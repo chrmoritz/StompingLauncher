@@ -304,7 +304,16 @@ namespace TheStompingLandLauncher
 
         private void addToServerList(String ip)
         {
-            LBserverHistory.Items.Insert(0, ip);
+            if (LBserverHistory.Items.Contains(ip))
+            {
+                int i = LBserverHistory.Items.IndexOf(ip);
+                LBserverHistory.Items[i] = LBserverHistory.Items[0].ToString();
+                LBserverHistory.Items[0] = ip;
+            }
+            else
+            {
+                LBserverHistory.Items.Insert(0, ip);
+            }
             saveServerHistory();
             LBserverHistory.SelectedIndex = 0;
         }
