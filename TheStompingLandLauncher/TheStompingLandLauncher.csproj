@@ -56,6 +56,16 @@
     <Compile Include="addNewServerConfig.Designer.cs">
       <DependentUpon>addNewServerConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalStrings.de.Designer.cs">
+      <DependentUpon>GlobalStrings.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,11 +75,28 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="addHistoryServerForm.de.resx">
+      <DependentUpon>addHistoryServerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addHistoryServerForm.resx">
       <DependentUpon>addHistoryServerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addNewServerConfig.de.resx">
+      <DependentUpon>addNewServerConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addNewServerConfig.resx">
       <DependentUpon>addNewServerConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalStrings.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.de.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>

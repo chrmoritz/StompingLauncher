@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addHistoryServerForm));
             this.label1 = new System.Windows.Forms.Label();
             this.TBaddServerIP = new System.Windows.Forms.TextBox();
             this.BaddServer = new System.Windows.Forms.Button();
@@ -35,45 +36,31 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "server address:";
             // 
             // TBaddServerIP
             // 
-            this.TBaddServerIP.Location = new System.Drawing.Point(97, 12);
+            resources.ApplyResources(this.TBaddServerIP, "TBaddServerIP");
             this.TBaddServerIP.Name = "TBaddServerIP";
-            this.TBaddServerIP.Size = new System.Drawing.Size(133, 20);
-            this.TBaddServerIP.TabIndex = 1;
-            this.TBaddServerIP.Text = "127.0.0.1:7777";
             this.TBaddServerIP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBaddServerIP_KeyPress);
             // 
             // BaddServer
             // 
             this.BaddServer.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BaddServer.Location = new System.Drawing.Point(15, 38);
+            resources.ApplyResources(this.BaddServer, "BaddServer");
             this.BaddServer.Name = "BaddServer";
-            this.BaddServer.Size = new System.Drawing.Size(212, 23);
-            this.BaddServer.TabIndex = 2;
-            this.BaddServer.Text = "add server to server list ...";
             this.BaddServer.UseVisualStyleBackColor = true;
             // 
             // addHistoryServerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 68);
             this.Controls.Add(this.BaddServer);
             this.Controls.Add(this.TBaddServerIP);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximumSize = new System.Drawing.Size(255, 106);
-            this.MinimumSize = new System.Drawing.Size(255, 106);
             this.Name = "addHistoryServerForm";
-            this.Text = "add server to history";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,10 +16,5 @@ namespace TheStompingLandLauncher
         {
             InitializeComponent();
         }
-
-        private void addNewServerConfig_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

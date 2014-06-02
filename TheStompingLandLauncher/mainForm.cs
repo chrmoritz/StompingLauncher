@@ -34,7 +34,6 @@ namespace TheStompingLandLauncher
 
             //ToDo: fix this:
             String settings = (string)Properties.Settings.Default["ServerSettings"];
-            Console.WriteLine("loading settings: " + settings);
             if (String.IsNullOrEmpty(settings))
             {
                 this.serverSettings = new Dictionary<String, serverSetting>();
@@ -66,7 +65,7 @@ namespace TheStompingLandLauncher
                 }
                 else
                 {
-                    MessageBox.Show("Sorry, we couldn't detect your Stomping Land folder :( Please select your Stomping Land Folder (the one containing Binaries, Engine and UDKGame) in the next dialog.", "Couldn't detect The Stomping Land folder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(GlobalStrings.SLfolderPathBody, GlobalStrings.SLfolderPathHeader, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                     {
                         TBpath.Text = folderBrowserDialog1.SelectedPath;
@@ -90,7 +89,7 @@ namespace TheStompingLandLauncher
             }
             else
             {
-                MessageBox.Show("Please enter a valid server address. (eg. if you want to connect to a local server enter 127.0.0.1:7777)", "Error: Invalid server address", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,22 +97,22 @@ namespace TheStompingLandLauncher
         {
             if (int.Parse(TBport.Text) < 1 || int.Parse(TBport.Text) > 65535)
             {
-                MessageBox.Show("Please enter a valid port. (between 1 and 65535)", "Error: Invalid port", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.PortBody, GlobalStrings.PortHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (int.Parse(TBqueryPort.Text) < 1 || int.Parse(TBqueryPort.Text) > 65535)
             {
-                MessageBox.Show("Please enter a valid SteamQueryPort. (between 1 and 65535)", "Error: Invalid SteamQueryPort", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.SteamQueryPortBody, GlobalStrings.SteamQueryPortHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (String.IsNullOrEmpty(TBhostname.Text))
             {
-                MessageBox.Show("Please enter a valid (not empty) hostname.", "Error: Invalid hostname", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.HostnameBody, GlobalStrings.HostnameHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (String.IsNullOrEmpty(TBconfigDir.Text))
             {
-                MessageBox.Show("Please enter a valid (not empty) configdir.", "Error: Invalid configdir", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.ConfigdirBody, GlobalStrings.ConfigdirHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             String cmd = "Server Capa_Island";
@@ -247,7 +246,7 @@ namespace TheStompingLandLauncher
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid server address. (eg. if you want to connect to a local server enter 127.0.0.1:7777)", "Error: Invalid server address", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 addForm.Dispose();
             }
@@ -345,22 +344,22 @@ namespace TheStompingLandLauncher
             }
             if (int.Parse(TBport.Text) < 1 || int.Parse(TBport.Text) > 65535)
             {
-                MessageBox.Show("Please enter a valid port. (between 1 and 65535)", "Error: Invalid port", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.PortBody, GlobalStrings.PortHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (int.Parse(TBqueryPort.Text) < 1 || int.Parse(TBqueryPort.Text) > 65535)
             {
-                MessageBox.Show("Please enter a valid SteamQueryPort. (between 1 and 65535)", "Error: Invalid SteamQueryPort", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.SteamQueryPortBody, GlobalStrings.SteamQueryPortHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (String.IsNullOrEmpty(TBhostname.Text))
             {
-                MessageBox.Show("Please enter a valid (not empty) hostname.", "Error: Invalid hostname", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.HostnameBody, GlobalStrings.HostnameHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (String.IsNullOrEmpty(TBconfigDir.Text))
             {
-                MessageBox.Show("Please enter a valid (not empty) configdir.", "Error: Invalid configdir", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GlobalStrings.ConfigdirBody, GlobalStrings.ConfigdirHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             String config = (string)CBserverConfig.SelectedItem;
@@ -393,7 +392,7 @@ namespace TheStompingLandLauncher
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid (not empty) configuration name.", "Error: Invalid Configuration Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(GlobalStrings.ConfigurationNameBody, GlobalStrings.ConfigurationNameHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 addForm.Dispose();
             }
@@ -408,7 +407,6 @@ namespace TheStompingLandLauncher
             ms.Position = 0;
             byte[] buffer = new byte[(int)ms.Length];
             ms.Read(buffer, 0, buffer.Length);
-            Console.WriteLine("base64: " + Convert.ToBase64String(buffer));
             Properties.Settings.Default["ServerSettings"] = Convert.ToBase64String(buffer);
             Properties.Settings.Default.Save();
         }
