@@ -588,6 +588,71 @@
   <data name="BserbasedSP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAICAAAAEACACoCAAAJgAAABAQAAABAAgAaAUAAM4IAAAoAAAAIAAAAEAAAAABAAgAAAAAAAAE
+        AAAAAAAAAAAAAAABAAAAAAAA////AMv+/wCZ/v8AZf7/ADP+/wAA/f0A/sv/AMvL/wCZy/8AZcv/ADPM
+        /wAAy/0A/pn/AMuZ/wCZmf8AZZj/ADOY/wAAmP0A/mX/AMtl/wCYZf8AZWX/ADNl/wAAZf0A/jP/AMsz
+        /wCYM/8AZTP/ADMz/wAAMv0A/QD9AMsA/QCYAP0AZQD9ADIA/QAAAP0A///LAMv/ywCZ/8wAZf/LADP/
+        zAAA/csA/8vLAMzMzACYy8sAZsvMADLLywAAy8wA/5nLAMuYywCYmMsAZpjMADKYywAAmcwA/2XLAMtm
+        zACYZswAZmbMADJlywAAZcwA/zPLAMsyywCYMssAZTLLADIyywAAMswA/QDLAMsAzACYAMwAZQDMADIA
+        zAAAAMwA//+ZAMv/mQCZ/5kAZf+YADP/mQAA/ZgA/8yZAMvLmACYy5gAZsyZADLLmAAAzJkA/5mZAMuY
+        mACZmZkAZZiYADOYmQAAl5gA/2WYAMxmmACYZZgAZWWYADNlmQAAZZgA/zOYAMsymACYM5kAZTOZADMz
+        mQAAMpgA/QCYAMwAmACXAJgAZQCYADIAmAAAAJgA//9lAMv/ZQCY/2UAZf9lADP/ZgAA/WUA/8tlAMzM
+        ZgCYzGYAZsxmADLLZQAAzGYA/5hlAMyZZgCYmGUAZZhlADOZZgAAmGUA/2VlAMxmZgCYZWUAZmZmADJl
+        ZQAAZWYA/zNlAMsyZQCZM2UAZTJlADIyZQAAMmYA/QBlAMwAZQCYAGUAZQBmADIAZgAAAGYA//8zAMz/
+        MwCY/zMAZv8zADP/MwAA/TIA/8wzAMvLMgCYyzIAZcsyADLLMgAAzDMA/5kzAMuYMgCZmTMAZZkzADOZ
+        MwAAmDIA/2YzAMtlMgCZZjMAZWUyADJlMgAAZjMA/zMzAMsyMgCZMzMAZTIyADMzMwAAMTIA/QAyAMwA
+        MgCYADIAZgAyADEAMgAAADIA/f0AAMv9AACY/QAAZf0AADL9AAAA/QAA/csAAMzMAACZzAAAZcwAADPM
+        AAAAzAAA/ZgAAMyZAACYmAAAZZgAADKYAAAAmAAA/WUAAMxmAACYZQAAZmYAADJmAAAAZgAA/TIAAMwz
+        AACYMgAAZjMAADIyAAAAMgAA/QAAAMwAAACYAAAAZgAAADIAAAAAAO4AAADcAAAAugAAAKoAAACIAAAA
+        dgAAAFQAAABEAAAAIgAAABAAAO4AAADcAAAAugAAAKoAAACIAAAAdgAAAFQAAABEAAAAIgAAABAAAO4A
+        AADcAAAAugAAAKoAAACIAAAAdgAAAFQAAABEAAAAIgAAABAAAADu7u4A3d3dALu7uwCqqqoAiIiIAHd3
+        dwBVVVUAREREACIiIgAREREAAAAAAP///////////////////////////////////////////////4Jk
+        Xl7///////+CXoKC/////15eXv9dXfiI/////////4he//////////9dMur///9e/////15eXl7/////
+        /////4he/////////14z/f///////////15e9P//////////Xohe/////////1dd////////////gv9e
+        Xv//////////iK2I4P//////Xl5e9P///////4mIg+pd//////////+Jia2C/+D/////Xl6C9P//////
+        gomI/17///////////+I6v9eXerg//9eVzNe////////Xv//Xv//////4N/q9OpdV1dXiKzgXl1eM/+I
+        4P////+C/15e////M/9XXV7qMywzXvyC/4iCVzNX/62I6v//iIj/Xl3/////M///M17/M1eIiP/8raxX
+        V/+IrF5l4F6Cgl7/M////17/Xiz/M1f//6yJ8/2IgjpX9KytXoKJ6oJegv9e/////15eXS3/XV6C9PyJ
+        iIKIpjle/Ihegoj/goKCXv///////15egYIzgnxe//z9iP+Igl6I/IKIWOCCgoiCZP///////15egtOC
+        goL/iIL/V/2IgoJerF1egoKm/F////////T/Xl70BP9dXl7/4DIzgv+sXl6CXleIWIKsgoj///9eXvz+
+        Xl7/Xl5eXjNXV15e/16CiF6CXvxfXqxXXf//Xl70LPz/Xv//XjMsV15kgl5e//yCgjqCiIJeiV5X//9e
+        /zP+Xl7/LCz+XV5eXoJeZILgifteWIKCiIKIXlf///8z/V5e9Fcz/f8zVzNXZF5eXv+Ig15eX4JeXoJe
+        V/////1eXv1eM/9XM1eIXlczgmT/gl6sgjqCgl5Ygvoz/////17/M//0XTNXiV6CZFdeXv+CrIJYgmRe
+        gliCXvP//////yz/Xl4zLV1eiF6CiF7/rII0XqZeX6aCXl6C/////////4iJXlcyV4heZV5e/4KmXliI
+        goJkfKY0goL/////////Xl6IgjMzgoJeXv/8VzRegqBkXl6me15e////////////4F5eXV5eXv//goJe
+        WPqmXVdYV6CCXv///////////////////////////4KCgnxXM118goL/////////////////////////
+        /////16CXl5egl7/////////////////////////////////////4P/g////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////gcDwD4HgYAfD8MAH4fDPB+D4PwPweD4D8BweA/gEDwNAA
+        AcCAAACAwAAAAIAAAAAAAAAAYAAAAPAAAADAAAAAgAAAAAAAAAAAAAAAgAAAAIAAAAAAAAABYAAAAcAA
+        AAGQAAADeAAAB/4GAA///4Af///Af////////////////ygAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAA
+        AAAAAAAAAAEAAAAAAAD///8Ay/7/AJn+/wBl/v8AM/7/AAD9/QD+y/8Ay8v/AJnL/wBly/8AM8z/AADL
+        /QD+mf8Ay5n/AJmZ/wBlmP8AM5j/AACY/QD+Zf8Ay2X/AJhl/wBlZf8AM2X/AABl/QD+M/8AyzP/AJgz
+        /wBlM/8AMzP/AAAy/QD9AP0AywD9AJgA/QBlAP0AMgD9AAAA/QD//8sAy//LAJn/zABl/8sAM//MAAD9
+        ywD/y8sAzMzMAJjLywBmy8wAMsvLAADLzAD/mcsAy5jLAJiYywBmmMwAMpjLAACZzAD/ZcsAy2bMAJhm
+        zABmZswAMmXLAABlzAD/M8sAyzLLAJgyywBlMssAMjLLAAAyzAD9AMsAywDMAJgAzABlAMwAMgDMAAAA
+        zAD//5kAy/+ZAJn/mQBl/5gAM/+ZAAD9mAD/zJkAy8uYAJjLmABmzJkAMsuYAADMmQD/mZkAy5iYAJmZ
+        mQBlmJgAM5iZAACXmAD/ZZgAzGaYAJhlmABlZZgAM2WZAABlmAD/M5gAyzKYAJgzmQBlM5kAMzOZAAAy
+        mAD9AJgAzACYAJcAmABlAJgAMgCYAAAAmAD//2UAy/9lAJj/ZQBl/2UAM/9mAAD9ZQD/y2UAzMxmAJjM
+        ZgBmzGYAMstlAADMZgD/mGUAzJlmAJiYZQBlmGUAM5lmAACYZQD/ZWUAzGZmAJhlZQBmZmYAMmVlAABl
+        ZgD/M2UAyzJlAJkzZQBlMmUAMjJlAAAyZgD9AGUAzABlAJgAZQBlAGYAMgBmAAAAZgD//zMAzP8zAJj/
+        MwBm/zMAM/8zAAD9MgD/zDMAy8syAJjLMgBlyzIAMssyAADMMwD/mTMAy5gyAJmZMwBlmTMAM5kzAACY
+        MgD/ZjMAy2UyAJlmMwBlZTIAMmUyAABmMwD/MzMAyzIyAJkzMwBlMjIAMzMzAAAxMgD9ADIAzAAyAJgA
+        MgBmADIAMQAyAAAAMgD9/QAAy/0AAJj9AABl/QAAMv0AAAD9AAD9ywAAzMwAAJnMAABlzAAAM8wAAADM
+        AAD9mAAAzJkAAJiYAABlmAAAMpgAAACYAAD9ZQAAzGYAAJhlAABmZgAAMmYAAABmAAD9MgAAzDMAAJgy
+        AABmMwAAMjIAAAAyAAD9AAAAzAAAAJgAAABmAAAAMgAAAAAA7gAAANwAAAC6AAAAqgAAAIgAAAB2AAAA
+        VAAAAEQAAAAiAAAAEAAA7gAAANwAAAC6AAAAqgAAAIgAAAB2AAAAVAAAAEQAAAAiAAAAEAAA7gAAANwA
+        AAC6AAAAqgAAAIgAAAB2AAAAVAAAAEQAAAAiAAAAEAAAAO7u7gDd3d0Au7u7AKqqqgCIiIgAd3d3AFVV
+        VQBEREQAIiIiABEREQAAAAAA//leXfr/+4GC//+tiIGC////+4n///+J+//f+fqCiFb///+Irf//ejr+
+        //8riYit/////KytgiusXoH/963+iP/7gv1eV12zgjP+iCuIrYj/iIhegoj+/F6miF6tgoiC/Ptegl38
+        rfytXYiIrIKCrf/5/YKCXv2IXa2Cgl6CiP37iIKI/V5XXl79gl6IXoKCgoKCiFeCXV5eiYhYgohegqz8
+        iIiCXV5dXv2CgmRYgoH/rIKILV6CXq2CXoKCXoL5+v+Igl5diayCXnxdfIKC///////5+iv3+4JeXoL7
+        ///////////////5+vn3/////////////////////////4RhAADOQAAA5jAAAOAQAACAAAAAgAAAAAAA
+        AACAAAAAAAAAAAAAAAAAAAAAgAAAAEABAADwAwAA/4cAAP//AAA=
+</value>
+  </data>
   <data name="&gt;&gt;TBconfigDir.Name" xml:space="preserve">
     <value>TBconfigDir</value>
   </data>
@@ -1259,9 +1324,6 @@
   </data>
   <metadata name="tabPage3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

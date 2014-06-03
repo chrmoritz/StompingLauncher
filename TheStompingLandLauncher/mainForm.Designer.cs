@@ -215,6 +215,7 @@
             // CBserverConfig
             // 
             resources.ApplyResources(this.CBserverConfig, "CBserverConfig");
+            this.CBserverConfig.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBserverConfig.FormattingEnabled = true;
             this.CBserverConfig.Name = "CBserverConfig";
             // 
