@@ -120,7 +120,7 @@ namespace TheStompingLandLauncher
             {
                 cmd += "?steamsockets?ServerName=\"" + TBhostname.Text + "\"";
             }
-            cmd += "?NoFriendlyFire=" + !CBfriendlyFire.Checked + "?ShowAllPlayerNames=" + CBplayerNames.Checked + "?NoDinosaurs=" + CBremoveDinos.Checked;
+            cmd += "?NoFriendlyFire=" + !CBfriendlyFire.Checked + "?ShowAllPlayerNames=" + CBplayerNames.Checked + (CBremoveDinos.Checked ? "?NoDinosaurs=True" : "");
             cmd += " -Port=" + TBport.Text + " -QueryPort=" + TBqueryPort.Text;
             if (CBconfigDir.Checked)
             {
@@ -136,7 +136,7 @@ namespace TheStompingLandLauncher
 
         private void BserbasedSP_Click(object sender, EventArgs e)
         {
-            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "Server Capa_Island");
+            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "Server Capa_Island?NoFriendlyFire=True");
             System.Threading.Thread.Sleep(5000);
             Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:7777");
         }
