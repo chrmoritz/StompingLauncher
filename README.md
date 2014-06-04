@@ -2,13 +2,13 @@
 
 # Download: 
 
-Current version (v0.1.1): https://github.com/chrmoritz/StompingLauncher/releases  
+Current version (v0.1.2): https://github.com/chrmoritz/StompingLauncher/releases  
 Requirements: [Microsoft .NET Frammework 4.5](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (most likly already installed)
 
 # Features:
 
 ### 1. Join Server by IP
-* join every community/private server with only knowing their ip address
+* join every community/private server with only knowing their ip address (or dns name/url)
   * even if the server isn't listed in the server list
 * manage a history/server list of your favorite community/private servers with the ability to:
   * reorder and remove server from the list
