@@ -78,18 +78,18 @@ namespace TheStompingLandLauncher
         private void BjoinServer_Click(object sender, EventArgs e)
         {
             String server = TBjoinIP.Text;
-            Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-            var match = rgx.Match(server);
-            if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-            {
+            //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
+            //var match = rgx.Match(server);
+            //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
+            //{
                 Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
                 Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
                 addToServerList(server);
-            }
-            else
-            {
-                MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void BhostServer_Click(object sender, EventArgs e)
@@ -179,10 +179,10 @@ namespace TheStompingLandLauncher
 
         private void TBjoinIP_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ':')
-            {
-                e.Handled = true;
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ':')
+            //{
+            //    e.Handled = true;
+            //}
         }
 
         private void TBport_KeyPress(object sender, KeyPressEventArgs e)
@@ -237,16 +237,16 @@ namespace TheStompingLandLauncher
             if (addForm.ShowDialog(this) == DialogResult.OK)
             {
                 String addIP = addForm.TBaddServerIP.Text;
-                Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-                var match = rgx.Match(addIP);
-                if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-                {
+                //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
+                //var match = rgx.Match(addIP);
+                //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
+                //{
                     addToServerList(addIP);
-                }
-                else
-                {
-                    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
                 addForm.Dispose();
             }
         }
