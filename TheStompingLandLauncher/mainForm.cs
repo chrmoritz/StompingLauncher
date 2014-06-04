@@ -32,7 +32,6 @@ namespace TheStompingLandLauncher
                 LBserverHistory.Items.AddRange(history);
             }
 
-            //ToDo: fix this:
             String settings = (string)Properties.Settings.Default["ServerSettings"];
             if (String.IsNullOrEmpty(settings))
             {
