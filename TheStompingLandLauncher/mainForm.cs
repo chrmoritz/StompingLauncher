@@ -125,6 +125,21 @@ namespace TheStompingLandLauncher
             {
                 cmd += " --configsubdir=" + TBconfigDir.Text;
             }
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.ServerAlreadyRunningBody, GlobalStrings.ServerAlreadyRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
             Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", cmd);
             if (CBautoJoin.Checked)
             {
@@ -135,6 +150,21 @@ namespace TheStompingLandLauncher
 
         private void BserbasedSP_Click(object sender, EventArgs e)
         {
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.ServerAlreadyRunningBody, GlobalStrings.ServerAlreadyRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
             Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "Server Capa_Island?NoFriendlyFire=True");
             System.Threading.Thread.Sleep(5000);
             Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:7777");

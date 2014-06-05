@@ -159,4 +159,10 @@
   <data name="SteamQueryPortHeader" xml:space="preserve">
     <value>Fehler: Ungültiger SteamQueryPort</value>
   </data>
+  <data name="ServerAlreadyRunningBody" xml:space="preserve">
+    <value>Es sieht so aus als ob bereits ein anderer Server läuft. Beende diesen oder der neue Server wird möglicherweise nicht richtig starten.</value>
+  </data>
+  <data name="ServerAlreadyRunningHeader" xml:space="preserve">
+    <value>Server läuft bereits?</value>
+  </data>
 </root>

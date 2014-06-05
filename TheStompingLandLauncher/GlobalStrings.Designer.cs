@@ -151,6 +151,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It looks like you are already running a server. You may want to quit it, because otherwise the new server will not start correctly. ähnelt.
+        /// </summary>
+        internal static string ServerAlreadyRunningBody {
+            get {
+                return ResourceManager.GetString("ServerAlreadyRunningBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Server already running? ähnelt.
+        /// </summary>
+        internal static string ServerAlreadyRunningHeader {
+            get {
+                return ResourceManager.GetString("ServerAlreadyRunningHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Sorry, we couldn&apos;t detect your The Stomping Land folder :( Please select your Stomping Land Folder (the one containing Binaries, Engine and UDKGame) in the next dialog. ähnelt.
         /// </summary>
         internal static string SLfolderPathBody {
