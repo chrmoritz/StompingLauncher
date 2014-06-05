@@ -439,6 +439,98 @@ namespace TheStompingLandLauncher
             Properties.Settings.Default["ServerSettings"] = Convert.ToBase64String(buffer);
             Properties.Settings.Default.Save();
         }
+
+        private void BreloadServerSave_Click(object sender, EventArgs e)
+        {
+            List<PlayerSave> serverSave = new List<PlayerSave>();
+            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            DGVserverSave.DataSource = serverSave;
+        }
+
+        private void BwriteServerSave_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    class PlayerSave
+    {
+        public string id;
+        public int expertise;
+        public int hunger;
+        public int thirst;
+        public int herbs;
+        public int arrows;
+        public int ropes;
+        public string itemSlot1;
+        public string itemSlot2;
+        public string itemSlot3;
+        public string itemSlot4;
+        public string itemSlot5;
+        public string itemSlot6;
+        public string itemSlot7;
+        public string itemSlot8;
+        public string itemSlot9;
+        public double x;
+        public double y;
+        public double z;
+        public int pitch;
+        public int yaw;
+        public int roll;
+        public PlayerSave(string id, double x, double y, double z, int pitch, int yaw, int roll, int expertise, int hunger, int thirst, int arrows, int ropes, int herbs,
+            string itemSlot1, string itemSlot2, string itemSlot3, string itemSlot4, string itemSlot5, string itemSlot6, string itemSlot7, string itemSlot8, string itemSlot9)
+        {
+            this.id = id;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.pitch = pitch;
+            this.yaw = yaw;
+            this.roll = roll;
+            this.expertise = expertise;
+            this.hunger = hunger;
+            this.thirst = thirst;
+            this.arrows = arrows;
+            this.ropes = ropes;
+            this.herbs = herbs;
+            this.itemSlot1 = itemSlot1;
+            this.itemSlot2 = itemSlot2;
+            this.itemSlot3 = itemSlot3;
+            this.itemSlot4 = itemSlot4;
+            this.itemSlot5 = itemSlot5;
+            this.itemSlot6 = itemSlot6;
+            this.itemSlot7 = itemSlot7;
+            this.itemSlot8 = itemSlot8;
+            this.itemSlot9 = itemSlot9;
+        }
+        public string ID { get { return id; } }
+        public double X { get { return x; } }
+        public double Y { get { return y; } }
+        public double Z { get { return z; } }
+        public int Pitch { get { return pitch; } }
+        public int Yaw { get { return yaw; } }
+        public int Roll { get { return roll; } }
+        public int Expertise { get { return expertise; } }
+        public int Hunger { get { return hunger; } }
+        public int Thirst { get { return thirst; } }
+        public int Arrows { get { return arrows; } }
+        public int Ropes { get { return ropes; } }
+        public int Herbs { get { return herbs; } }
+        public string ItemSlot1 { get { return itemSlot1; } }
+        public string ItemSlot2 { get { return itemSlot2; } }
+        public string ItemSlot3 { get { return itemSlot3; } }
+        public string ItemSlot4 { get { return itemSlot4; } }
+        public string ItemSlot5 { get { return itemSlot5; } }
+        public string ItemSlot6 { get { return itemSlot6; } }
+        public string ItemSlot7 { get { return itemSlot7; } }
+        public string ItemSlot8 { get { return itemSlot8; } }
+        public string ItemSlot9 { get { return itemSlot9; } }
     }
 
     [Serializable()]

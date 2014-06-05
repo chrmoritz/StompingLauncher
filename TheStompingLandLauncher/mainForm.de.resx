@@ -289,6 +289,21 @@
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Serverbasierter Einzelspieler/LAN starten</value>
   </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Fahre den Server vor dem ändern der Savefiles herrunter oder deine Änderungen werden verloren gehen.</value>
+  </data>
+  <data name="BwriteServerSave.Text" xml:space="preserve">
+    <value>speichern</value>
+  </data>
+  <data name="BreloadServerSave.Text" xml:space="preserve">
+    <value>erneut laden</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Savefile Editor</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>
   </data>

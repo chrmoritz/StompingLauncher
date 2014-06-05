@@ -67,6 +67,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.BserbasedSP = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.BwriteServerSave = new System.Windows.Forms.Button();
+            this.BreloadServerSave = new System.Windows.Forms.Button();
+            this.DGVserverSave = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.TBpath = new System.Windows.Forms.TextBox();
             this.BselectPath = new System.Windows.Forms.Button();
@@ -77,6 +82,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControll
@@ -85,6 +92,7 @@
             this.tabControll.Controls.Add(this.tabPage1);
             this.tabControll.Controls.Add(this.tabPage2);
             this.tabControll.Controls.Add(this.tabPage3);
+            this.tabControll.Controls.Add(this.tabPage4);
             this.tabControll.Name = "tabControll";
             this.tabControll.SelectedIndex = 0;
             // 
@@ -352,6 +360,42 @@
             this.BserbasedSP.UseVisualStyleBackColor = true;
             this.BserbasedSP.Click += new System.EventHandler(this.BserbasedSP_Click);
             // 
+            // tabPage4
+            // 
+            resources.ApplyResources(this.tabPage4, "tabPage4");
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.BwriteServerSave);
+            this.tabPage4.Controls.Add(this.BreloadServerSave);
+            this.tabPage4.Controls.Add(this.DGVserverSave);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            this.label10.UseWaitCursor = true;
+            // 
+            // BwriteServerSave
+            // 
+            resources.ApplyResources(this.BwriteServerSave, "BwriteServerSave");
+            this.BwriteServerSave.Name = "BwriteServerSave";
+            this.BwriteServerSave.UseVisualStyleBackColor = true;
+            this.BwriteServerSave.Click += new System.EventHandler(this.BwriteServerSave_Click);
+            // 
+            // BreloadServerSave
+            // 
+            resources.ApplyResources(this.BreloadServerSave, "BreloadServerSave");
+            this.BreloadServerSave.Name = "BreloadServerSave";
+            this.BreloadServerSave.UseVisualStyleBackColor = true;
+            this.BreloadServerSave.Click += new System.EventHandler(this.BreloadServerSave_Click);
+            // 
+            // DGVserverSave
+            // 
+            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
+            this.DGVserverSave.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVserverSave.Name = "DGVserverSave";
+            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -394,6 +438,9 @@
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,6 +490,11 @@
         private System.Windows.Forms.Button BloadSC;
         private System.Windows.Forms.ComboBox CBserverConfig;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button BwriteServerSave;
+        private System.Windows.Forms.Button BreloadServerSave;
+        private System.Windows.Forms.DataGridView DGVserverSave;
     }
 }
 
