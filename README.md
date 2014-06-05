@@ -2,7 +2,7 @@
 
 # Download: 
 
-Current version (v0.1.2): https://github.com/chrmoritz/StompingLauncher/releases  
+Current version (v0.1.3): https://github.com/chrmoritz/StompingLauncher/releases  
 Requirements: [Microsoft .NET Frammework 4.5](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (most likly already installed)
 
 # Features:
@@ -33,10 +33,16 @@ Requirements: [Microsoft .NET Frammework 4.5](http://www.microsoft.com/en-US/dow
 * instead of playing in build-in solo modus play a serverbased singleplayer game with following advantages
   * working expertise and weapons saving
     * continue where you left the last time (Note: atm similar to current multiplayer games base and dinosaur saving isn't working)
-  * ability to edit your server saves
-    * you can cheat as many expertise/herbs/weapons as you want by editing UDK_TheStompingLand_Server.ini
 
-### 4. Other Features
+### 4. Savefile editor
+* easily edit your servers savefiles and change your players:
+  * location (teleport to your friends), expertise (start with 200+), hunger
+  * herbs, arrows, robe (more than ingame limits possible)
+  * weapons equiped in each slot (multiple shields possible)
+
+ ![](https://github.com/chrmoritz/StompingLauncher/releases/download/0.1/sll3.png)
+
+### 5. Other Features
 * open source (under [GPL v3 license](LICENCE.txt))
   * don't hesitate to make a pull request and contribute code ;)
   * please report bugs in the [Issue Tracker](https://github.com/chrmoritz/StompingLauncher/issues)
