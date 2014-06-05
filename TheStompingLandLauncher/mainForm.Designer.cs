@@ -71,14 +71,12 @@
             this.TBpath = new System.Windows.Forms.TextBox();
             this.BselectPath = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.tabControll.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControll
@@ -92,6 +90,7 @@
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.BdownSL);
             this.tabPage1.Controls.Add(this.BupSL);
             this.tabPage1.Controls.Add(this.BremoveSL);
@@ -103,7 +102,6 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.TBjoinIP);
             this.tabPage1.Controls.Add(this.label3);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -178,6 +176,7 @@
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.BnewSC);
             this.tabPage2.Controls.Add(this.BsaveSC);
             this.tabPage2.Controls.Add(this.BloadSC);
@@ -187,7 +186,6 @@
             this.tabPage2.Controls.Add(this.BhostServer);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -309,10 +307,10 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CBremoveDinos);
             this.groupBox1.Controls.Add(this.CBplayerNames);
             this.groupBox1.Controls.Add(this.CBfriendlyFire);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -336,9 +334,9 @@
             // 
             // tabPage3
             // 
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.BserbasedSP);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -373,12 +371,8 @@
             // 
             // folderBrowserDialog1
             // 
+            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // mainForm
             // 
@@ -400,7 +394,6 @@
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,7 +436,6 @@
         private System.Windows.Forms.Button BremoveSL;
         private System.Windows.Forms.Button BaddSL;
         private System.Windows.Forms.Button BconnectSL;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Button BdownSL;
         private System.Windows.Forms.Button BupSL;
         private System.Windows.Forms.Button BnewSC;
