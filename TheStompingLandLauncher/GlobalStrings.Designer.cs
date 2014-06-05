@@ -169,6 +169,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You have to shut down your server before editing savefiles. Otherwise your changes will be overwritten. ähnelt.
+        /// </summary>
+        internal static string ServerStillRunningBody {
+            get {
+                return ResourceManager.GetString("ServerStillRunningBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Server still running? ähnelt.
+        /// </summary>
+        internal static string ServerStillRunningHeader {
+            get {
+                return ResourceManager.GetString("ServerStillRunningHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Sorry, we couldn&apos;t detect your The Stomping Land folder :( Please select your Stomping Land Folder (the one containing Binaries, Engine and UDKGame) in the next dialog. ähnelt.
         /// </summary>
         internal static string SLfolderPathBody {

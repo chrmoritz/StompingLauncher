@@ -12,12 +12,14 @@ using Microsoft.Win32;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Globalization;
 
 namespace TheStompingLandLauncher
 {
     public partial class mainForm : Form
     {
         public Dictionary<String, serverSetting> serverSettings;
+        public string[] serverSaveLines;
 
         public mainForm()
         {
@@ -440,27 +442,62 @@ namespace TheStompingLandLauncher
             Properties.Settings.Default.Save();
         }
 
+        enum weapons {Bow, Spear, Shield, Bola};
+
         private void BreloadServerSave_Click(object sender, EventArgs e)
         {
             List<PlayerSave> serverSave = new List<PlayerSave>();
-            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
-            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
-            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
-            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
-            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
-            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
-            serverSave.Add(new PlayerSave("0x011000010917387C", -1001.621460, -37301.777344, 112.390411, 904, 31936, 0, 1051, 0, 0, 1000, 1000, 1000, "Bow", "Spear", "Shield", "Bola", "Shield", "Shield", "Shield", "Shield", "Shield"));
+            this.serverSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
+            for (int i = 0; i < this.serverSaveLines.Length; i++)
+            {
+                Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
+                var match = rgx.Match(this.serverSaveLines[i]);
+                if (match.Success) {
+                    serverSave.Add(new PlayerSave(i, match.Groups[1].Value, double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[4].Value, CultureInfo.InvariantCulture), 
+                        int.Parse(match.Groups[5].Value), int.Parse(match.Groups[6].Value), int.Parse(match.Groups[7].Value), int.Parse(match.Groups[8].Value), int.Parse(match.Groups[9].Value), int.Parse(match.Groups[10].Value), int.Parse(match.Groups[11].Value), int.Parse(match.Groups[12].Value), int.Parse(match.Groups[13].Value), 
+                        match.Groups[14].Value, match.Groups[15].Value, match.Groups[16].Value, match.Groups[17].Value, match.Groups[18].Value, match.Groups[19].Value, match.Groups[20].Value, match.Groups[21].Value, match.Groups[22].Value));
+                }
+            }
             DGVserverSave.DataSource = serverSave;
         }
 
         private void BwriteServerSave_Click(object sender, EventArgs e)
         {
-
+            List<PlayerSave> serverSave = (List<PlayerSave>) DGVserverSave.DataSource;
+            if (serverSave.Count == 0)
+            {
+                return;
+            }
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
+            foreach (PlayerSave save in serverSave)
+            {
+                this.serverSaveLines[save.index] = "PlayerData=(SteamID=" + save.id + ",Location=(X=" + save.x.ToString(CultureInfo.InvariantCulture) + ",Y=" + save.y.ToString(CultureInfo.InvariantCulture) + ",Z=" + save.z.ToString(CultureInfo.InvariantCulture) 
+                    + "),Rotation=(Pitch=" + save.pitch + ",Yaw=" + save.yaw + ",Roll=" + save.roll 
+                    + "),Stat_Expertise=" + save.expertise + ",N_Hunger=" + save.hunger + ",N_Thirst=" + save.thirst + ",R_Arrows=" + save.arrows + ",R_Rope=" + save.ropes + ",R_Herbs=" + save.herbs + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=," 
+                    + "ItemSlot[1]=" + save.itemSlot1 + ",ItemSlot[2]=" + save.itemSlot2 + ",ItemSlot[3]=" + save.itemSlot3 + ",ItemSlot[4]=" + save.itemSlot4 + ",ItemSlot[5]=" + save.itemSlot5 
+                    + ",ItemSlot[6]=" + save.itemSlot6 + ",ItemSlot[7]=" + save.itemSlot7 + ",ItemSlot[8]=" + save.itemSlot8 + ",ItemSlot[9]=" + save.itemSlot9 + ")";
+            }
+            System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini", this.serverSaveLines);
         }
     }
 
     class PlayerSave
     {
+        public int index;
         public string id;
         public int expertise;
         public int hunger;
@@ -483,9 +520,10 @@ namespace TheStompingLandLauncher
         public int pitch;
         public int yaw;
         public int roll;
-        public PlayerSave(string id, double x, double y, double z, int pitch, int yaw, int roll, int expertise, int hunger, int thirst, int arrows, int ropes, int herbs,
+        public PlayerSave(int index, string id, double x, double y, double z, int pitch, int yaw, int roll, int expertise, int hunger, int thirst, int arrows, int ropes, int herbs,
             string itemSlot1, string itemSlot2, string itemSlot3, string itemSlot4, string itemSlot5, string itemSlot6, string itemSlot7, string itemSlot8, string itemSlot9)
         {
+            this.index = index;
             this.id = id;
             this.x = x;
             this.y = y;
@@ -509,28 +547,28 @@ namespace TheStompingLandLauncher
             this.itemSlot8 = itemSlot8;
             this.itemSlot9 = itemSlot9;
         }
-        public string ID { get { return id; } }
-        public double X { get { return x; } }
-        public double Y { get { return y; } }
-        public double Z { get { return z; } }
-        public int Pitch { get { return pitch; } }
-        public int Yaw { get { return yaw; } }
-        public int Roll { get { return roll; } }
-        public int Expertise { get { return expertise; } }
-        public int Hunger { get { return hunger; } }
-        public int Thirst { get { return thirst; } }
-        public int Arrows { get { return arrows; } }
-        public int Ropes { get { return ropes; } }
-        public int Herbs { get { return herbs; } }
-        public string ItemSlot1 { get { return itemSlot1; } }
-        public string ItemSlot2 { get { return itemSlot2; } }
-        public string ItemSlot3 { get { return itemSlot3; } }
-        public string ItemSlot4 { get { return itemSlot4; } }
-        public string ItemSlot5 { get { return itemSlot5; } }
-        public string ItemSlot6 { get { return itemSlot6; } }
-        public string ItemSlot7 { get { return itemSlot7; } }
-        public string ItemSlot8 { get { return itemSlot8; } }
-        public string ItemSlot9 { get { return itemSlot9; } }
+        public string ID { get { return id; } set { id = value; } }
+        public double X { get { return x; } set { x = value; } }
+        public double Y { get { return y; } set { y = value; } }
+        public double Z { get { return z; } set { z = value; } }
+        public int Pitch { get { return pitch; } set { pitch = value; } }
+        public int Yaw { get { return yaw; } set { yaw = value; } }
+        public int Roll { get { return roll; } set { roll = value; } }
+        public int Expertise { get { return expertise; } set { expertise = value; } }
+        public int Hunger { get { return hunger; } set { hunger = value; } }
+        public int Thirst { get { return thirst; } set { thirst = value; } }
+        public int Arrows { get { return arrows; } set { arrows = value; } }
+        public int Ropes { get { return ropes; } set { ropes = value; } }
+        public int Herbs { get { return herbs; } set { herbs = value; } }
+        public string ItemSlot1 { get { return itemSlot1; } set { itemSlot1 = value; } }
+        public string ItemSlot2 { get { return itemSlot2; } set { itemSlot2 = value; } }
+        public string ItemSlot3 { get { return itemSlot3; } set { itemSlot3 = value; } }
+        public string ItemSlot4 { get { return itemSlot4; } set { itemSlot4 = value; } }
+        public string ItemSlot5 { get { return itemSlot5; } set { itemSlot5 = value; } }
+        public string ItemSlot6 { get { return itemSlot6; } set { itemSlot6 = value; } }
+        public string ItemSlot7 { get { return itemSlot7; } set { itemSlot7 = value; } }
+        public string ItemSlot8 { get { return itemSlot8; } set { itemSlot8 = value; } }
+        public string ItemSlot9 { get { return itemSlot9; } set { itemSlot9 = value; } }
     }
 
     [Serializable()]

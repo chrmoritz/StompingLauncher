@@ -165,4 +165,10 @@
   <data name="ServerAlreadyRunningHeader" xml:space="preserve">
     <value>Server already running?</value>
   </data>
+  <data name="ServerStillRunningBody" xml:space="preserve">
+    <value>You have to shut down your server before editing savefiles. Otherwise your changes will be overwritten.</value>
+  </data>
+  <data name="ServerStillRunningHeader" xml:space="preserve">
+    <value>Server still running?</value>
+  </data>
 </root>
