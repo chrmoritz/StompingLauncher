@@ -121,8 +121,11 @@ namespace TheStompingLandLauncher
             {
                 cmd += "?steamsockets?ServerName=\"" + TBhostname.Text + "\"";
             }
-            cmd += "?NoFriendlyFire=" + !CBfriendlyFire.Checked + "?ShowAllPlayerNames=" + CBplayerNames.Checked + (CBremoveDinos.Checked ? "?NoDinosaurs=True" : "");
-            cmd += " -Port=" + TBport.Text + " -QueryPort=" + TBqueryPort.Text;
+            cmd += "?NoFriendlyFire=" + !CBfriendlyFire.Checked + "?ShowAllPlayerNames=" + CBplayerNames.Checked;
+            cmd += (CBremoveDinos.Checked ? "?NoDinosaurs=True" : "") + " -Port=" + TBport.Text;
+            if (CBsteamQuery.Checked){
+                cmd += " -QueryPort=" + TBqueryPort.Text;
+            }
             if (CBconfigDir.Checked)
             {
                 cmd += " --configsubdir=" + TBconfigDir.Text;
@@ -177,10 +180,12 @@ namespace TheStompingLandLauncher
             if (CBsteamQuery.Checked)
             {
                 TBhostname.Enabled = true;
+                TBqueryPort.Enabled = true;
             }
             else
             {
                 TBhostname.Enabled = false;
+                TBqueryPort.Enabled = false;
             }
         }
 
