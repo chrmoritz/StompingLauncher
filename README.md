@@ -2,7 +2,7 @@
 
 # Download: 
 
-Current version (v0.1.3): https://github.com/chrmoritz/StompingLauncher/releases
+Current version (v0.2): https://github.com/chrmoritz/StompingLauncher/releases
 
 # Features:
 
@@ -28,10 +28,12 @@ Current version (v0.1.3): https://github.com/chrmoritz/StompingLauncher/releases
 
 ![](https://github.com/chrmoritz/StompingLauncher/releases/download/0.1/sll1.png)
 
-### 3. Start serverbased Singleplayer
-* instead of playing in build-in solo modus play a serverbased singleplayer game with following advantages
+### 3. Start serverbased Singleplayer / LAN
+* instead of playing in build-in solo modus play a serverbased singleplayer game with the following advantages
   * working expertise and weapons saving
     * continue where you left the last time (Note: atm similar to current multiplayer games base and dinosaur saving isn't working)
+  * one click hosting for LAN games (for more options use the host server tab and uncheck steam server list)
+    * other players can join your server by entering your local network ip in the join server tab
 
 ### 4. Savefile editor
 * easily edit your servers savefiles and change your players:
