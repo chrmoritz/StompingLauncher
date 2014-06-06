@@ -2,8 +2,7 @@
 
 # Download: 
 
-Current version (v0.1.3): https://github.com/chrmoritz/StompingLauncher/releases  
-Requirements: [Microsoft .NET Frammework 4.5](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (most likly already installed)
+Current version (v0.1.3): https://github.com/chrmoritz/StompingLauncher/releases
 
 # Features:
 
