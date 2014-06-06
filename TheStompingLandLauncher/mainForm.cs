@@ -446,6 +446,21 @@ namespace TheStompingLandLauncher
 
         private void BreloadServerSave_Click(object sender, EventArgs e)
         {
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
             List<PlayerSave> serverSave = new List<PlayerSave>();
             this.serverSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
             for (int i = 0; i < this.serverSaveLines.Length; i++)
@@ -492,6 +507,14 @@ namespace TheStompingLandLauncher
                     + ",ItemSlot[6]=" + save.itemSlot6 + ",ItemSlot[7]=" + save.itemSlot7 + ",ItemSlot[8]=" + save.itemSlot8 + ",ItemSlot[9]=" + save.itemSlot9 + ")";
             }
             System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini", this.serverSaveLines);
+        }
+
+        private void tabControll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControll.SelectedIndex == 3)
+            {
+                this.BreloadServerSave_Click(null, null);
+            }
         }
     }
 

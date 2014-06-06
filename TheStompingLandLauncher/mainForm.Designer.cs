@@ -95,6 +95,7 @@
             this.tabControll.Controls.Add(this.tabPage4);
             this.tabControll.Name = "tabControll";
             this.tabControll.SelectedIndex = 0;
+            this.tabControll.SelectedIndexChanged += new System.EventHandler(this.tabControll_SelectedIndexChanged);
             // 
             // tabPage1
             // 
