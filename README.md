@@ -38,6 +38,7 @@ Current version (v0.1.3): https://github.com/chrmoritz/StompingLauncher/releases
   * location (teleport to your friends), expertise (start with 200+), hunger
   * herbs, arrows, robe (more than ingame limits possible)
   * weapons equiped in each slot (multiple shields possible)
+* copy the values of one player to another (used for teleportation)
 
  ![](https://github.com/chrmoritz/StompingLauncher/releases/download/0.1/sll3.png)
 

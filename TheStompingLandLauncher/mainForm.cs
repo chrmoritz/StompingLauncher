@@ -20,6 +20,7 @@ namespace TheStompingLandLauncher
     {
         public Dictionary<String, serverSetting> serverSettings;
         public string[] serverSaveLines;
+        public int copiedSaveLine;
 
         public mainForm()
         {
@@ -519,6 +520,31 @@ namespace TheStompingLandLauncher
             if (tabControll.SelectedIndex == 3)
             {
                 this.BreloadServerSave_Click(null, null);
+            }
+        }
+
+        private void BCopySaveLine_Click(object sender, EventArgs e)
+        {
+            this.copiedSaveLine = DGVserverSave.CurrentRow.Index;
+            BPasteSaveLine.Enabled = true;
+        }
+
+        private void BPasteSaveLine_Click(object sender, EventArgs e)
+        {
+            int line = DGVserverSave.CurrentRow.Index;
+            if (CBpasteOnlyPos.Checked)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
+                }
+            }
+            else
+            {
+                for (int i = 1; i < DGVserverSave.ColumnCount; i++)
+                {
+                    DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
+                }
             }
         }
     }

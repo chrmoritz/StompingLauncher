@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Server mittels Adresse beitreten</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Eigenen Server hosten</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Serverbasierter Einzelspieler/LAN starten</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Savefile Editor</value>
+  </data>
   <data name="BdownSL.Text" xml:space="preserve">
     <value>Unten</value>
   </data>
@@ -159,9 +171,6 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Verbinde zu:</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Server mittels Adresse beitreten</value>
   </data>
   <data name="BnewSC.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 139</value>
@@ -214,6 +223,15 @@
   <data name="BhostServer.Text" xml:space="preserve">
     <value>Server erstellen/hosten ...</value>
   </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>537, 98</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Hosting-Optionen</value>
+  </data>
   <data name="CBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
   </data>
@@ -238,14 +256,11 @@
   <data name="CBsteamQuery.Text" xml:space="preserve">
     <value>in die Steam Serverlisten eintragen</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 6</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 98</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>537, 98</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Hosting-Optionen</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Server-Konfiguration</value>
   </data>
   <data name="CBremoveDinos.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
@@ -265,15 +280,6 @@
   <data name="CBfriendlyFire.Text" xml:space="preserve">
     <value>Verbündetenbeschuss</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 98</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Server-Konfiguration</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Eigenen Server hosten</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>715, 65</value>
   </data>
@@ -286,8 +292,38 @@
   <data name="BserbasedSP.Text" xml:space="preserve">
     <value>Serverbasierter Einzelspieler starten ...</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Serverbasierter Einzelspieler/LAN starten</value>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 81</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>(Teleportation)</value>
+  </data>
+  <data name="CBpasteOnlyPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 17</value>
+  </data>
+  <data name="CBpasteOnlyPos.Text" xml:space="preserve">
+    <value>nur Position</value>
+  </data>
+  <data name="BPasteSaveLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>623, 32</value>
+  </data>
+  <data name="BPasteSaveLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 23</value>
+  </data>
+  <data name="BPasteSaveLine.Text" xml:space="preserve">
+    <value>Zeile einfügen</value>
+  </data>
+  <data name="BCopySaveLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>623, 3</value>
+  </data>
+  <data name="BCopySaveLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 23</value>
+  </data>
+  <data name="BCopySaveLine.Text" xml:space="preserve">
+    <value>Zeile kopieren</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>504, 13</value>
@@ -301,8 +337,8 @@
   <data name="BreloadServerSave.Text" xml:space="preserve">
     <value>erneut laden</value>
   </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Savefile Editor</value>
+  <data name="DGVserverSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>617, 142</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>

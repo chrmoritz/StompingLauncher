@@ -68,6 +68,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BserbasedSP = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.CBpasteOnlyPos = new System.Windows.Forms.CheckBox();
+            this.BPasteSaveLine = new System.Windows.Forms.Button();
+            this.BCopySaveLine = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.BwriteServerSave = new System.Windows.Forms.Button();
             this.BreloadServerSave = new System.Windows.Forms.Button();
@@ -99,6 +103,7 @@
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.BdownSL);
             this.tabPage1.Controls.Add(this.BupSL);
             this.tabPage1.Controls.Add(this.BremoveSL);
@@ -110,7 +115,6 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.TBjoinIP);
             this.tabPage1.Controls.Add(this.label3);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -185,6 +189,7 @@
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.BnewSC);
             this.tabPage2.Controls.Add(this.BsaveSC);
             this.tabPage2.Controls.Add(this.BloadSC);
@@ -194,7 +199,6 @@
             this.tabPage2.Controls.Add(this.BhostServer);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -316,10 +320,10 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CBremoveDinos);
             this.groupBox1.Controls.Add(this.CBplayerNames);
             this.groupBox1.Controls.Add(this.CBfriendlyFire);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -343,9 +347,9 @@
             // 
             // tabPage3
             // 
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.BserbasedSP);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -363,13 +367,42 @@
             // 
             // tabPage4
             // 
+            resources.ApplyResources(this.tabPage4, "tabPage4");
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.CBpasteOnlyPos);
+            this.tabPage4.Controls.Add(this.BPasteSaveLine);
+            this.tabPage4.Controls.Add(this.BCopySaveLine);
             this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.BwriteServerSave);
             this.tabPage4.Controls.Add(this.BreloadServerSave);
             this.tabPage4.Controls.Add(this.DGVserverSave);
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // CBpasteOnlyPos
+            // 
+            resources.ApplyResources(this.CBpasteOnlyPos, "CBpasteOnlyPos");
+            this.CBpasteOnlyPos.Name = "CBpasteOnlyPos";
+            this.CBpasteOnlyPos.UseVisualStyleBackColor = true;
+            // 
+            // BPasteSaveLine
+            // 
+            resources.ApplyResources(this.BPasteSaveLine, "BPasteSaveLine");
+            this.BPasteSaveLine.Name = "BPasteSaveLine";
+            this.BPasteSaveLine.UseVisualStyleBackColor = true;
+            this.BPasteSaveLine.Click += new System.EventHandler(this.BPasteSaveLine_Click);
+            // 
+            // BCopySaveLine
+            // 
+            resources.ApplyResources(this.BCopySaveLine, "BCopySaveLine");
+            this.BCopySaveLine.Name = "BCopySaveLine";
+            this.BCopySaveLine.UseVisualStyleBackColor = true;
+            this.BCopySaveLine.Click += new System.EventHandler(this.BCopySaveLine_Click);
             // 
             // label10
             // 
@@ -393,10 +426,10 @@
             // 
             // DGVserverSave
             // 
+            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AllowUserToAddRows = false;
             this.DGVserverSave.AllowUserToDeleteRows = false;
             this.DGVserverSave.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGVserverSave.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVserverSave.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
@@ -424,6 +457,7 @@
             // 
             // folderBrowserDialog1
             // 
+            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
             // mainForm
@@ -503,6 +537,10 @@
         private System.Windows.Forms.Button BwriteServerSave;
         private System.Windows.Forms.Button BreloadServerSave;
         private System.Windows.Forms.DataGridView DGVserverSave;
+        private System.Windows.Forms.Button BPasteSaveLine;
+        private System.Windows.Forms.Button BCopySaveLine;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox CBpasteOnlyPos;
     }
 }
 
