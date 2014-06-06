@@ -104,9 +104,6 @@
     <EmbeddedResource Include="mainForm.de.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainForm.en.resx">
-      <DependentUpon>mainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
