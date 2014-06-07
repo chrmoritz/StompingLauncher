@@ -177,4 +177,22 @@
   <data name="ServerSaveNotExistHeader" xml:space="preserve">
     <value>Server savefile doesn't exists</value>
   </data>
+  <data name="GameStillRunningBody" xml:space="preserve">
+    <value>You have to shut down yourgame before editing savefiles. Otherwise your changes will be overwritten.</value>
+  </data>
+  <data name="GameStillRunningHeader" xml:space="preserve">
+    <value>Game still running?</value>
+  </data>
+  <data name="InvalidPositionBody" xml:space="preserve">
+    <value>Please enter a valid floating point number for X, Y and Z.</value>
+  </data>
+  <data name="InvalidPositionHeader" xml:space="preserve">
+    <value>Error: Invalid Position</value>
+  </data>
+  <data name="SoloSaveNotExistBody" xml:space="preserve">
+    <value>Please start the solo game modus at least once and the required solo safefile will be created.</value>
+  </data>
+  <data name="SoloSaveNotExistHeader" xml:space="preserve">
+    <value>Solo savefile doesn't exists</value>
+  </data>
 </root>

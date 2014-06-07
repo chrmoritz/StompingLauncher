@@ -480,6 +480,11 @@ namespace TheStompingLandLauncher
 
         private void BwriteServerSave_Click(object sender, EventArgs e)
         {
+            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini"))
+            {
+                MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             List<PlayerSave> serverSave = (List<PlayerSave>) DGVserverSave.DataSource;
             if (serverSave.Count == 0)
             {
@@ -520,7 +525,7 @@ namespace TheStompingLandLauncher
                     this.readServerSlotsCount();
                     break;
                 case 2:
-                    //reload solo savefile
+                    this.BreloadSoloSave_Click(null, null);
                     break;
                 case 3:
                     this.BreloadServerSave_Click(null, null);
@@ -574,6 +579,170 @@ namespace TheStompingLandLauncher
         private void TBslots_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void BreloadSoloSave_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini"))
+            {
+                MessageBox.Show(GlobalStrings.SoloSaveNotExistBody, GlobalStrings.SoloSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.GameStillRunningBody, GlobalStrings.GameStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
+            string[] soloSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini");
+            Regex rgx = new Regex(@"^SoloData=\(MapName=""capa_island"",Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
+            for (int i = 0; i < soloSaveLines.Length; i++)
+            {
+                Match match = rgx.Match(soloSaveLines[i]);
+                if (match.Success)
+                {
+                    TBsoloX.Text = match.Groups[1].Value;
+                    TBsoloY.Text = match.Groups[2].Value;
+                    TBsoloZ.Text = match.Groups[3].Value;
+                    TBsoloPitch.Text = match.Groups[4].Value;
+                    TBsoloYaw.Text = match.Groups[5].Value;
+                    TBsoloRoll.Text = match.Groups[6].Value;
+                    TBsoloExpertise.Text = match.Groups[7].Value;
+                    TBsoloHunger.Text = match.Groups[8].Value;
+                    TBsoloThirst.Text = match.Groups[9].Value;
+                    TBsoloArrows.Text = match.Groups[10].Value;
+                    TBsoloRope.Text = match.Groups[11].Value;
+                    TBsoloHerbs.Text = match.Groups[12].Value;
+                    CBsoloItemSlot1.SelectedIndex = this.itemToCBindex(match.Groups[13].Value);
+                    CBsoloItemSlot2.SelectedIndex = this.itemToCBindex(match.Groups[14].Value);
+                    CBsoloItemSlot3.SelectedIndex = this.itemToCBindex(match.Groups[15].Value);
+                    CBsoloItemSlot4.SelectedIndex = this.itemToCBindex(match.Groups[16].Value);
+                    CBsoloItemSlot5.SelectedIndex = this.itemToCBindex(match.Groups[17].Value);
+                    CBsoloItemSlot6.SelectedIndex = this.itemToCBindex(match.Groups[18].Value);
+                    CBsoloItemSlot7.SelectedIndex = this.itemToCBindex(match.Groups[19].Value);
+                    CBsoloItemSlot8.SelectedIndex = this.itemToCBindex(match.Groups[20].Value);
+                    CBsoloItemSlot9.SelectedIndex = this.itemToCBindex(match.Groups[21].Value);
+                    return;
+                }
+            }
+        }
+
+        private int itemToCBindex(string item)
+        {
+            switch (item)
+            {
+                case "\"Bow\"":
+                    return 1;
+                case "\"Spear\"":
+                    return 2;
+                case "\"Bolas\"":
+                    return 3;
+                case "\"Shield\"":
+                    return 4;
+                default:
+                    return 0;
+            }
+        }
+
+        private void BwriteSoloSave_Click(object sender, EventArgs e)
+        {
+            double d;
+            if (!Double.TryParse(TBsoloX.Text, out d) || !Double.TryParse(TBsoloY.Text, out d) || !Double.TryParse(TBsoloZ.Text, out d))
+            {
+                MessageBox.Show(GlobalStrings.InvalidPositionBody, GlobalStrings.InvalidPositionHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini"))
+            {
+                MessageBox.Show(GlobalStrings.SoloSaveNotExistBody, GlobalStrings.SoloSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.GameStillRunningBody, GlobalStrings.GameStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
+            bool t = true;
+            string[] soloSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini");
+            Regex rgx = new Regex(@"^SoloData=\(MapName=""capa_island"",Location=");
+            for (int i = 0; i < soloSaveLines.Length; i++)
+            {
+                if (rgx.IsMatch(soloSaveLines[i]))
+                {
+                    if (t)
+                    {
+                        soloSaveLines[i] = "SoloData=(MapName=\"capa_island\",Location=(X=" + TBsoloX.Text + ",Y=" + TBsoloY.Text + ",Z=" + TBsoloZ.Text
+                            + "),Rotation=(Pitch=" + TBsoloPitch.Text + ",Yaw=" + TBsoloYaw.Text + ",Roll=" + TBsoloRoll.Text
+                            + "),Stat_Expertise=" + TBsoloExpertise.Text + ",N_Hunger=" + TBsoloHunger.Text + ",N_Thirst=" + TBsoloThirst.Text
+                            + ",R_Arrows=" + TBsoloArrows.Text + ",R_Rope=" + TBsoloRope.Text + ",R_Herbs=" + TBsoloHerbs.Text + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=\"Tomahawk\""
+                            + ",ItemSlot[1]=" + this.CBindexToItem(CBsoloItemSlot1.SelectedIndex) + ",ItemSlot[2]=" + this.CBindexToItem(CBsoloItemSlot2.SelectedIndex) + ",ItemSlot[3]=" + this.CBindexToItem(CBsoloItemSlot3.SelectedIndex)
+                            + ",ItemSlot[4]=" + this.CBindexToItem(CBsoloItemSlot4.SelectedIndex) + ",ItemSlot[5]=" + this.CBindexToItem(CBsoloItemSlot5.SelectedIndex) + ",ItemSlot[6]=" + this.CBindexToItem(CBsoloItemSlot6.SelectedIndex)
+                            + ",ItemSlot[7]=" + this.CBindexToItem(CBsoloItemSlot7.SelectedIndex) + ",ItemSlot[8]=" + this.CBindexToItem(CBsoloItemSlot8.SelectedIndex) + ",ItemSlot[9]=" + this.CBindexToItem(CBsoloItemSlot9.SelectedIndex) + ")";
+                        t = false;
+                    }
+                    else
+                    {
+                        soloSaveLines[i] = "";
+                    }
+                }
+            }
+            System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini", soloSaveLines);
+            if (CBsoloAutoStart.Checked)
+            {
+                Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "capa_island");
+            }
+        }
+
+        private string CBindexToItem(int index)
+        {
+            switch (index)
+            {
+                case 1:
+                    return "\"Bow\"";
+                case 2:
+                    return "\"Spear\"";
+                case 3:
+                    return "\"Bolas\"";
+                case 4:
+                    return "\"Shield\"";
+                default:
+                    return "";
+            }
+        }
+
+        private void validateNumberInput(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void validateDouble(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-')
             {
                 e.Handled = true;
             }

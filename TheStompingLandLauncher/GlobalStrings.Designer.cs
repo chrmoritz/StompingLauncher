@@ -97,6 +97,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You have to shut down yourgame before editing savefiles. Otherwise your changes will be overwritten. ähnelt.
+        /// </summary>
+        internal static string GameStillRunningBody {
+            get {
+                return ResourceManager.GetString("GameStillRunningBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Game still running? ähnelt.
+        /// </summary>
+        internal static string GameStillRunningHeader {
+            get {
+                return ResourceManager.GetString("GameStillRunningHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a valid (not empty) hostname. ähnelt.
         /// </summary>
         internal static string HostnameBody {
@@ -111,6 +129,24 @@ namespace TheStompingLandLauncher {
         internal static string HostnameHeader {
             get {
                 return ResourceManager.GetString("HostnameHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a valid floating point number for X, Y and Z. ähnelt.
+        /// </summary>
+        internal static string InvalidPositionBody {
+            get {
+                return ResourceManager.GetString("InvalidPositionBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error: Invalid Position ähnelt.
+        /// </summary>
+        internal static string InvalidPositionHeader {
+            get {
+                return ResourceManager.GetString("InvalidPositionHeader", resourceCulture);
             }
         }
         
@@ -219,6 +255,24 @@ namespace TheStompingLandLauncher {
         internal static string SLfolderPathHeader {
             get {
                 return ResourceManager.GetString("SLfolderPathHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please start the solo game modus at least once and the required solo safefile will be created. ähnelt.
+        /// </summary>
+        internal static string SoloSaveNotExistBody {
+            get {
+                return ResourceManager.GetString("SoloSaveNotExistBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Solo savefile doesn&apos;t exists ähnelt.
+        /// </summary>
+        internal static string SoloSaveNotExistHeader {
+            get {
+                return ResourceManager.GetString("SoloSaveNotExistHeader", resourceCulture);
             }
         }
         

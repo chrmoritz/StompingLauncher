@@ -172,9 +172,27 @@
     <value>Server läuft noch?</value>
   </data>
   <data name="ServerSaveNotExistBody" xml:space="preserve">
-    <value>Bitte starten den Server einmal kurz, damit er die savefile anlegen kann.</value>
+    <value>Bitte starten den Server einmal kurz, damit er die Server Savefile anlegen kann.</value>
   </data>
   <data name="ServerSaveNotExistHeader" xml:space="preserve">
-    <value>Server savefile nicht gefunden</value>
+    <value>Server Savefile nicht gefunden</value>
+  </data>
+  <data name="GameStillRunningBody" xml:space="preserve">
+    <value>Bitte beende The Stomping Land bevor du die Savefiles editierst. Anderenfalls werden deine Änderungen überschrieben.</value>
+  </data>
+  <data name="GameStillRunningHeader" xml:space="preserve">
+    <value>Spiel läuft noch?</value>
+  </data>
+  <data name="InvalidPositionBody" xml:space="preserve">
+    <value>Bitte geben sie eine gültige Fließpunktzahl für X, Y und Z ein.</value>
+  </data>
+  <data name="InvalidPositionHeader" xml:space="preserve">
+    <value>Fehler: ungültige Position</value>
+  </data>
+  <data name="SoloSaveNotExistBody" xml:space="preserve">
+    <value>Bitte starten den Solo-Spielmodus einmal kurz, damit das Spiel die Solo Savefile anlegen kann.</value>
+  </data>
+  <data name="SoloSaveNotExistHeader" xml:space="preserve">
+    <value>Solo Savefile nicht gefunden</value>
   </data>
 </root>

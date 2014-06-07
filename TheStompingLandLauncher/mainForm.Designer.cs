@@ -67,6 +67,56 @@
             this.CBplayerNames = new System.Windows.Forms.CheckBox();
             this.CBfriendlyFire = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.CBsoloAutoStart = new System.Windows.Forms.CheckBox();
+            this.BwriteSoloSave = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
+            this.BreloadSoloSave = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.CBsoloItemSlot9 = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot8 = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot7 = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot6 = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot5 = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot4 = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot3 = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot2 = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.CBsoloItemSlot1 = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.TBsoloRope = new System.Windows.Forms.TextBox();
+            this.TBsoloHerbs = new System.Windows.Forms.TextBox();
+            this.TBsoloArrows = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.TBsoloThirst = new System.Windows.Forms.TextBox();
+            this.TBsoloHunger = new System.Windows.Forms.TextBox();
+            this.TBsoloExpertise = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.TBsoloRoll = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.TBsoloYaw = new System.Windows.Forms.TextBox();
+            this.TBsoloPitch = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TBsoloX = new System.Windows.Forms.TextBox();
+            this.TBsoloY = new System.Windows.Forms.TextBox();
+            this.TBsoloZ = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.CBpasteOnlyPos = new System.Windows.Forms.CheckBox();
@@ -85,6 +135,10 @@
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +156,7 @@
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.BdownSL);
             this.tabPage1.Controls.Add(this.BupSL);
             this.tabPage1.Controls.Add(this.BremoveSL);
@@ -113,7 +168,6 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.TBjoinIP);
             this.tabPage1.Controls.Add(this.label3);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -188,6 +242,7 @@
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.BnewSC);
             this.tabPage2.Controls.Add(this.BsaveSC);
             this.tabPage2.Controls.Add(this.BloadSC);
@@ -197,7 +252,6 @@
             this.tabPage2.Controls.Add(this.BhostServer);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -273,6 +327,7 @@
             // 
             // TBslots
             // 
+            this.TBslots.AcceptsReturn = true;
             resources.ApplyResources(this.TBslots, "TBslots");
             this.TBslots.Name = "TBslots";
             this.TBslots.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBslots_KeyPress);
@@ -332,10 +387,10 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CBremoveDinos);
             this.groupBox1.Controls.Add(this.CBplayerNames);
             this.groupBox1.Controls.Add(this.CBfriendlyFire);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -362,11 +417,407 @@
             // tabPage3
             // 
             resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Controls.Add(this.CBsoloAutoStart);
+            this.tabPage3.Controls.Add(this.BwriteSoloSave);
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.BreloadSoloSave);
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // CBsoloAutoStart
+            // 
+            resources.ApplyResources(this.CBsoloAutoStart, "CBsoloAutoStart");
+            this.CBsoloAutoStart.Checked = true;
+            this.CBsoloAutoStart.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CBsoloAutoStart.Name = "CBsoloAutoStart";
+            this.CBsoloAutoStart.UseVisualStyleBackColor = true;
+            // 
+            // BwriteSoloSave
+            // 
+            resources.ApplyResources(this.BwriteSoloSave, "BwriteSoloSave");
+            this.BwriteSoloSave.Name = "BwriteSoloSave";
+            this.BwriteSoloSave.UseVisualStyleBackColor = true;
+            this.BwriteSoloSave.Click += new System.EventHandler(this.BwriteSoloSave_Click);
+            // 
+            // label34
+            // 
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.Name = "label34";
+            this.label34.UseWaitCursor = true;
+            // 
+            // BreloadSoloSave
+            // 
+            resources.ApplyResources(this.BreloadSoloSave, "BreloadSoloSave");
+            this.BreloadSoloSave.Name = "BreloadSoloSave";
+            this.BreloadSoloSave.UseVisualStyleBackColor = true;
+            this.BreloadSoloSave.Click += new System.EventHandler(this.BreloadSoloSave_Click);
+            // 
+            // groupBox5
+            // 
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot9);
+            this.groupBox5.Controls.Add(this.label33);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot8);
+            this.groupBox5.Controls.Add(this.label32);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot7);
+            this.groupBox5.Controls.Add(this.label31);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot6);
+            this.groupBox5.Controls.Add(this.label30);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot5);
+            this.groupBox5.Controls.Add(this.label29);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot4);
+            this.groupBox5.Controls.Add(this.label28);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot3);
+            this.groupBox5.Controls.Add(this.label27);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot2);
+            this.groupBox5.Controls.Add(this.label26);
+            this.groupBox5.Controls.Add(this.CBsoloItemSlot1);
+            this.groupBox5.Controls.Add(this.label25);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
+            // CBsoloItemSlot9
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot9, "CBsoloItemSlot9");
+            this.CBsoloItemSlot9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot9.FormattingEnabled = true;
+            this.CBsoloItemSlot9.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot9.Items"),
+            resources.GetString("CBsoloItemSlot9.Items1"),
+            resources.GetString("CBsoloItemSlot9.Items2"),
+            resources.GetString("CBsoloItemSlot9.Items3"),
+            resources.GetString("CBsoloItemSlot9.Items4")});
+            this.CBsoloItemSlot9.Name = "CBsoloItemSlot9";
+            // 
+            // label33
+            // 
+            resources.ApplyResources(this.label33, "label33");
+            this.label33.Name = "label33";
+            // 
+            // CBsoloItemSlot8
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot8, "CBsoloItemSlot8");
+            this.CBsoloItemSlot8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot8.FormattingEnabled = true;
+            this.CBsoloItemSlot8.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot8.Items"),
+            resources.GetString("CBsoloItemSlot8.Items1"),
+            resources.GetString("CBsoloItemSlot8.Items2"),
+            resources.GetString("CBsoloItemSlot8.Items3"),
+            resources.GetString("CBsoloItemSlot8.Items4")});
+            this.CBsoloItemSlot8.Name = "CBsoloItemSlot8";
+            // 
+            // label32
+            // 
+            resources.ApplyResources(this.label32, "label32");
+            this.label32.Name = "label32";
+            // 
+            // CBsoloItemSlot7
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot7, "CBsoloItemSlot7");
+            this.CBsoloItemSlot7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot7.FormattingEnabled = true;
+            this.CBsoloItemSlot7.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot7.Items"),
+            resources.GetString("CBsoloItemSlot7.Items1"),
+            resources.GetString("CBsoloItemSlot7.Items2"),
+            resources.GetString("CBsoloItemSlot7.Items3"),
+            resources.GetString("CBsoloItemSlot7.Items4")});
+            this.CBsoloItemSlot7.Name = "CBsoloItemSlot7";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.Name = "label31";
+            // 
+            // CBsoloItemSlot6
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot6, "CBsoloItemSlot6");
+            this.CBsoloItemSlot6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot6.FormattingEnabled = true;
+            this.CBsoloItemSlot6.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot6.Items"),
+            resources.GetString("CBsoloItemSlot6.Items1"),
+            resources.GetString("CBsoloItemSlot6.Items2"),
+            resources.GetString("CBsoloItemSlot6.Items3"),
+            resources.GetString("CBsoloItemSlot6.Items4")});
+            this.CBsoloItemSlot6.Name = "CBsoloItemSlot6";
+            // 
+            // label30
+            // 
+            resources.ApplyResources(this.label30, "label30");
+            this.label30.Name = "label30";
+            // 
+            // CBsoloItemSlot5
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot5, "CBsoloItemSlot5");
+            this.CBsoloItemSlot5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot5.FormattingEnabled = true;
+            this.CBsoloItemSlot5.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot5.Items"),
+            resources.GetString("CBsoloItemSlot5.Items1"),
+            resources.GetString("CBsoloItemSlot5.Items2"),
+            resources.GetString("CBsoloItemSlot5.Items3"),
+            resources.GetString("CBsoloItemSlot5.Items4")});
+            this.CBsoloItemSlot5.Name = "CBsoloItemSlot5";
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // CBsoloItemSlot4
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot4, "CBsoloItemSlot4");
+            this.CBsoloItemSlot4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot4.FormattingEnabled = true;
+            this.CBsoloItemSlot4.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot4.Items"),
+            resources.GetString("CBsoloItemSlot4.Items1"),
+            resources.GetString("CBsoloItemSlot4.Items2"),
+            resources.GetString("CBsoloItemSlot4.Items3"),
+            resources.GetString("CBsoloItemSlot4.Items4")});
+            this.CBsoloItemSlot4.Name = "CBsoloItemSlot4";
+            // 
+            // label28
+            // 
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.Name = "label28";
+            // 
+            // CBsoloItemSlot3
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot3, "CBsoloItemSlot3");
+            this.CBsoloItemSlot3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot3.FormattingEnabled = true;
+            this.CBsoloItemSlot3.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot3.Items"),
+            resources.GetString("CBsoloItemSlot3.Items1"),
+            resources.GetString("CBsoloItemSlot3.Items2"),
+            resources.GetString("CBsoloItemSlot3.Items3"),
+            resources.GetString("CBsoloItemSlot3.Items4")});
+            this.CBsoloItemSlot3.Name = "CBsoloItemSlot3";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.Name = "label27";
+            // 
+            // CBsoloItemSlot2
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot2, "CBsoloItemSlot2");
+            this.CBsoloItemSlot2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot2.FormattingEnabled = true;
+            this.CBsoloItemSlot2.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot2.Items"),
+            resources.GetString("CBsoloItemSlot2.Items1"),
+            resources.GetString("CBsoloItemSlot2.Items2"),
+            resources.GetString("CBsoloItemSlot2.Items3"),
+            resources.GetString("CBsoloItemSlot2.Items4")});
+            this.CBsoloItemSlot2.Name = "CBsoloItemSlot2";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
+            // 
+            // CBsoloItemSlot1
+            // 
+            resources.ApplyResources(this.CBsoloItemSlot1, "CBsoloItemSlot1");
+            this.CBsoloItemSlot1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBsoloItemSlot1.FormattingEnabled = true;
+            this.CBsoloItemSlot1.Items.AddRange(new object[] {
+            resources.GetString("CBsoloItemSlot1.Items"),
+            resources.GetString("CBsoloItemSlot1.Items1"),
+            resources.GetString("CBsoloItemSlot1.Items2"),
+            resources.GetString("CBsoloItemSlot1.Items3"),
+            resources.GetString("CBsoloItemSlot1.Items4")});
+            this.CBsoloItemSlot1.Name = "CBsoloItemSlot1";
+            // 
+            // label25
+            // 
+            resources.ApplyResources(this.label25, "label25");
+            this.label25.Name = "label25";
+            // 
+            // groupBox4
+            // 
+            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.TBsoloRope);
+            this.groupBox4.Controls.Add(this.TBsoloHerbs);
+            this.groupBox4.Controls.Add(this.TBsoloArrows);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.TBsoloThirst);
+            this.groupBox4.Controls.Add(this.TBsoloHunger);
+            this.groupBox4.Controls.Add(this.TBsoloExpertise);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.TabStop = false;
+            // 
+            // TBsoloRope
+            // 
+            resources.ApplyResources(this.TBsoloRope, "TBsoloRope");
+            this.TBsoloRope.Name = "TBsoloRope";
+            this.TBsoloRope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // TBsoloHerbs
+            // 
+            resources.ApplyResources(this.TBsoloHerbs, "TBsoloHerbs");
+            this.TBsoloHerbs.Name = "TBsoloHerbs";
+            this.TBsoloHerbs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // TBsoloArrows
+            // 
+            resources.ApplyResources(this.TBsoloArrows, "TBsoloArrows");
+            this.TBsoloArrows.Name = "TBsoloArrows";
+            this.TBsoloArrows.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // TBsoloThirst
+            // 
+            resources.ApplyResources(this.TBsoloThirst, "TBsoloThirst");
+            this.TBsoloThirst.Name = "TBsoloThirst";
+            this.TBsoloThirst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // TBsoloHunger
+            // 
+            resources.ApplyResources(this.TBsoloHunger, "TBsoloHunger");
+            this.TBsoloHunger.Name = "TBsoloHunger";
+            this.TBsoloHunger.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // TBsoloExpertise
+            // 
+            resources.ApplyResources(this.TBsoloExpertise, "TBsoloExpertise");
+            this.TBsoloExpertise.Name = "TBsoloExpertise";
+            this.TBsoloExpertise.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.Name = "label21";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.Name = "label20";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // groupBox3
+            // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.TBsoloRoll);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.TBsoloYaw);
+            this.groupBox3.Controls.Add(this.TBsoloPitch);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.TBsoloX);
+            this.groupBox3.Controls.Add(this.TBsoloY);
+            this.groupBox3.Controls.Add(this.TBsoloZ);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // TBsoloRoll
+            // 
+            resources.ApplyResources(this.TBsoloRoll, "TBsoloRoll");
+            this.TBsoloRoll.Name = "TBsoloRoll";
+            this.TBsoloRoll.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // TBsoloYaw
+            // 
+            resources.ApplyResources(this.TBsoloYaw, "TBsoloYaw");
+            this.TBsoloYaw.Name = "TBsoloYaw";
+            this.TBsoloYaw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // TBsoloPitch
+            // 
+            resources.ApplyResources(this.TBsoloPitch, "TBsoloPitch");
+            this.TBsoloPitch.Name = "TBsoloPitch";
+            this.TBsoloPitch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // TBsoloX
+            // 
+            resources.ApplyResources(this.TBsoloX, "TBsoloX");
+            this.TBsoloX.Name = "TBsoloX";
+            this.TBsoloX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateDouble);
+            // 
+            // TBsoloY
+            // 
+            resources.ApplyResources(this.TBsoloY, "TBsoloY");
+            this.TBsoloY.Name = "TBsoloY";
+            this.TBsoloY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateDouble);
+            // 
+            // TBsoloZ
+            // 
+            resources.ApplyResources(this.TBsoloZ, "TBsoloZ");
+            this.TBsoloZ.Name = "TBsoloZ";
+            this.TBsoloZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateDouble);
+            // 
             // tabPage4
             // 
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.CBpasteOnlyPos);
             this.tabPage4.Controls.Add(this.BPasteSaveLine);
@@ -375,7 +826,6 @@
             this.tabPage4.Controls.Add(this.BwriteServerSave);
             this.tabPage4.Controls.Add(this.BreloadServerSave);
             this.tabPage4.Controls.Add(this.DGVserverSave);
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -426,10 +876,10 @@
             // 
             // DGVserverSave
             // 
+            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AllowUserToAddRows = false;
             this.DGVserverSave.AllowUserToDeleteRows = false;
             this.DGVserverSave.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGVserverSave.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVserverSave.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
@@ -457,6 +907,7 @@
             // 
             // folderBrowserDialog1
             // 
+            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
             // mainForm
@@ -477,6 +928,14 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).EndInit();
@@ -538,6 +997,56 @@
         private System.Windows.Forms.CheckBox CBpasteOnlyPos;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TBslots;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TBsoloX;
+        private System.Windows.Forms.TextBox TBsoloY;
+        private System.Windows.Forms.TextBox TBsoloZ;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox TBsoloRoll;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox TBsoloYaw;
+        private System.Windows.Forms.TextBox TBsoloPitch;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox TBsoloThirst;
+        private System.Windows.Forms.TextBox TBsoloHunger;
+        private System.Windows.Forms.TextBox TBsoloExpertise;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox TBsoloRope;
+        private System.Windows.Forms.TextBox TBsoloHerbs;
+        private System.Windows.Forms.TextBox TBsoloArrows;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button BwriteSoloSave;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button BreloadSoloSave;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot9;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot8;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot7;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot6;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot5;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot4;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot3;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox CBsoloItemSlot2;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.CheckBox CBsoloAutoStart;
     }
 }
 

@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Server mittels Adresse beitreten</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Eigenen Server hosten</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Savefile Editor (Solo)</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Savefile Editor (Server)</value>
+  </data>
   <data name="BdownSL.Text" xml:space="preserve">
     <value>Unten</value>
   </data>
@@ -159,9 +171,6 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Verbinde zu:</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Server mittels Adresse beitreten</value>
   </data>
   <data name="BnewSC.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 139</value>
@@ -214,11 +223,20 @@
   <data name="BhostServer.Text" xml:space="preserve">
     <value>Server erstellen/hosten ...</value>
   </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>537, 98</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Hosting-Optionen</value>
+  </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 46</value>
   </data>
   <data name="TBslots.Location" type="System.Drawing.Point, System.Drawing">
-    <value>508, 43</value>
+    <value>504, 43</value>
   </data>
   <data name="CBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
@@ -244,14 +262,11 @@
   <data name="CBsteamQuery.Text" xml:space="preserve">
     <value>in die Steam Serverlisten eintragen</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 6</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 98</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>537, 98</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Hosting-Optionen</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Server-Konfiguration</value>
   </data>
   <data name="CBremoveDinos.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
@@ -271,17 +286,62 @@
   <data name="CBfriendlyFire.Text" xml:space="preserve">
     <value>Verbündetenbeschuss</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 98</value>
+  <data name="CBsoloAutoStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>549, 154</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Server-Konfiguration</value>
+  <data name="CBsoloAutoStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 17</value>
   </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Eigenen Server hosten</value>
+  <data name="CBsoloAutoStart.Text" xml:space="preserve">
+    <value>Solospiel automatisch starten</value>
   </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Savefile Editor (Solo)</value>
+  <data name="BwriteSoloSave.Text" xml:space="preserve">
+    <value>Savefile speichern</value>
+  </data>
+  <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>402, 13</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Schließe das Spiel vor den Ändern der Savefiles oder deine werden verloren gehen.</value>
+  </data>
+  <data name="BreloadSoloSave.Text" xml:space="preserve">
+    <value>Savefile erneut laden</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Gegenstands-Belegung (Slots):</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Resourcen:</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Seile:</value>
+  </data>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Pfeile:</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Kräuter:</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Durst:</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Erfahrung:</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>637, 81</value>
@@ -317,10 +377,10 @@
     <value>Zeile kopieren</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 13</value>
+    <value>505, 13</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Fahre den Server vor dem ändern der Savefiles herrunter oder deine Änderungen werden verloren gehen.</value>
+    <value>Fahre den Server vor dem Ändern der Savefiles herrunter oder deine Änderungen werden verloren gehen.</value>
   </data>
   <data name="BwriteServerSave.Text" xml:space="preserve">
     <value>speichern</value>
@@ -330,9 +390,6 @@
   </data>
   <data name="DGVserverSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>617, 142</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Savefile Editor (Server)</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>
