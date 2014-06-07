@@ -122,7 +122,7 @@ namespace TheStompingLandLauncher
             {
                 cmd += "?steamsockets?ServerName=\"" + TBhostname.Text + "\"";
             }
-            cmd += "?NoFriendlyFire=" + !CBfriendlyFire.Checked + "?ShowAllPlayerNames=" + CBplayerNames.Checked;
+            cmd += (CBfriendlyFire.Checked ? "" : "?NoFriendlyFire=True") + ( CBplayerNames.Checked ? "?ShowAllPlayerNames=True" : "");
             cmd += (CBremoveDinos.Checked ? "?NoDinosaurs=True" : "") + " -Port=" + TBport.Text;
             if (CBsteamQuery.Checked){
                 cmd += " -QueryPort=" + TBqueryPort.Text;

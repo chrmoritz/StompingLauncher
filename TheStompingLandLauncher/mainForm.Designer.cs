@@ -103,7 +103,6 @@
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.BdownSL);
             this.tabPage1.Controls.Add(this.BupSL);
             this.tabPage1.Controls.Add(this.BremoveSL);
@@ -115,6 +114,7 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.TBjoinIP);
             this.tabPage1.Controls.Add(this.label3);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -189,7 +189,6 @@
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.BnewSC);
             this.tabPage2.Controls.Add(this.BsaveSC);
             this.tabPage2.Controls.Add(this.BloadSC);
@@ -199,6 +198,7 @@
             this.tabPage2.Controls.Add(this.BhostServer);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -320,10 +320,10 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CBremoveDinos);
             this.groupBox1.Controls.Add(this.CBplayerNames);
             this.groupBox1.Controls.Add(this.CBfriendlyFire);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -342,14 +342,16 @@
             // CBfriendlyFire
             // 
             resources.ApplyResources(this.CBfriendlyFire, "CBfriendlyFire");
+            this.CBfriendlyFire.Checked = true;
+            this.CBfriendlyFire.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CBfriendlyFire.Name = "CBfriendlyFire";
             this.CBfriendlyFire.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.BserbasedSP);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -367,7 +369,6 @@
             // 
             // tabPage4
             // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.CBpasteOnlyPos);
             this.tabPage4.Controls.Add(this.BPasteSaveLine);
@@ -376,6 +377,7 @@
             this.tabPage4.Controls.Add(this.BwriteServerSave);
             this.tabPage4.Controls.Add(this.BreloadServerSave);
             this.tabPage4.Controls.Add(this.DGVserverSave);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -426,10 +428,10 @@
             // 
             // DGVserverSave
             // 
-            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AllowUserToAddRows = false;
             this.DGVserverSave.AllowUserToDeleteRows = false;
             this.DGVserverSave.AllowUserToResizeRows = false;
+            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGVserverSave.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVserverSave.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
@@ -457,7 +459,6 @@
             // 
             // folderBrowserDialog1
             // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
             // mainForm
