@@ -51,6 +51,8 @@
             this.CBautoJoin = new System.Windows.Forms.CheckBox();
             this.BhostServer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TBslots = new System.Windows.Forms.TextBox();
             this.CBconfigDir = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,8 +67,6 @@
             this.CBplayerNames = new System.Windows.Forms.CheckBox();
             this.CBfriendlyFire = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BserbasedSP = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.CBpasteOnlyPos = new System.Windows.Forms.CheckBox();
@@ -85,7 +85,6 @@
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).BeginInit();
             this.SuspendLayout();
@@ -253,6 +252,8 @@
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.TBslots);
             this.groupBox2.Controls.Add(this.CBconfigDir);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -264,6 +265,17 @@
             this.groupBox2.Controls.Add(this.CBsteamQuery);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // TBslots
+            // 
+            resources.ApplyResources(this.TBslots, "TBslots");
+            this.TBslots.Name = "TBslots";
+            this.TBslots.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBslots_KeyPress);
             // 
             // CBconfigDir
             // 
@@ -349,23 +361,9 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Controls.Add(this.BserbasedSP);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // BserbasedSP
-            // 
-            resources.ApplyResources(this.BserbasedSP, "BserbasedSP");
-            this.BserbasedSP.Name = "BserbasedSP";
-            this.BserbasedSP.UseVisualStyleBackColor = true;
-            this.BserbasedSP.Click += new System.EventHandler(this.BserbasedSP_Click);
             // 
             // tabPage4
             // 
@@ -479,8 +477,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).EndInit();
@@ -499,8 +495,6 @@
         private System.Windows.Forms.TextBox TBpath;
         private System.Windows.Forms.Button BselectPath;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button BserbasedSP;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BjoinServer;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TBjoinIP;
@@ -542,6 +536,8 @@
         private System.Windows.Forms.Button BCopySaveLine;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox CBpasteOnlyPos;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox TBslots;
     }
 }
 

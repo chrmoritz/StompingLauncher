@@ -27,15 +27,15 @@ namespace TheStompingLandLauncher
             InitializeComponent();
             //Load stored Settings
             TBjoinIP.Text = (string)Properties.Settings.Default["lastConnected"];
-            String serverHistory = (string)Properties.Settings.Default["ServerHistory"];
+            string serverHistory = (string)Properties.Settings.Default["ServerHistory"];
 
-            String[] history = serverHistory.Split('|');
+            string[] history = serverHistory.Split('|');
             if (history.Length > 1 || !String.IsNullOrEmpty(history[0]))
             {
                 LBserverHistory.Items.AddRange(history);
             }
 
-            String settings = (string)Properties.Settings.Default["ServerSettings"];
+            string settings = (string)Properties.Settings.Default["ServerSettings"];
             if (String.IsNullOrEmpty(settings))
             {
                 this.serverSettings = new Dictionary<String, serverSetting>();
@@ -46,12 +46,12 @@ namespace TheStompingLandLauncher
                 BinaryFormatter bf = new BinaryFormatter();
                 this.serverSettings = (Dictionary<String, serverSetting>)bf.Deserialize(ms);
             }
-            foreach (var config in this.serverSettings.Keys)
+            foreach (string config in this.serverSettings.Keys)
             {
                 CBserverConfig.Items.Add(config);
             }
 
-            String TSLpath = (string)Properties.Settings.Default["TSLpath"];
+            string TSLpath = (string)Properties.Settings.Default["TSLpath"];
             if (Directory.Exists(TSLpath))
             {
                 TBpath.Text = TSLpath;
@@ -59,8 +59,8 @@ namespace TheStompingLandLauncher
             else
             {
                 //try to detect TSLpath via steams registry entry
-                String steamPath = (string)Registry.GetValue("HKEY_CURRENT_USER\\Software\\Valve\\Steam", "SteamPath", "C:\\Program Files (x86)\\Steam");
-                String path = steamPath.Replace("/", "\\") + "\\steamapps\\common\\the stomping land";
+                string steamPath = (string)Registry.GetValue("HKEY_CURRENT_USER\\Software\\Valve\\Steam", "SteamPath", "C:\\Program Files (x86)\\Steam");
+                string path = steamPath.Replace("/", "\\") + "\\steamapps\\common\\the stomping land";
                 if (Directory.Exists(path))
                 {
                     TBpath.Text = path;
@@ -80,9 +80,9 @@ namespace TheStompingLandLauncher
 
         private void BjoinServer_Click(object sender, EventArgs e)
         {
-            String server = TBjoinIP.Text;
+            string server = TBjoinIP.Text;
             //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-            //var match = rgx.Match(server);
+            //Match match = rgx.Match(server);
             //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
             //{
                 Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
@@ -117,7 +117,7 @@ namespace TheStompingLandLauncher
                 MessageBox.Show(GlobalStrings.ConfigdirBody, GlobalStrings.ConfigdirHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            String cmd = "Server Capa_Island";
+            string cmd = "Server Capa_Island";
             if (CBsteamQuery.Checked)
             {
                 cmd += "?steamsockets?ServerName=\"" + TBhostname.Text + "\"";
@@ -130,6 +130,20 @@ namespace TheStompingLandLauncher
             if (CBconfigDir.Checked)
             {
                 cmd += " --configsubdir=" + TBconfigDir.Text;
+            }
+            if (File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini"))
+            {
+                string[] serverConfigLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini");
+                Regex rgx = new Regex(@"^MaxPlayers=(\d*)$");
+                for (int i = 0; i < serverConfigLines.Length; i++)
+                {
+                    if (rgx.IsMatch(serverConfigLines[i]))
+                    {
+                        serverConfigLines[i] = "MaxPlayers=" + TBslots.Text;
+                        break;
+                    }
+                }
+                System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini", serverConfigLines);
             }
             Process[] pname = Process.GetProcessesByName("udk");
             if (pname.Length > 0)
@@ -152,28 +166,6 @@ namespace TheStompingLandLauncher
                 System.Threading.Thread.Sleep(5000);
                 Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:" + TBport.Text);
             }
-        }
-
-        private void BserbasedSP_Click(object sender, EventArgs e)
-        {
-            Process[] pname = Process.GetProcessesByName("udk");
-            if (pname.Length > 0)
-            {
-                DialogResult result = DialogResult.Retry;
-                while (result == DialogResult.Retry && pname.Length > 0)
-                {
-                    result = MessageBox.Show(GlobalStrings.ServerAlreadyRunningBody, GlobalStrings.ServerAlreadyRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
-                    if (result == DialogResult.Abort)
-                    {
-                        return;
-                    }
-                    pname = Process.GetProcessesByName("udk");
-                }
-            }
-            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "Server Capa_Island?NoFriendlyFire=True");
-            System.Threading.Thread.Sleep(5000);
-            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:7777");
         }
 
         private void CBsteamQuery_CheckedChanged(object sender, EventArgs e)
@@ -233,7 +225,7 @@ namespace TheStompingLandLauncher
             e.Handled = isInvalidPort(e.KeyChar, TBqueryPort.Text);
         }
 
-        private bool isInvalidPort(char key, String input)
+        private bool isInvalidPort(char key, string input)
         {
             if (!char.IsControl(key) && !char.IsDigit(key))
             {
@@ -252,9 +244,9 @@ namespace TheStompingLandLauncher
             {
                 return;
             }
-            String server = (string) LBserverHistory.SelectedItem;
+            string server = (string) LBserverHistory.SelectedItem;
             Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-            var match = rgx.Match(server);
+            Match match = rgx.Match(server);
             if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
             {
                 Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
@@ -274,9 +266,9 @@ namespace TheStompingLandLauncher
             addHistoryServerForm addForm = new addHistoryServerForm();
             if (addForm.ShowDialog(this) == DialogResult.OK)
             {
-                String addIP = addForm.TBaddServerIP.Text;
+                string addIP = addForm.TBaddServerIP.Text;
                 //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-                //var match = rgx.Match(addIP);
+                //Match match = rgx.Match(addIP);
                 //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
                 //{
                     addToServerList(addIP);
@@ -301,7 +293,7 @@ namespace TheStompingLandLauncher
 
         private void saveServerHistory()
         {
-            String serverHistory = "";
+            string serverHistory = "";
             for (int i = 0; i < LBserverHistory.Items.Count; i++)
             {
                 serverHistory += LBserverHistory.Items[i].ToString() + (i==LBserverHistory.Items.Count-1 ? "" : "|");
@@ -317,7 +309,7 @@ namespace TheStompingLandLauncher
             {
                 return;
             }
-            String tmp = LBserverHistory.Items[i].ToString();
+            string tmp = LBserverHistory.Items[i].ToString();
             LBserverHistory.Items[i] = LBserverHistory.Items[i - 1].ToString();
             LBserverHistory.Items[i - 1] = tmp;
             saveServerHistory();
@@ -331,14 +323,14 @@ namespace TheStompingLandLauncher
             {
                 return;
             }
-            String tmp = LBserverHistory.Items[i].ToString();
+            string tmp = LBserverHistory.Items[i].ToString();
             LBserverHistory.Items[i] = LBserverHistory.Items[i + 1].ToString();
             LBserverHistory.Items[i + 1] = tmp;
             saveServerHistory();
             LBserverHistory.SelectedIndex = i + 1;
         }
 
-        private void addToServerList(String ip)
+        private void addToServerList(string ip)
         {
             if (LBserverHistory.Items.Contains(ip))
             {
@@ -399,7 +391,7 @@ namespace TheStompingLandLauncher
                 MessageBox.Show(GlobalStrings.ConfigdirBody, GlobalStrings.ConfigdirHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            String config = (string)CBserverConfig.SelectedItem;
+            string config = (string)CBserverConfig.SelectedItem;
             this.serverSettings[config].friendlyFire = CBfriendlyFire.Checked;
             this.serverSettings[config].playerNames = CBplayerNames.Checked;
             this.serverSettings[config].removeDinos = CBremoveDinos.Checked;
@@ -418,7 +410,7 @@ namespace TheStompingLandLauncher
             addNewServerConfig addForm = new addNewServerConfig();
             if (addForm.ShowDialog(this) == DialogResult.OK)
             {
-                String configName = addForm.TBconfigName.Text;
+                string configName = addForm.TBconfigName.Text;
                 if (!String.IsNullOrEmpty(configName))
                 {
                     CBserverConfig.Items.Insert(0, configName);
@@ -467,12 +459,16 @@ namespace TheStompingLandLauncher
                     pname = Process.GetProcessesByName("udk");
                 }
             }
+            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini")){
+                MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             List<PlayerSave> serverSave = new List<PlayerSave>();
             this.serverSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
+            Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
             for (int i = 0; i < this.serverSaveLines.Length; i++)
             {
-                Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
-                var match = rgx.Match(this.serverSaveLines[i]);
+                Match match = rgx.Match(this.serverSaveLines[i]);
                 if (match.Success) {
                     serverSave.Add(new PlayerSave(i, match.Groups[1].Value, double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[4].Value, CultureInfo.InvariantCulture), 
                         int.Parse(match.Groups[5].Value), int.Parse(match.Groups[6].Value), int.Parse(match.Groups[7].Value), int.Parse(match.Groups[8].Value), int.Parse(match.Groups[9].Value), int.Parse(match.Groups[10].Value), int.Parse(match.Groups[11].Value), int.Parse(match.Groups[12].Value), int.Parse(match.Groups[13].Value), 
@@ -517,9 +513,36 @@ namespace TheStompingLandLauncher
 
         private void tabControll_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControll.SelectedIndex == 3)
+            int selectedTab = tabControll.SelectedIndex;
+            switch (selectedTab)
             {
-                this.BreloadServerSave_Click(null, null);
+                case 1:
+                    this.readServerSlotsCount();
+                    break;
+                case 2:
+                    //reload solo savefile
+                    break;
+                case 3:
+                    this.BreloadServerSave_Click(null, null);
+                    break;
+            }
+        }
+
+        private void readServerSlotsCount()
+        {
+            if (File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini"))
+            {
+                string[] serverConfigLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini");
+                Regex rgx = new Regex(@"^MaxPlayers=(\d*)$");
+                for (int i = 0; i < serverConfigLines.Length; i++)
+                {
+                    Match match = rgx.Match(serverConfigLines[i]);
+                    if (match.Success)
+                    {
+                        TBslots.Text = match.Groups[1].Value;
+                        return;
+                    }
+                }
             }
         }
 
@@ -547,33 +570,24 @@ namespace TheStompingLandLauncher
                 }
             }
         }
+
+        private void TBslots_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 
     class PlayerSave
     {
         public int index;
         public string id;
-        public int expertise;
-        public int hunger;
-        public int thirst;
-        public int herbs;
-        public int arrows;
-        public int ropes;
-        public string itemSlot1;
-        public string itemSlot2;
-        public string itemSlot3;
-        public string itemSlot4;
-        public string itemSlot5;
-        public string itemSlot6;
-        public string itemSlot7;
-        public string itemSlot8;
-        public string itemSlot9;
-        public double x;
-        public double y;
-        public double z;
-        public int pitch;
-        public int yaw;
-        public int roll;
+        public int expertise, hunger, thirst, herbs, arrows, ropes;
+        public string itemSlot1, itemSlot2, itemSlot3, itemSlot4, itemSlot5, itemSlot6, itemSlot7, itemSlot8, itemSlot9;
+        public double x, y, z;
+        public int pitch, yaw, roll;
         public PlayerSave(int index, string id, double x, double y, double z, int pitch, int yaw, int roll, int expertise, int hunger, int thirst, int arrows, int ropes, int herbs,
             string itemSlot1, string itemSlot2, string itemSlot3, string itemSlot4, string itemSlot5, string itemSlot6, string itemSlot7, string itemSlot8, string itemSlot9)
         {
@@ -629,8 +643,8 @@ namespace TheStompingLandLauncher
     public class serverSetting
     {
         public bool friendlyFire, playerNames, removeDinos, steamQuery, customConfig, autoJoin;
-        public String hostName, port, QueryPort, configDir;
-        public serverSetting(bool ff, bool pn, bool rd, bool sq, String hn, String p, String qp, bool cc, String cd, bool aj)
+        public string hostName, port, QueryPort, configDir;
+        public serverSetting(bool ff, bool pn, bool rd, bool sq, string hn, string p, string qp, bool cc, string cd, bool aj)
         {
             this.friendlyFire = ff;
             this.playerNames = pn;

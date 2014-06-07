@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Server mittels Adresse beitreten</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Eigenen Server hosten</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Serverbasierter Einzelspieler/LAN starten</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Savefile Editor</value>
-  </data>
   <data name="BdownSL.Text" xml:space="preserve">
     <value>Unten</value>
   </data>
@@ -171,6 +159,9 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Verbinde zu:</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Server mittels Adresse beitreten</value>
   </data>
   <data name="BnewSC.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 139</value>
@@ -223,14 +214,11 @@
   <data name="BhostServer.Text" xml:space="preserve">
     <value>Server erstellen/hosten ...</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 6</value>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 46</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>537, 98</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Hosting-Optionen</value>
+  <data name="TBslots.Location" type="System.Drawing.Point, System.Drawing">
+    <value>508, 43</value>
   </data>
   <data name="CBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
@@ -245,7 +233,7 @@
     <value>150, 20</value>
   </data>
   <data name="TBhostname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 20</value>
+    <value>393, 20</value>
   </data>
   <data name="TBhostname.Text" xml:space="preserve">
     <value>Mein Stomping Land Server</value>
@@ -256,11 +244,14 @@
   <data name="CBsteamQuery.Text" xml:space="preserve">
     <value>in die Steam Serverlisten eintragen</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 98</value>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 6</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Server-Konfiguration</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>537, 98</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Hosting-Optionen</value>
   </data>
   <data name="CBremoveDinos.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
@@ -280,17 +271,17 @@
   <data name="CBfriendlyFire.Text" xml:space="preserve">
     <value>Verbündetenbeschuss</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>715, 65</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 98</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Hiermit wird, im Gegensatz zum im Spiel inbegriffenen Solo-Modus, auch dann deine Erfahrung und deine Waffen gespeichert, wenn du alleine spielst. Sobald du dich wieder mit dem serverbasierten Einzelspielermodus verbindest wirst du zwar deine Erfahrung und Waffen wiederfinden, aber ähnlich wie auf den aktuellen Mehrspieler-Servern werden deine Gebäude und dein gezähmter Dinosaurier verschwunden sein. Funktionsweise: Dieser Modus erstell im Prinzip einen lokalen Server auf deinem Rechner (welcher nur von deinem PC und den lokalen Netzwerk erreichbar ist) und verbindet zu diesen.</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Server-Konfiguration</value>
   </data>
-  <data name="BserbasedSP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 78</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Eigenen Server hosten</value>
   </data>
-  <data name="BserbasedSP.Text" xml:space="preserve">
-    <value>Serverbasierter Einzelspieler starten ...</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Savefile Editor (Solo)</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>637, 81</value>
@@ -339,6 +330,9 @@
   </data>
   <data name="DGVserverSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>617, 142</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Savefile Editor (Server)</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>

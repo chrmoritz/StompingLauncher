@@ -171,4 +171,10 @@
   <data name="ServerStillRunningHeader" xml:space="preserve">
     <value>Server läuft noch?</value>
   </data>
+  <data name="ServerSaveNotExistBody" xml:space="preserve">
+    <value>Bitte starten den Server einmal kurz, damit er die savefile anlegen kann.</value>
+  </data>
+  <data name="ServerSaveNotExistHeader" xml:space="preserve">
+    <value>Server savefile nicht gefunden</value>
+  </data>
 </root>
