@@ -620,7 +620,7 @@ namespace TheStompingLandLauncher
         private void BwriteSoloSave_Click(object sender, EventArgs e)
         {
             double d;
-            if (!Double.TryParse(TBsoloX.Text, out d) || !Double.TryParse(TBsoloY.Text, out d) || !Double.TryParse(TBsoloZ.Text, out d))
+            if (!Double.TryParse(TBsoloX.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out d) || !Double.TryParse(TBsoloY.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out d) || !Double.TryParse(TBsoloZ.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out d))
             {
                 MessageBox.Show(GlobalStrings.InvalidPositionBody, GlobalStrings.InvalidPositionHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

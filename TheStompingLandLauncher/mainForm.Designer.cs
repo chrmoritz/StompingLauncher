@@ -233,7 +233,6 @@
             // 
             resources.ApplyResources(this.TBjoinIP, "TBjoinIP");
             this.TBjoinIP.Name = "TBjoinIP";
-            this.TBjoinIP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBjoinIP_KeyPress);
             // 
             // label3
             // 
