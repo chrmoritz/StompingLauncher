@@ -308,7 +308,142 @@
     <value>Savefile erneut laden</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
-    <value>Gegenstands-Belegung (Slots):</value>
+    <value>Waffen/Gegenstands-Belegung (Slots):</value>
+  </data>
+  <data name="CBsoloItemSlot9.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot9.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot9.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot9.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot9.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot8.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot8.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot8.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot8.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot8.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot7.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot7.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot7.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot7.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot7.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot6.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot6.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot6.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot6.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot6.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot5.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot5.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot5.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot5.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot5.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot4.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot4.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot4.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot4.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot4.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot3.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot3.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot3.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot3.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot3.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot2.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot2.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot2.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot2.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot2.Items4" xml:space="preserve">
+    <value>Schild</value>
+  </data>
+  <data name="CBsoloItemSlot1.Items" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CBsoloItemSlot1.Items1" xml:space="preserve">
+    <value>Bogen</value>
+  </data>
+  <data name="CBsoloItemSlot1.Items2" xml:space="preserve">
+    <value>Speer</value>
+  </data>
+  <data name="CBsoloItemSlot1.Items3" xml:space="preserve">
+    <value>Bola</value>
+  </data>
+  <data name="CBsoloItemSlot1.Items4" xml:space="preserve">
+    <value>Schild</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Resourcen:</value>

@@ -1,4 +1,4 @@
-**The Stomping Launcher** is a tool for the dinosaur survival game [The Stomping Land](http://www.thestompingland.com/) with the aim of making joining and hosting servers easier for those not familiar with command line parameters.
+**The Stomping Launcher** is a tool for the dinosaur survival game [The Stomping Land](http://www.thestompingland.com/) with the aim of making joining and hosting servers easier for those not familiar with command line parameters. It as well provides functionality for editing solo and server savefiles.
 
 # Download: 
 
