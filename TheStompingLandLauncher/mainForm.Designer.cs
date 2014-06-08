@@ -156,7 +156,6 @@
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.BdownSL);
             this.tabPage1.Controls.Add(this.BupSL);
             this.tabPage1.Controls.Add(this.BremoveSL);
@@ -168,6 +167,7 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.TBjoinIP);
             this.tabPage1.Controls.Add(this.label3);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -242,7 +242,6 @@
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.BnewSC);
             this.tabPage2.Controls.Add(this.BsaveSC);
             this.tabPage2.Controls.Add(this.BloadSC);
@@ -252,6 +251,7 @@
             this.tabPage2.Controls.Add(this.BhostServer);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -330,7 +330,7 @@
             this.TBslots.AcceptsReturn = true;
             resources.ApplyResources(this.TBslots, "TBslots");
             this.TBslots.Name = "TBslots";
-            this.TBslots.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBslots_KeyPress);
+            this.TBslots.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
             // 
             // CBconfigDir
             // 
@@ -358,13 +358,13 @@
             // 
             resources.ApplyResources(this.TBqueryPort, "TBqueryPort");
             this.TBqueryPort.Name = "TBqueryPort";
-            this.TBqueryPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBqueryPort_KeyPress);
+            this.TBqueryPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validatePort);
             // 
             // TBport
             // 
             resources.ApplyResources(this.TBport, "TBport");
             this.TBport.Name = "TBport";
-            this.TBport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBport_KeyPress);
+            this.TBport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validatePort);
             // 
             // TBhostname
             // 
@@ -387,10 +387,10 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CBremoveDinos);
             this.groupBox1.Controls.Add(this.CBplayerNames);
             this.groupBox1.Controls.Add(this.CBfriendlyFire);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -416,7 +416,6 @@
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.CBsoloAutoStart);
             this.tabPage3.Controls.Add(this.BwriteSoloSave);
             this.tabPage3.Controls.Add(this.label34);
@@ -424,6 +423,7 @@
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.groupBox3);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -481,7 +481,6 @@
             // 
             // CBsoloItemSlot9
             // 
-            resources.ApplyResources(this.CBsoloItemSlot9, "CBsoloItemSlot9");
             this.CBsoloItemSlot9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot9.FormattingEnabled = true;
             this.CBsoloItemSlot9.Items.AddRange(new object[] {
@@ -490,6 +489,7 @@
             resources.GetString("CBsoloItemSlot9.Items2"),
             resources.GetString("CBsoloItemSlot9.Items3"),
             resources.GetString("CBsoloItemSlot9.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot9, "CBsoloItemSlot9");
             this.CBsoloItemSlot9.Name = "CBsoloItemSlot9";
             // 
             // label33
@@ -499,7 +499,6 @@
             // 
             // CBsoloItemSlot8
             // 
-            resources.ApplyResources(this.CBsoloItemSlot8, "CBsoloItemSlot8");
             this.CBsoloItemSlot8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot8.FormattingEnabled = true;
             this.CBsoloItemSlot8.Items.AddRange(new object[] {
@@ -508,6 +507,7 @@
             resources.GetString("CBsoloItemSlot8.Items2"),
             resources.GetString("CBsoloItemSlot8.Items3"),
             resources.GetString("CBsoloItemSlot8.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot8, "CBsoloItemSlot8");
             this.CBsoloItemSlot8.Name = "CBsoloItemSlot8";
             // 
             // label32
@@ -517,7 +517,6 @@
             // 
             // CBsoloItemSlot7
             // 
-            resources.ApplyResources(this.CBsoloItemSlot7, "CBsoloItemSlot7");
             this.CBsoloItemSlot7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot7.FormattingEnabled = true;
             this.CBsoloItemSlot7.Items.AddRange(new object[] {
@@ -526,6 +525,7 @@
             resources.GetString("CBsoloItemSlot7.Items2"),
             resources.GetString("CBsoloItemSlot7.Items3"),
             resources.GetString("CBsoloItemSlot7.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot7, "CBsoloItemSlot7");
             this.CBsoloItemSlot7.Name = "CBsoloItemSlot7";
             // 
             // label31
@@ -535,7 +535,6 @@
             // 
             // CBsoloItemSlot6
             // 
-            resources.ApplyResources(this.CBsoloItemSlot6, "CBsoloItemSlot6");
             this.CBsoloItemSlot6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot6.FormattingEnabled = true;
             this.CBsoloItemSlot6.Items.AddRange(new object[] {
@@ -544,6 +543,7 @@
             resources.GetString("CBsoloItemSlot6.Items2"),
             resources.GetString("CBsoloItemSlot6.Items3"),
             resources.GetString("CBsoloItemSlot6.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot6, "CBsoloItemSlot6");
             this.CBsoloItemSlot6.Name = "CBsoloItemSlot6";
             // 
             // label30
@@ -553,7 +553,6 @@
             // 
             // CBsoloItemSlot5
             // 
-            resources.ApplyResources(this.CBsoloItemSlot5, "CBsoloItemSlot5");
             this.CBsoloItemSlot5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot5.FormattingEnabled = true;
             this.CBsoloItemSlot5.Items.AddRange(new object[] {
@@ -562,6 +561,7 @@
             resources.GetString("CBsoloItemSlot5.Items2"),
             resources.GetString("CBsoloItemSlot5.Items3"),
             resources.GetString("CBsoloItemSlot5.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot5, "CBsoloItemSlot5");
             this.CBsoloItemSlot5.Name = "CBsoloItemSlot5";
             // 
             // label29
@@ -571,7 +571,6 @@
             // 
             // CBsoloItemSlot4
             // 
-            resources.ApplyResources(this.CBsoloItemSlot4, "CBsoloItemSlot4");
             this.CBsoloItemSlot4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot4.FormattingEnabled = true;
             this.CBsoloItemSlot4.Items.AddRange(new object[] {
@@ -580,6 +579,7 @@
             resources.GetString("CBsoloItemSlot4.Items2"),
             resources.GetString("CBsoloItemSlot4.Items3"),
             resources.GetString("CBsoloItemSlot4.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot4, "CBsoloItemSlot4");
             this.CBsoloItemSlot4.Name = "CBsoloItemSlot4";
             // 
             // label28
@@ -589,7 +589,6 @@
             // 
             // CBsoloItemSlot3
             // 
-            resources.ApplyResources(this.CBsoloItemSlot3, "CBsoloItemSlot3");
             this.CBsoloItemSlot3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot3.FormattingEnabled = true;
             this.CBsoloItemSlot3.Items.AddRange(new object[] {
@@ -598,6 +597,7 @@
             resources.GetString("CBsoloItemSlot3.Items2"),
             resources.GetString("CBsoloItemSlot3.Items3"),
             resources.GetString("CBsoloItemSlot3.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot3, "CBsoloItemSlot3");
             this.CBsoloItemSlot3.Name = "CBsoloItemSlot3";
             // 
             // label27
@@ -607,7 +607,6 @@
             // 
             // CBsoloItemSlot2
             // 
-            resources.ApplyResources(this.CBsoloItemSlot2, "CBsoloItemSlot2");
             this.CBsoloItemSlot2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot2.FormattingEnabled = true;
             this.CBsoloItemSlot2.Items.AddRange(new object[] {
@@ -616,6 +615,7 @@
             resources.GetString("CBsoloItemSlot2.Items2"),
             resources.GetString("CBsoloItemSlot2.Items3"),
             resources.GetString("CBsoloItemSlot2.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot2, "CBsoloItemSlot2");
             this.CBsoloItemSlot2.Name = "CBsoloItemSlot2";
             // 
             // label26
@@ -625,7 +625,6 @@
             // 
             // CBsoloItemSlot1
             // 
-            resources.ApplyResources(this.CBsoloItemSlot1, "CBsoloItemSlot1");
             this.CBsoloItemSlot1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloItemSlot1.FormattingEnabled = true;
             this.CBsoloItemSlot1.Items.AddRange(new object[] {
@@ -634,6 +633,7 @@
             resources.GetString("CBsoloItemSlot1.Items2"),
             resources.GetString("CBsoloItemSlot1.Items3"),
             resources.GetString("CBsoloItemSlot1.Items4")});
+            resources.ApplyResources(this.CBsoloItemSlot1, "CBsoloItemSlot1");
             this.CBsoloItemSlot1.Name = "CBsoloItemSlot1";
             // 
             // label25
@@ -727,7 +727,6 @@
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.TBsoloRoll);
             this.groupBox3.Controls.Add(this.label17);
@@ -741,6 +740,7 @@
             this.groupBox3.Controls.Add(this.TBsoloX);
             this.groupBox3.Controls.Add(this.TBsoloY);
             this.groupBox3.Controls.Add(this.TBsoloZ);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -817,7 +817,6 @@
             // 
             // tabPage4
             // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.CBpasteOnlyPos);
             this.tabPage4.Controls.Add(this.BPasteSaveLine);
@@ -826,6 +825,7 @@
             this.tabPage4.Controls.Add(this.BwriteServerSave);
             this.tabPage4.Controls.Add(this.BreloadServerSave);
             this.tabPage4.Controls.Add(this.DGVserverSave);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -876,10 +876,10 @@
             // 
             // DGVserverSave
             // 
-            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AllowUserToAddRows = false;
             this.DGVserverSave.AllowUserToDeleteRows = false;
             this.DGVserverSave.AllowUserToResizeRows = false;
+            resources.ApplyResources(this.DGVserverSave, "DGVserverSave");
             this.DGVserverSave.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGVserverSave.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVserverSave.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
@@ -907,7 +907,6 @@
             // 
             // folderBrowserDialog1
             // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
             // mainForm

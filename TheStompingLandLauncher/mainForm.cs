@@ -207,37 +207,6 @@ namespace TheStompingLandLauncher
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e) { }
 
-        private void TBjoinIP_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ':')
-            //{
-            //    e.Handled = true;
-            //}
-        }
-
-        private void TBport_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = isInvalidPort(e.KeyChar, TBport.Text);
-        }
-
-        private void TBqueryPort_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = isInvalidPort(e.KeyChar, TBqueryPort.Text);
-        }
-
-        private bool isInvalidPort(char key, string input)
-        {
-            if (!char.IsControl(key) && !char.IsDigit(key))
-            {
-                return true;
-            }
-            if (char.IsDigit(key) && !(int.Parse(input + key) < 65536))
-            {
-                return true;
-            }
-            return false;
-        }
-
         private void BconnectSL_Click(object sender, EventArgs e)
         {
             if (LBserverHistory.SelectedIndex == -1)
@@ -576,14 +545,6 @@ namespace TheStompingLandLauncher
             }
         }
 
-        private void TBslots_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void BreloadSoloSave_Click(object sender, EventArgs e)
         {
             if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini"))
@@ -743,6 +704,19 @@ namespace TheStompingLandLauncher
         private void validateDouble(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void validatePort(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (char.IsDigit(e.KeyChar) && !(int.Parse(tb.Text + e.KeyChar) < 65536))
             {
                 e.Handled = true;
             }
