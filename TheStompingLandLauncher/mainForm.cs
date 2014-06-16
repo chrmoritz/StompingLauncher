@@ -218,20 +218,20 @@ namespace TheStompingLandLauncher
                 return;
             }
             string server = (string) LBserverHistory.SelectedItem;
-            Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-            Match match = rgx.Match(server);
-            if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-            {
+            //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
+            //Match match = rgx.Match(server);
+            //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
+            //{
                 Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
                 Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
                 LBserverHistory.Items.Insert(0, server);
                 LBserverHistory.SelectedIndex = 0;
                 Properties.Settings.Default.Save();
-            }
-            else
-            {
-                LBserverHistory.Items.RemoveAt(LBserverHistory.SelectedIndex);
-            }
+            //}
+            //else
+            //{
+            //    LBserverHistory.Items.RemoveAt(LBserverHistory.SelectedIndex);
+            //}
         }
 
         private void BaddSL_Click(object sender, EventArgs e)

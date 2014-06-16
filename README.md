@@ -2,7 +2,7 @@
 
 # Download: 
 
-Current version (v0.3): https://github.com/chrmoritz/StompingLauncher/releases
+Current version (v0.3.1): https://github.com/chrmoritz/StompingLauncher/releases
 
 # Features:
 
@@ -31,7 +31,8 @@ Current version (v0.3): https://github.com/chrmoritz/StompingLauncher/releases
 
 ### 3. Savefile editor (Solo and Server)
 * easily edit your servers / solo savefiles and change your players / your:
-  * location (teleport to your friends), expertise (start with 200+), hunger, thirst
+  * location: teleport to your friends or to some predefined waypoints (e.g big water cave entrance/exit, vulcano and more)
+  * expertise (start with 200+), hunger, thirst (disable hunger completly)
   * herbs, arrows, robe (more than ingame limits possible)
   * weapons equiped in each slot (multiple shields possible)
 * copy the values of one player to another (used for teleportation)
