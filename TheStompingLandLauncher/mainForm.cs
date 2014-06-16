@@ -50,6 +50,10 @@ namespace TheStompingLandLauncher
             {
                 CBserverConfig.Items.Add(config);
             }
+            CBserverConfig.SelectedIndex = 0;
+
+            CBsoloTpList.SelectedIndex = 0;
+            CBserverTpList.SelectedIndex = 0;
 
             string TSLpath = (string)Properties.Settings.Default["TSLpath"];
             if (Directory.Exists(TSLpath))
@@ -531,7 +535,7 @@ namespace TheStompingLandLauncher
             int line = DGVserverSave.CurrentRow.Index;
             if (CBpasteOnlyPos.Checked)
             {
-                for (int i = 1; i < 4; i++)
+                for (int i = 1; i < 7; i++)
                 {
                     DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
                 }
@@ -646,9 +650,10 @@ namespace TheStompingLandLauncher
                 }
             }
             bool t = true;
+            int i;
             string[] soloSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini");
             Regex rgx = new Regex(@"^SoloData=\(MapName=""capa_island"",Location=");
-            for (int i = 0; i < soloSaveLines.Length; i++)
+            for (i = 0; i < soloSaveLines.Length; i++)
             {
                 if (rgx.IsMatch(soloSaveLines[i]))
                 {
@@ -668,6 +673,17 @@ namespace TheStompingLandLauncher
                         soloSaveLines[i] = "";
                     }
                 }
+            }
+            if (t && String.IsNullOrEmpty(soloSaveLines[i - 1]))
+            {
+                soloSaveLines[i - 1] = "SoloData=(MapName=\"capa_island\",Location=(X=" + TBsoloX.Text + ",Y=" + TBsoloY.Text + ",Z=" + TBsoloZ.Text
+                    + "),Rotation=(Pitch=" + TBsoloPitch.Text + ",Yaw=" + TBsoloYaw.Text + ",Roll=" + TBsoloRoll.Text
+                    + "),Stat_Expertise=" + TBsoloExpertise.Text + ",N_Hunger=" + TBsoloHunger.Text + ",N_Thirst=" + TBsoloThirst.Text
+                    + ",R_Arrows=" + TBsoloArrows.Text + ",R_Rope=" + TBsoloRope.Text + ",R_Herbs=" + TBsoloHerbs.Text + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=\"Tomahawk\""
+                    + ",ItemSlot[1]=" + this.CBindexToItem(CBsoloItemSlot1.SelectedIndex) + ",ItemSlot[2]=" + this.CBindexToItem(CBsoloItemSlot2.SelectedIndex) + ",ItemSlot[3]=" + this.CBindexToItem(CBsoloItemSlot3.SelectedIndex)
+                    + ",ItemSlot[4]=" + this.CBindexToItem(CBsoloItemSlot4.SelectedIndex) + ",ItemSlot[5]=" + this.CBindexToItem(CBsoloItemSlot5.SelectedIndex) + ",ItemSlot[6]=" + this.CBindexToItem(CBsoloItemSlot6.SelectedIndex)
+                    + ",ItemSlot[7]=" + this.CBindexToItem(CBsoloItemSlot7.SelectedIndex) + ",ItemSlot[8]=" + this.CBindexToItem(CBsoloItemSlot8.SelectedIndex) + ",ItemSlot[9]=" + this.CBindexToItem(CBsoloItemSlot9.SelectedIndex) + ")";
+                t = false;
             }
             System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Solo.ini", soloSaveLines);
             if (CBsoloAutoStart.Checked)
@@ -695,7 +711,13 @@ namespace TheStompingLandLauncher
 
         private void validateNumberInput(object sender, KeyPressEventArgs e)
         {
+            int i;
+            TextBox tb = (TextBox)sender;
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (char.IsDigit(e.KeyChar) && (!int.TryParse(tb.Text + e.KeyChar, out i) || !(i >= 0)))
             {
                 e.Handled = true;
             }
@@ -724,9 +746,167 @@ namespace TheStompingLandLauncher
 
         private void validateNegNumberInput(object sender, KeyPressEventArgs e)
         {
+            int i;
+            TextBox tb = (TextBox)sender;
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
             {
                 e.Handled = true;
+            }
+            if (char.IsDigit(e.KeyChar) && !int.TryParse(tb.Text + e.KeyChar, out i))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void BsoloUnlimitedAmmo_Click(object sender, EventArgs e)
+        {
+            TBsoloExpertise.Text = "2147000000";
+            TBsoloHerbs.Text = "2147483647";
+            TBsoloArrows.Text = "2147483647";
+            TBsoloRope.Text = "2147483647";
+            CBsoloItemSlot1.SelectedIndex = 1;
+            CBsoloItemSlot2.SelectedIndex = 2;
+            CBsoloItemSlot3.SelectedIndex = 3;
+            CBsoloItemSlot4.SelectedIndex = 4;
+            CBsoloItemSlot5.SelectedIndex = 4;
+            CBsoloItemSlot6.SelectedIndex = 4;
+            CBsoloItemSlot7.SelectedIndex = 4;
+            CBsoloItemSlot8.SelectedIndex = 4;
+            CBsoloItemSlot9.SelectedIndex = 4;
+        }
+
+        private void BsoloDisableHunger_Click(object sender, EventArgs e)
+        {
+            TBsoloHunger.Text = "-2147483648";
+            TBsoloThirst.Text = "-2147483648";
+        }
+
+        private void BsoloTp_Click(object sender, EventArgs e)
+        {
+            int selectedWP = CBsoloTpList.SelectedIndex;
+            switch (selectedWP)
+            {
+                case 0:
+                    TBsoloX.Text = "89.725906";
+                    TBsoloY.Text = "-34004.398438";
+                    TBsoloZ.Text = "113.925491";
+                    TBsoloPitch.Text = "0";
+                    TBsoloYaw.Text = "10833";
+                    TBsoloRoll.Text  = "0";
+                    break;
+                case 1:
+                    TBsoloX.Text = "-48754.703125";
+                    TBsoloY.Text = "-8867.308594";
+                    TBsoloZ.Text = "1724.750244";
+                    TBsoloPitch.Text = "0";
+                    TBsoloYaw.Text = "17271";
+                    TBsoloRoll.Text  = "0";
+                    break;
+                case 2:
+                    TBsoloX.Text = "-35461.242188";
+                    TBsoloY.Text = "-21397.582031";
+                    TBsoloZ.Text = "918.003479";
+                    TBsoloPitch.Text = "0";
+                    TBsoloYaw.Text = "10137";
+                    TBsoloRoll.Text  = "0";
+                    break;
+                case 3:
+                    TBsoloX.Text = "-19371.386719";
+                    TBsoloY.Text = "21350.605469";
+                    TBsoloZ.Text = "5841.007813";
+                    TBsoloPitch.Text = "0";
+                    TBsoloYaw.Text = "-19733";
+                    TBsoloRoll.Text = "0";
+                    break;
+                case 4:
+                    TBsoloX.Text = "-22653.009766";
+                    TBsoloY.Text = "23101.542969";
+                    TBsoloZ.Text = "3110.780518";
+                    TBsoloPitch.Text = "0";
+                    TBsoloYaw.Text = "17315";
+                    TBsoloRoll.Text = "0";
+                    break;
+                case 5:
+                    TBsoloX.Text = "21226.568359";
+                    TBsoloY.Text = "28516.144531";
+                    TBsoloZ.Text = "913.588501";
+                    TBsoloPitch.Text = "0";
+                    TBsoloYaw.Text = "14213";
+                    TBsoloRoll.Text = "0";
+                    break;
+                case 6:
+                    TBsoloX.Text = "46529.703125";
+                    TBsoloY.Text = "-19490.609375";
+                    TBsoloZ.Text = "151.390274";
+                    TBsoloPitch.Text = "0";
+                    TBsoloYaw.Text = "5135";
+                    TBsoloRoll.Text = "0";
+                    break;
+            }
+        }
+
+        private void BserverTp_Click(object sender, EventArgs e)
+        {
+            int line = DGVserverSave.CurrentRow.Index;
+            int selectedWP = CBserverTpList.SelectedIndex;
+            switch (selectedWP)
+            {
+                case 0:
+                    DGVserverSave.Rows[line].Cells[1].Value = 89.725906;
+                    DGVserverSave.Rows[line].Cells[2].Value = -34004.398438;
+                    DGVserverSave.Rows[line].Cells[3].Value = 113.925491;
+                    DGVserverSave.Rows[line].Cells[4].Value = 0;
+                    DGVserverSave.Rows[line].Cells[5].Value = 10833;
+                    DGVserverSave.Rows[line].Cells[6].Value = 0;
+                    break;
+                case 1:
+                    DGVserverSave.Rows[line].Cells[1].Value = -48754.703125;
+                    DGVserverSave.Rows[line].Cells[2].Value = -8867.308594;
+                    DGVserverSave.Rows[line].Cells[3].Value = 1724.750244;
+                    DGVserverSave.Rows[line].Cells[4].Value = 0;
+                    DGVserverSave.Rows[line].Cells[5].Value = 17271;
+                    DGVserverSave.Rows[line].Cells[6].Value = 0;
+                    break;
+                case 2:
+                    DGVserverSave.Rows[line].Cells[1].Value = -35461.242188;
+                    DGVserverSave.Rows[line].Cells[2].Value = -21397.582031;
+                    DGVserverSave.Rows[line].Cells[3].Value = 918.003479;
+                    DGVserverSave.Rows[line].Cells[4].Value = 0;
+                    DGVserverSave.Rows[line].Cells[5].Value = 10137;
+                    DGVserverSave.Rows[line].Cells[6].Value = 0;
+                    break;
+                case 3:
+                    DGVserverSave.Rows[line].Cells[1].Value = -19371.386719;
+                    DGVserverSave.Rows[line].Cells[2].Value = 21350.605469;
+                    DGVserverSave.Rows[line].Cells[3].Value = 5841.007813;
+                    DGVserverSave.Rows[line].Cells[4].Value = 0;
+                    DGVserverSave.Rows[line].Cells[5].Value = -19733;
+                    DGVserverSave.Rows[line].Cells[6].Value = 0;
+                    break;
+                case 4:
+                    DGVserverSave.Rows[line].Cells[1].Value = -22653.009766;
+                    DGVserverSave.Rows[line].Cells[2].Value = 23101.542969;
+                    DGVserverSave.Rows[line].Cells[3].Value = 3110.780518;
+                    DGVserverSave.Rows[line].Cells[4].Value = 0;
+                    DGVserverSave.Rows[line].Cells[5].Value = 17315;
+                    DGVserverSave.Rows[line].Cells[6].Value = 0;
+                    break;
+                case 5:
+                    DGVserverSave.Rows[line].Cells[1].Value = 21226.568359;
+                    DGVserverSave.Rows[line].Cells[2].Value = 28516.144531;
+                    DGVserverSave.Rows[line].Cells[3].Value = 913.588501;
+                    DGVserverSave.Rows[line].Cells[4].Value = 0;
+                    DGVserverSave.Rows[line].Cells[5].Value = 14213;
+                    DGVserverSave.Rows[line].Cells[6].Value = 0;
+                    break;
+                case 6:
+                    DGVserverSave.Rows[line].Cells[1].Value = 46529.703125;
+                    DGVserverSave.Rows[line].Cells[2].Value = -19490.609375;
+                    DGVserverSave.Rows[line].Cells[3].Value = 151.390274;
+                    DGVserverSave.Rows[line].Cells[4].Value = 0;
+                    DGVserverSave.Rows[line].Cells[5].Value = 5135;
+                    DGVserverSave.Rows[line].Cells[6].Value = 0;
+                    break;
             }
         }
     }
@@ -751,8 +931,7 @@ namespace TheStompingLandLauncher
             this.yaw = yaw;
             this.roll = roll;
             this.expertise = expertise;
-            this.hunger = hunger;
-            this.thirst = thirst;
+            this.hunger = hunger;            this.thirst = thirst;
             this.arrows = arrows;
             this.ropes = ropes;
             this.herbs = herbs;

@@ -1147,7 +1147,7 @@
     <value>168, 17</value>
   </data>
   <data name="CBsoloAutoStart.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>27</value>
   </data>
   <data name="CBsoloAutoStart.Text" xml:space="preserve">
     <value>autostart solo game after save</value>
@@ -1174,7 +1174,7 @@
     <value>200, 23</value>
   </data>
   <data name="BwriteSoloSave.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>28</value>
   </data>
   <data name="BwriteSoloSave.Text" xml:space="preserve">
     <value>save/write savefile</value>
@@ -1234,7 +1234,7 @@
     <value>200, 23</value>
   </data>
   <data name="BreloadSoloSave.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>26</value>
   </data>
   <data name="BreloadSoloSave.Text" xml:space="preserve">
     <value>reload savefile</value>
@@ -1276,7 +1276,7 @@
     <value>55, 21</value>
   </data>
   <data name="CBsoloItemSlot9.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>25</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot9.Name" xml:space="preserve">
     <value>CBsoloItemSlot9</value>
@@ -1339,7 +1339,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot8.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>24</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot8.Name" xml:space="preserve">
     <value>CBsoloItemSlot8</value>
@@ -1402,7 +1402,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot7.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>23</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot7.Name" xml:space="preserve">
     <value>CBsoloItemSlot7</value>
@@ -1465,7 +1465,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot6.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>22</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot6.Name" xml:space="preserve">
     <value>CBsoloItemSlot6</value>
@@ -1528,7 +1528,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot5.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>21</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot5.Name" xml:space="preserve">
     <value>CBsoloItemSlot5</value>
@@ -1591,7 +1591,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot4.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot4.Name" xml:space="preserve">
     <value>CBsoloItemSlot4</value>
@@ -1654,7 +1654,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot3.Name" xml:space="preserve">
     <value>CBsoloItemSlot3</value>
@@ -1717,7 +1717,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot2.Name" xml:space="preserve">
     <value>CBsoloItemSlot2</value>
@@ -1780,7 +1780,7 @@
     <value>54, 21</value>
   </data>
   <data name="CBsoloItemSlot1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;CBsoloItemSlot1.Name" xml:space="preserve">
     <value>CBsoloItemSlot1</value>
@@ -1848,11 +1848,35 @@
   <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="BsoloUnlimitedAmmo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="BsoloUnlimitedAmmo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 71</value>
+  </data>
+  <data name="BsoloUnlimitedAmmo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 23</value>
+  </data>
+  <data name="BsoloUnlimitedAmmo.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="BsoloUnlimitedAmmo.Text" xml:space="preserve">
+    <value>unlimited ammo/weapons</value>
+  </data>
+  <data name="&gt;&gt;BsoloUnlimitedAmmo.Name" xml:space="preserve">
+    <value>BsoloUnlimitedAmmo</value>
+  </data>
+  <data name="&gt;&gt;BsoloUnlimitedAmmo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BsoloUnlimitedAmmo.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;BsoloUnlimitedAmmo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="BsoloDisableHunger.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="BsoloDisableHunger.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="BsoloDisableHunger.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1861,10 +1885,10 @@
     <value>6, 71</value>
   </data>
   <data name="BsoloDisableHunger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 23</value>
+    <value>183, 23</value>
   </data>
   <data name="BsoloDisableHunger.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="BsoloDisableHunger.Text" xml:space="preserve">
     <value>disable hunger and thirst</value>
@@ -1879,7 +1903,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;BsoloDisableHunger.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="TBsoloRope.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1891,7 +1915,7 @@
     <value>60, 20</value>
   </data>
   <data name="TBsoloRope.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;TBsoloRope.Name" xml:space="preserve">
     <value>TBsoloRope</value>
@@ -1903,7 +1927,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloRope.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="TBsoloHerbs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1915,7 +1939,7 @@
     <value>88, 20</value>
   </data>
   <data name="TBsoloHerbs.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;TBsoloHerbs.Name" xml:space="preserve">
     <value>TBsoloHerbs</value>
@@ -1927,7 +1951,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloHerbs.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="TBsoloArrows.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1939,7 +1963,7 @@
     <value>60, 20</value>
   </data>
   <data name="TBsoloArrows.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;TBsoloArrows.Name" xml:space="preserve">
     <value>TBsoloArrows</value>
@@ -1951,7 +1975,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloArrows.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label24.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1981,7 +2005,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label23.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2011,7 +2035,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label22.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2038,7 +2062,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="TBsoloThirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2050,7 +2074,7 @@
     <value>60, 20</value>
   </data>
   <data name="TBsoloThirst.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;TBsoloThirst.Name" xml:space="preserve">
     <value>TBsoloThirst</value>
@@ -2062,7 +2086,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloThirst.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="TBsoloHunger.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2074,7 +2098,7 @@
     <value>60, 20</value>
   </data>
   <data name="TBsoloHunger.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;TBsoloHunger.Name" xml:space="preserve">
     <value>TBsoloHunger</value>
@@ -2086,7 +2110,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloHunger.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="TBsoloExpertise.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2098,7 +2122,7 @@
     <value>73, 20</value>
   </data>
   <data name="TBsoloExpertise.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;TBsoloExpertise.Name" xml:space="preserve">
     <value>TBsoloExpertise</value>
@@ -2110,7 +2134,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloExpertise.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label21.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2140,7 +2164,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label20.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2170,7 +2194,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2197,7 +2221,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>343, 3</value>
@@ -2233,7 +2257,7 @@
     <value>115, 23</value>
   </data>
   <data name="BsoloAddWP.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>8</value>
   </data>
   <data name="BsoloAddWP.Text" xml:space="preserve">
     <value>add new waypoint ...</value>
@@ -2250,9 +2274,6 @@
   <data name="&gt;&gt;BsoloAddWP.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="BsoloTp.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="BsoloTp.Location" type="System.Drawing.Point, System.Drawing">
     <value>156, 71</value>
   </data>
@@ -2260,7 +2281,7 @@
     <value>50, 23</value>
   </data>
   <data name="BsoloTp.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>7</value>
   </data>
   <data name="BsoloTp.Text" xml:space="preserve">
     <value>teleport</value>
@@ -2277,8 +2298,26 @@
   <data name="&gt;&gt;BsoloTp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="CBsoloTpList.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="CBsoloTpList.Items" xml:space="preserve">
+    <value>Waterfall cave</value>
+  </data>
+  <data name="CBsoloTpList.Items1" xml:space="preserve">
+    <value>big water cave entrance</value>
+  </data>
+  <data name="CBsoloTpList.Items2" xml:space="preserve">
+    <value>big water cave exit</value>
+  </data>
+  <data name="CBsoloTpList.Items3" xml:space="preserve">
+    <value>vulcano</value>
+  </data>
+  <data name="CBsoloTpList.Items4" xml:space="preserve">
+    <value>vulcano cave entrance</value>
+  </data>
+  <data name="CBsoloTpList.Items5" xml:space="preserve">
+    <value>southern lake</value>
+  </data>
+  <data name="CBsoloTpList.Items6" xml:space="preserve">
+    <value>western river mouth</value>
   </data>
   <data name="CBsoloTpList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 71</value>
@@ -2287,7 +2326,7 @@
     <value>144, 21</value>
   </data>
   <data name="CBsoloTpList.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;CBsoloTpList.Name" xml:space="preserve">
     <value>CBsoloTpList</value>
@@ -2703,9 +2742,6 @@
   <data name="BserverTp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="BserverTp.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="BserverTp.Location" type="System.Drawing.Point, System.Drawing">
     <value>637, 122</value>
   </data>
@@ -2733,8 +2769,26 @@
   <data name="CBserverTpList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="CBserverTpList.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="CBserverTpList.Items" xml:space="preserve">
+    <value>Waterfall cave</value>
+  </data>
+  <data name="CBserverTpList.Items1" xml:space="preserve">
+    <value>big water cave entrance</value>
+  </data>
+  <data name="CBserverTpList.Items2" xml:space="preserve">
+    <value>big water cave exit</value>
+  </data>
+  <data name="CBserverTpList.Items3" xml:space="preserve">
+    <value>vulcano</value>
+  </data>
+  <data name="CBserverTpList.Items4" xml:space="preserve">
+    <value>vulcano cave entrance</value>
+  </data>
+  <data name="CBserverTpList.Items5" xml:space="preserve">
+    <value>southern lake</value>
+  </data>
+  <data name="CBserverTpList.Items6" xml:space="preserve">
+    <value>western river mouth</value>
   </data>
   <data name="CBserverTpList.Location" type="System.Drawing.Point, System.Drawing">
     <value>637, 95</value>

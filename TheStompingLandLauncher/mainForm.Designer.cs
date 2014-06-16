@@ -92,6 +92,7 @@
             this.CBsoloItemSlot1 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.BsoloUnlimitedAmmo = new System.Windows.Forms.Button();
             this.BsoloDisableHunger = new System.Windows.Forms.Button();
             this.TBsoloRope = new System.Windows.Forms.TextBox();
             this.TBsoloHerbs = new System.Windows.Forms.TextBox();
@@ -663,6 +664,7 @@
             // groupBox4
             // 
             resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.BsoloUnlimitedAmmo);
             this.groupBox4.Controls.Add(this.BsoloDisableHunger);
             this.groupBox4.Controls.Add(this.TBsoloRope);
             this.groupBox4.Controls.Add(this.TBsoloHerbs);
@@ -679,11 +681,19 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
+            // BsoloUnlimitedAmmo
+            // 
+            resources.ApplyResources(this.BsoloUnlimitedAmmo, "BsoloUnlimitedAmmo");
+            this.BsoloUnlimitedAmmo.Name = "BsoloUnlimitedAmmo";
+            this.BsoloUnlimitedAmmo.UseVisualStyleBackColor = true;
+            this.BsoloUnlimitedAmmo.Click += new System.EventHandler(this.BsoloUnlimitedAmmo_Click);
+            // 
             // BsoloDisableHunger
             // 
             resources.ApplyResources(this.BsoloDisableHunger, "BsoloDisableHunger");
             this.BsoloDisableHunger.Name = "BsoloDisableHunger";
             this.BsoloDisableHunger.UseVisualStyleBackColor = true;
+            this.BsoloDisableHunger.Click += new System.EventHandler(this.BsoloDisableHunger_Click);
             // 
             // TBsoloRope
             // 
@@ -722,13 +732,13 @@
             // 
             resources.ApplyResources(this.TBsoloThirst, "TBsoloThirst");
             this.TBsoloThirst.Name = "TBsoloThirst";
-            this.TBsoloThirst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            this.TBsoloThirst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNegNumberInput);
             // 
             // TBsoloHunger
             // 
             resources.ApplyResources(this.TBsoloHunger, "TBsoloHunger");
             this.TBsoloHunger.Name = "TBsoloHunger";
-            this.TBsoloHunger.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            this.TBsoloHunger.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNegNumberInput);
             // 
             // TBsoloExpertise
             // 
@@ -784,12 +794,21 @@
             resources.ApplyResources(this.BsoloTp, "BsoloTp");
             this.BsoloTp.Name = "BsoloTp";
             this.BsoloTp.UseVisualStyleBackColor = true;
+            this.BsoloTp.Click += new System.EventHandler(this.BsoloTp_Click);
             // 
             // CBsoloTpList
             // 
             this.CBsoloTpList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.CBsoloTpList, "CBsoloTpList");
             this.CBsoloTpList.FormattingEnabled = true;
+            this.CBsoloTpList.Items.AddRange(new object[] {
+            resources.GetString("CBsoloTpList.Items"),
+            resources.GetString("CBsoloTpList.Items1"),
+            resources.GetString("CBsoloTpList.Items2"),
+            resources.GetString("CBsoloTpList.Items3"),
+            resources.GetString("CBsoloTpList.Items4"),
+            resources.GetString("CBsoloTpList.Items5"),
+            resources.GetString("CBsoloTpList.Items6")});
+            resources.ApplyResources(this.CBsoloTpList, "CBsoloTpList");
             this.CBsoloTpList.Name = "CBsoloTpList";
             // 
             // label18
@@ -890,12 +909,21 @@
             resources.ApplyResources(this.BserverTp, "BserverTp");
             this.BserverTp.Name = "BserverTp";
             this.BserverTp.UseVisualStyleBackColor = true;
+            this.BserverTp.Click += new System.EventHandler(this.BserverTp_Click);
             // 
             // CBserverTpList
             // 
             resources.ApplyResources(this.CBserverTpList, "CBserverTpList");
             this.CBserverTpList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBserverTpList.FormattingEnabled = true;
+            this.CBserverTpList.Items.AddRange(new object[] {
+            resources.GetString("CBserverTpList.Items"),
+            resources.GetString("CBserverTpList.Items1"),
+            resources.GetString("CBserverTpList.Items2"),
+            resources.GetString("CBserverTpList.Items3"),
+            resources.GetString("CBserverTpList.Items4"),
+            resources.GetString("CBserverTpList.Items5"),
+            resources.GetString("CBserverTpList.Items6")});
             this.CBserverTpList.Name = "CBserverTpList";
             // 
             // CBpasteOnlyPos
@@ -1134,6 +1162,7 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button BsoloDisableHunger;
+        private System.Windows.Forms.Button BsoloUnlimitedAmmo;
     }
 }
 
