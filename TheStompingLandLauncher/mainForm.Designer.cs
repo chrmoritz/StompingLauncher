@@ -738,6 +738,7 @@
             // 
             resources.ApplyResources(this.TBsoloHunger, "TBsoloHunger");
             this.TBsoloHunger.Name = "TBsoloHunger";
+            this.TBsoloHunger.TextChanged += new System.EventHandler(this.TBsoloHunger_TextChanged);
             this.TBsoloHunger.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNegNumberInput);
             // 
             // TBsoloExpertise

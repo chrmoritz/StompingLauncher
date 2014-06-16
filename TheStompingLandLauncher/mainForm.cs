@@ -716,6 +716,7 @@ namespace TheStompingLandLauncher
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                return;
             }
             if (char.IsDigit(e.KeyChar) && (!int.TryParse(tb.Text + e.KeyChar, out i) || !(i >= 0)))
             {
@@ -737,6 +738,7 @@ namespace TheStompingLandLauncher
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                return;
             }
             if (char.IsDigit(e.KeyChar) && !(int.Parse(tb.Text + e.KeyChar) < 65536))
             {
@@ -751,6 +753,7 @@ namespace TheStompingLandLauncher
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
             {
                 e.Handled = true;
+                return;
             }
             if (char.IsDigit(e.KeyChar) && !int.TryParse(tb.Text + e.KeyChar, out i))
             {
@@ -907,6 +910,19 @@ namespace TheStompingLandLauncher
                     DGVserverSave.Rows[line].Cells[5].Value = 5135;
                     DGVserverSave.Rows[line].Cells[6].Value = 0;
                     break;
+            }
+        }
+
+        private void TBsoloHunger_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (int.TryParse(TBsoloHunger.Text, out i) && i >= 3000)
+            {
+                TBsoloHunger.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                TBsoloHunger.BackColor = Color.White;
             }
         }
     }
