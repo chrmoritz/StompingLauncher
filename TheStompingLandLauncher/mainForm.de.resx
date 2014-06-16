@@ -120,24 +120,17 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Server mittels Adresse beitreten</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>716, 209</value>
-  </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Eigenen Server hosten</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>716, 209</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Savefile Editor (Solo)</value>
   </data>
-  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>716, 209</value>
-  </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>Savefile Editor (Server)</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Grafik/Steuerung Optimierungen</value>
   </data>
   <data name="BeditSL.Text" xml:space="preserve">
     <value>bearbeiten ...</value>
@@ -157,6 +150,7 @@
   <data name="BconnectSL.Text" xml:space="preserve">
     <value>Verbinden ...</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
   </data>
@@ -184,41 +178,17 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Verbinde zu:</value>
   </data>
-  <data name="BnewSC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>590, 139</value>
-  </data>
-  <data name="BnewSC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Server-Konfigurations-Verwaltung:</value>
   </data>
   <data name="BnewSC.Text" xml:space="preserve">
     <value>neue Konfiguration ...</value>
   </data>
-  <data name="BsaveSC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 139</value>
-  </data>
-  <data name="BsaveSC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
-  </data>
   <data name="BsaveSC.Text" xml:space="preserve">
     <value>Konfiguration speichern</value>
   </data>
-  <data name="BloadSC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 139</value>
-  </data>
   <data name="BloadSC.Text" xml:space="preserve">
     <value>Konfiguration laden</value>
-  </data>
-  <data name="CBserverConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 139</value>
-  </data>
-  <data name="CBserverConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 21</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 13</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Konfigurations-Verwaltung:</value>
   </data>
   <data name="CBautoJoin.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 17</value>
@@ -251,10 +221,10 @@
     <value>504, 43</value>
   </data>
   <data name="CBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
+    <value>159, 17</value>
   </data>
   <data name="CBconfigDir.Text" xml:space="preserve">
-    <value>benutzerdef. Config-Ordner:</value>
+    <value>benutzerdef. Konfig.-Ordner:</value>
   </data>
   <data name="TBconfigDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>381, 68</value>
@@ -269,10 +239,10 @@
     <value>Mein Stomping Land Server</value>
   </data>
   <data name="CBsteamQuery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 17</value>
+    <value>183, 17</value>
   </data>
   <data name="CBsteamQuery.Text" xml:space="preserve">
-    <value>in die Steam Serverlisten eintragen</value>
+    <value>in die Steam Serverliste eintragen</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 98</value>
@@ -299,22 +269,25 @@
     <value>Verbündetenbeschuss</value>
   </data>
   <data name="CBsoloAutoStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>549, 154</value>
+    <value>242, 187</value>
   </data>
   <data name="CBsoloAutoStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 17</value>
+    <value>264, 17</value>
   </data>
   <data name="CBsoloAutoStart.Text" xml:space="preserve">
-    <value>Solospiel automatisch starten</value>
+    <value>Solospiel automatisch nach dem Speichern starten</value>
   </data>
   <data name="BwriteSoloSave.Text" xml:space="preserve">
     <value>Savefile speichern</value>
   </data>
+  <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 167</value>
+  </data>
   <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 13</value>
+    <value>698, 13</value>
   </data>
   <data name="label34.Text" xml:space="preserve">
-    <value>Schließe das Spiel vor den Ändern der Savefiles oder deine werden verloren gehen.</value>
+    <value>Warnung: Schließe das Spiel vor den Ändern der Savefiles oder deine Änderungen werden beim Beenden verloren gehen.</value>
   </data>
   <data name="BreloadSoloSave.Text" xml:space="preserve">
     <value>Savefile erneut laden</value>
@@ -460,6 +433,9 @@
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Resourcen:</value>
   </data>
+  <data name="BsoloDisableHunger.Text" xml:space="preserve">
+    <value>Hunger und Durst deaktivieren</value>
+  </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
   </data>
@@ -490,14 +466,50 @@
   <data name="label19.Text" xml:space="preserve">
     <value>Erfahrung:</value>
   </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 81</value>
+  <data name="BsoloAddWP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 71</value>
   </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
+  <data name="BsoloAddWP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>(Teleportation)</value>
+  <data name="BsoloAddWP.Text" xml:space="preserve">
+    <value>neuer Wegpunkt ...</value>
+  </data>
+  <data name="BsoloTp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 71</value>
+  </data>
+  <data name="BsoloTp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 23</value>
+  </data>
+  <data name="BsoloTp.Text" xml:space="preserve">
+    <value>teleportieren</value>
+  </data>
+  <data name="CBsoloTpList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 21</value>
+  </data>
+  <data name="BserverAddWP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>623, 151</value>
+  </data>
+  <data name="BserverAddWP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
+  </data>
+  <data name="BserverAddWP.Text" xml:space="preserve">
+    <value>neuer Wegpkt</value>
+  </data>
+  <data name="BserverTp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>623, 122</value>
+  </data>
+  <data name="BserverTp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="BserverTp.Text" xml:space="preserve">
+    <value>teleportieren</value>
+  </data>
+  <data name="CBserverTpList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>623, 95</value>
+  </data>
+  <data name="CBserverTpList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 21</value>
   </data>
   <data name="CBpasteOnlyPos.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 17</value>
@@ -536,7 +548,16 @@
     <value>erneut laden</value>
   </data>
   <data name="DGVserverSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>617, 142</value>
+    <value>617, 177</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 44</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 51</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>* in Entwicklung *</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>

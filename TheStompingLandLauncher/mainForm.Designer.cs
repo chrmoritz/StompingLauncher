@@ -44,11 +44,11 @@
             this.TBjoinIP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.BnewSC = new System.Windows.Forms.Button();
             this.BsaveSC = new System.Windows.Forms.Button();
             this.BloadSC = new System.Windows.Forms.Button();
             this.CBserverConfig = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.CBautoJoin = new System.Windows.Forms.CheckBox();
             this.BhostServer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -92,6 +92,7 @@
             this.CBsoloItemSlot1 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.BsoloDisableHunger = new System.Windows.Forms.Button();
             this.TBsoloRope = new System.Windows.Forms.TextBox();
             this.TBsoloHerbs = new System.Windows.Forms.TextBox();
             this.TBsoloArrows = new System.Windows.Forms.TextBox();
@@ -105,6 +106,9 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BsoloAddWP = new System.Windows.Forms.Button();
+            this.BsoloTp = new System.Windows.Forms.Button();
+            this.CBsoloTpList = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.TBsoloRoll = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -119,7 +123,9 @@
             this.TBsoloY = new System.Windows.Forms.TextBox();
             this.TBsoloZ = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
+            this.BserverAddWP = new System.Windows.Forms.Button();
+            this.BserverTp = new System.Windows.Forms.Button();
+            this.CBserverTpList = new System.Windows.Forms.ComboBox();
             this.CBpasteOnlyPos = new System.Windows.Forms.CheckBox();
             this.BPasteSaveLine = new System.Windows.Forms.Button();
             this.BCopySaveLine = new System.Windows.Forms.Button();
@@ -127,6 +133,8 @@
             this.BwriteServerSave = new System.Windows.Forms.Button();
             this.BreloadServerSave = new System.Windows.Forms.Button();
             this.DGVserverSave = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TBpath = new System.Windows.Forms.TextBox();
             this.BselectPath = new System.Windows.Forms.Button();
@@ -134,6 +142,7 @@
             this.tabControll.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -142,6 +151,7 @@
             this.groupBox3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControll
@@ -151,6 +161,7 @@
             this.tabControll.Controls.Add(this.tabPage2);
             this.tabControll.Controls.Add(this.tabPage3);
             this.tabControll.Controls.Add(this.tabPage4);
+            this.tabControll.Controls.Add(this.tabPage5);
             this.tabControll.Name = "tabControll";
             this.tabControll.SelectedIndex = 0;
             this.tabControll.SelectedIndexChanged += new System.EventHandler(this.tabControll_SelectedIndexChanged);
@@ -249,11 +260,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.BnewSC);
-            this.tabPage2.Controls.Add(this.BsaveSC);
-            this.tabPage2.Controls.Add(this.BloadSC);
-            this.tabPage2.Controls.Add(this.CBserverConfig);
-            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.CBautoJoin);
             this.tabPage2.Controls.Add(this.BhostServer);
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -261,6 +268,16 @@
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.BnewSC);
+            this.groupBox6.Controls.Add(this.BsaveSC);
+            this.groupBox6.Controls.Add(this.BloadSC);
+            this.groupBox6.Controls.Add(this.CBserverConfig);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
             // 
             // BnewSC
             // 
@@ -289,11 +306,6 @@
             this.CBserverConfig.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBserverConfig.FormattingEnabled = true;
             this.CBserverConfig.Name = "CBserverConfig";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
             // 
             // CBautoJoin
             // 
@@ -651,6 +663,7 @@
             // groupBox4
             // 
             resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.BsoloDisableHunger);
             this.groupBox4.Controls.Add(this.TBsoloRope);
             this.groupBox4.Controls.Add(this.TBsoloHerbs);
             this.groupBox4.Controls.Add(this.TBsoloArrows);
@@ -665,6 +678,12 @@
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // BsoloDisableHunger
+            // 
+            resources.ApplyResources(this.BsoloDisableHunger, "BsoloDisableHunger");
+            this.BsoloDisableHunger.Name = "BsoloDisableHunger";
+            this.BsoloDisableHunger.UseVisualStyleBackColor = true;
             // 
             // TBsoloRope
             // 
@@ -734,6 +753,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BsoloAddWP);
+            this.groupBox3.Controls.Add(this.BsoloTp);
+            this.groupBox3.Controls.Add(this.CBsoloTpList);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.TBsoloRoll);
             this.groupBox3.Controls.Add(this.label17);
@@ -751,6 +773,25 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
+            // BsoloAddWP
+            // 
+            resources.ApplyResources(this.BsoloAddWP, "BsoloAddWP");
+            this.BsoloAddWP.Name = "BsoloAddWP";
+            this.BsoloAddWP.UseVisualStyleBackColor = true;
+            // 
+            // BsoloTp
+            // 
+            resources.ApplyResources(this.BsoloTp, "BsoloTp");
+            this.BsoloTp.Name = "BsoloTp";
+            this.BsoloTp.UseVisualStyleBackColor = true;
+            // 
+            // CBsoloTpList
+            // 
+            this.CBsoloTpList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.CBsoloTpList, "CBsoloTpList");
+            this.CBsoloTpList.FormattingEnabled = true;
+            this.CBsoloTpList.Name = "CBsoloTpList";
+            // 
             // label18
             // 
             resources.ApplyResources(this.label18, "label18");
@@ -760,7 +801,7 @@
             // 
             resources.ApplyResources(this.TBsoloRoll, "TBsoloRoll");
             this.TBsoloRoll.Name = "TBsoloRoll";
-            this.TBsoloRoll.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            this.TBsoloRoll.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNegNumberInput);
             // 
             // label17
             // 
@@ -776,13 +817,13 @@
             // 
             resources.ApplyResources(this.TBsoloYaw, "TBsoloYaw");
             this.TBsoloYaw.Name = "TBsoloYaw";
-            this.TBsoloYaw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            this.TBsoloYaw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNegNumberInput);
             // 
             // TBsoloPitch
             // 
             resources.ApplyResources(this.TBsoloPitch, "TBsoloPitch");
             this.TBsoloPitch.Name = "TBsoloPitch";
-            this.TBsoloPitch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            this.TBsoloPitch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNegNumberInput);
             // 
             // label15
             // 
@@ -824,7 +865,9 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.BserverAddWP);
+            this.tabPage4.Controls.Add(this.BserverTp);
+            this.tabPage4.Controls.Add(this.CBserverTpList);
             this.tabPage4.Controls.Add(this.CBpasteOnlyPos);
             this.tabPage4.Controls.Add(this.BPasteSaveLine);
             this.tabPage4.Controls.Add(this.BCopySaveLine);
@@ -836,10 +879,24 @@
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // BserverAddWP
             // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
+            resources.ApplyResources(this.BserverAddWP, "BserverAddWP");
+            this.BserverAddWP.Name = "BserverAddWP";
+            this.BserverAddWP.UseVisualStyleBackColor = true;
+            // 
+            // BserverTp
+            // 
+            resources.ApplyResources(this.BserverTp, "BserverTp");
+            this.BserverTp.Name = "BserverTp";
+            this.BserverTp.UseVisualStyleBackColor = true;
+            // 
+            // CBserverTpList
+            // 
+            resources.ApplyResources(this.CBserverTpList, "CBserverTpList");
+            this.CBserverTpList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBserverTpList.FormattingEnabled = true;
+            this.CBserverTpList.Name = "CBserverTpList";
             // 
             // CBpasteOnlyPos
             // 
@@ -895,6 +952,18 @@
             this.DGVserverSave.MultiSelect = false;
             this.DGVserverSave.Name = "DGVserverSave";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.label9);
+            resources.ApplyResources(this.tabPage5, "tabPage5");
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -930,6 +999,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -945,6 +1015,8 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVserverSave)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -987,11 +1059,6 @@
         private System.Windows.Forms.Button BconnectSL;
         private System.Windows.Forms.Button BdownSL;
         private System.Windows.Forms.Button BupSL;
-        private System.Windows.Forms.Button BnewSC;
-        private System.Windows.Forms.Button BsaveSC;
-        private System.Windows.Forms.Button BloadSC;
-        private System.Windows.Forms.ComboBox CBserverConfig;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BwriteServerSave;
@@ -999,7 +1066,6 @@
         private System.Windows.Forms.DataGridView DGVserverSave;
         private System.Windows.Forms.Button BPasteSaveLine;
         private System.Windows.Forms.Button BCopySaveLine;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox CBpasteOnlyPos;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TBslots;
@@ -1054,6 +1120,20 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckBox CBsoloAutoStart;
         private System.Windows.Forms.Button BeditSL;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button BnewSC;
+        private System.Windows.Forms.Button BsaveSC;
+        private System.Windows.Forms.Button BloadSC;
+        private System.Windows.Forms.ComboBox CBserverConfig;
+        private System.Windows.Forms.Button BsoloAddWP;
+        private System.Windows.Forms.Button BsoloTp;
+        private System.Windows.Forms.ComboBox CBsoloTpList;
+        private System.Windows.Forms.ComboBox CBserverTpList;
+        private System.Windows.Forms.Button BserverAddWP;
+        private System.Windows.Forms.Button BserverTp;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button BsoloDisableHunger;
     }
 }
 

@@ -721,6 +721,14 @@ namespace TheStompingLandLauncher
                 e.Handled = true;
             }
         }
+
+        private void validateNegNumberInput(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
+            {
+                e.Handled = true;
+            }
+        }
     }
 
     class PlayerSave

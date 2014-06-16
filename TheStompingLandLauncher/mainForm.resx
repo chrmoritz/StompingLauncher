@@ -121,6 +121,9 @@
   <data name="tabControll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="BeditSL.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BeditSL.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -477,17 +480,20 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="groupBox6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="BnewSC.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="BnewSC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>597, 139</value>
+    <value>578, 19</value>
   </data>
   <data name="BnewSC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 23</value>
+    <value>120, 23</value>
   </data>
   <data name="BnewSC.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="BnewSC.Text" xml:space="preserve">
     <value>New configuration ...</value>
@@ -499,7 +505,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BnewSC.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;BnewSC.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -508,16 +514,16 @@
     <value>Top, Right</value>
   </data>
   <data name="BsaveSC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 139</value>
+    <value>432, 19</value>
   </data>
   <data name="BsaveSC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 23</value>
+    <value>140, 23</value>
   </data>
   <data name="BsaveSC.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="BsaveSC.Text" xml:space="preserve">
-    <value>Save configuration</value>
+    <value>Save server configuration</value>
   </data>
   <data name="&gt;&gt;BsaveSC.Name" xml:space="preserve">
     <value>BsaveSC</value>
@@ -526,7 +532,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BsaveSC.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;BsaveSC.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -535,16 +541,16 @@
     <value>Top, Right</value>
   </data>
   <data name="BloadSC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 139</value>
+    <value>286, 19</value>
   </data>
   <data name="BloadSC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 23</value>
+    <value>140, 23</value>
   </data>
   <data name="BloadSC.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="BloadSC.Text" xml:space="preserve">
-    <value>Load configuration</value>
+    <value>Load server configuration</value>
   </data>
   <data name="&gt;&gt;BloadSC.Name" xml:space="preserve">
     <value>BloadSC</value>
@@ -553,7 +559,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BloadSC.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;BloadSC.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -562,13 +568,13 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="CBserverConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 139</value>
+    <value>6, 21</value>
   </data>
   <data name="CBserverConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 21</value>
+    <value>274, 21</value>
   </data>
   <data name="CBserverConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;CBserverConfig.Name" xml:space="preserve">
     <value>CBserverConfig</value>
@@ -577,40 +583,37 @@
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBserverConfig.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;CBserverConfig.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="groupBox6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 151</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 142</value>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>704, 52</value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 13</value>
+  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Server configuration manager:</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Configuration manager:</value>
+  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
+    <value>groupBox6</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
+  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="CBautoJoin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -622,7 +625,7 @@
     <value>115, 17</value>
   </data>
   <data name="CBautoJoin.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="CBautoJoin.Text" xml:space="preserve">
     <value>Autojoin this server</value>
@@ -637,7 +640,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;CBautoJoin.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="BhostServer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -649,10 +652,10 @@
     <value>584, 23</value>
   </data>
   <data name="BhostServer.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="BhostServer.Text" xml:space="preserve">
-    <value>Host server ...</value>
+    <value>Start/host server ...</value>
   </data>
   <data name="&gt;&gt;BhostServer.Name" xml:space="preserve">
     <value>BhostServer</value>
@@ -664,7 +667,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;BhostServer.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -712,7 +715,7 @@
     <value>27, 20</value>
   </data>
   <data name="TBslots.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="TBslots.Text" xml:space="preserve">
     <value>32</value>
@@ -742,7 +745,7 @@
     <value>110, 17</value>
   </data>
   <data name="CBconfigDir.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="CBconfigDir.Text" xml:space="preserve">
     <value>Custom config dir:</value>
@@ -826,7 +829,7 @@
     <value>205, 20</value>
   </data>
   <data name="TBconfigDir.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="TBconfigDir.Text" xml:space="preserve">
     <value>serverconfig</value>
@@ -850,7 +853,7 @@
     <value>37, 20</value>
   </data>
   <data name="TBqueryPort.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="TBqueryPort.Text" xml:space="preserve">
     <value>27015</value>
@@ -874,7 +877,7 @@
     <value>37, 20</value>
   </data>
   <data name="TBport.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="TBport.Text" xml:space="preserve">
     <value>7777</value>
@@ -994,7 +997,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="CBremoveDinos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1057,13 +1060,13 @@
     <value>6, 19</value>
   </data>
   <data name="CBfriendlyFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+    <value>117, 17</value>
   </data>
   <data name="CBfriendlyFire.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="CBfriendlyFire.Text" xml:space="preserve">
-    <value>friendly fire</value>
+    <value>friendly fire enabled</value>
   </data>
   <data name="&gt;&gt;CBfriendlyFire.Name" xml:space="preserve">
     <value>CBfriendlyFire</value>
@@ -1099,7 +1102,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1138,16 +1141,16 @@
     <value>True</value>
   </data>
   <data name="CBsoloAutoStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>594, 154</value>
+    <value>338, 187</value>
   </data>
   <data name="CBsoloAutoStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
+    <value>168, 17</value>
   </data>
   <data name="CBsoloAutoStart.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="CBsoloAutoStart.Text" xml:space="preserve">
-    <value>autostart solo game</value>
+    <value>autostart solo game after save</value>
   </data>
   <data name="&gt;&gt;CBsoloAutoStart.Name" xml:space="preserve">
     <value>CBsoloAutoStart</value>
@@ -1165,10 +1168,10 @@
     <value>Top, Right</value>
   </data>
   <data name="BwriteSoloSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 129</value>
+    <value>512, 183</value>
   </data>
   <data name="BwriteSoloSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
+    <value>200, 23</value>
   </data>
   <data name="BwriteSoloSave.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1194,20 +1197,23 @@
   <data name="label34.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label34.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
   <data name="label34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 134</value>
+    <value>26, 167</value>
   </data>
   <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 13</value>
+    <value>674, 13</value>
   </data>
   <data name="label34.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="label34.Text" xml:space="preserve">
-    <value>Make sure to shutdown your game before saving or your changes will be overwritten.</value>
+    <value>Warning: Make sure to shutdown your game before saving or your changes will be overwritten when exiting the game.</value>
   </data>
   <data name="&gt;&gt;label34.Name" xml:space="preserve">
     <value>label34</value>
@@ -1222,10 +1228,10 @@
     <value>2</value>
   </data>
   <data name="BreloadSoloSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 129</value>
+    <value>3, 183</value>
   </data>
   <data name="BreloadSoloSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
+    <value>200, 23</value>
   </data>
   <data name="BreloadSoloSave.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1816,7 +1822,7 @@
     <value>17</value>
   </data>
   <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 77</value>
+    <value>3, 109</value>
   </data>
   <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>709, 46</value>
@@ -1842,6 +1848,39 @@
   <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="BsoloDisableHunger.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="BsoloDisableHunger.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BsoloDisableHunger.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BsoloDisableHunger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 71</value>
+  </data>
+  <data name="BsoloDisableHunger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 23</value>
+  </data>
+  <data name="BsoloDisableHunger.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="BsoloDisableHunger.Text" xml:space="preserve">
+    <value>disable hunger and thirst</value>
+  </data>
+  <data name="&gt;&gt;BsoloDisableHunger.Name" xml:space="preserve">
+    <value>BsoloDisableHunger</value>
+  </data>
+  <data name="&gt;&gt;BsoloDisableHunger.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BsoloDisableHunger.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;BsoloDisableHunger.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="TBsoloRope.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -1864,7 +1903,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloRope.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="TBsoloHerbs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1888,7 +1927,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloHerbs.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="TBsoloArrows.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1912,7 +1951,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloArrows.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label24.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1942,7 +1981,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label23.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1972,7 +2011,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label22.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1999,7 +2038,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="TBsoloThirst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2023,7 +2062,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloThirst.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="TBsoloHunger.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2047,7 +2086,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloHunger.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="TBsoloExpertise.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2071,7 +2110,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;TBsoloExpertise.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="label21.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2101,7 +2140,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label20.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2131,7 +2170,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2158,13 +2197,13 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>343, 3</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 73</value>
+    <value>369, 100</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2183,6 +2222,84 @@
   </data>
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="BsoloAddWP.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BsoloAddWP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 71</value>
+  </data>
+  <data name="BsoloAddWP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 23</value>
+  </data>
+  <data name="BsoloAddWP.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="BsoloAddWP.Text" xml:space="preserve">
+    <value>add new waypoint ...</value>
+  </data>
+  <data name="&gt;&gt;BsoloAddWP.Name" xml:space="preserve">
+    <value>BsoloAddWP</value>
+  </data>
+  <data name="&gt;&gt;BsoloAddWP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BsoloAddWP.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;BsoloAddWP.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BsoloTp.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BsoloTp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 71</value>
+  </data>
+  <data name="BsoloTp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 23</value>
+  </data>
+  <data name="BsoloTp.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="BsoloTp.Text" xml:space="preserve">
+    <value>teleport</value>
+  </data>
+  <data name="&gt;&gt;BsoloTp.Name" xml:space="preserve">
+    <value>BsoloTp</value>
+  </data>
+  <data name="&gt;&gt;BsoloTp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BsoloTp.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;BsoloTp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CBsoloTpList.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CBsoloTpList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 71</value>
+  </data>
+  <data name="CBsoloTpList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 21</value>
+  </data>
+  <data name="CBsoloTpList.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;CBsoloTpList.Name" xml:space="preserve">
+    <value>CBsoloTpList</value>
+  </data>
+  <data name="&gt;&gt;CBsoloTpList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CBsoloTpList.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;CBsoloTpList.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2209,7 +2326,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="TBsoloRoll.Location" type="System.Drawing.Point, System.Drawing">
     <value>282, 45</value>
@@ -2230,7 +2347,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;TBsoloRoll.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2257,7 +2374,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2284,7 +2401,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="TBsoloYaw.Location" type="System.Drawing.Point, System.Drawing">
     <value>190, 45</value>
@@ -2305,7 +2422,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;TBsoloYaw.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="TBsoloPitch.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 45</value>
@@ -2326,7 +2443,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;TBsoloPitch.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2356,7 +2473,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2383,7 +2500,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2410,7 +2527,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2437,7 +2554,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="TBsoloX.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 19</value>
@@ -2458,7 +2575,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;TBsoloX.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="TBsoloY.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 19</value>
@@ -2479,7 +2596,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;TBsoloY.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="TBsoloZ.Location" type="System.Drawing.Point, System.Drawing">
     <value>247, 19</value>
@@ -2500,13 +2617,13 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;TBsoloZ.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 73</value>
+    <value>334, 100</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2550,32 +2667,95 @@
   <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="BserverAddWP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>642, 81</value>
+  <data name="BserverAddWP.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
+  <data name="BserverAddWP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="BserverAddWP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>636, 151</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>(teleportation)</value>
+  <data name="BserverAddWP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
+  <data name="BserverAddWP.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="BserverAddWP.Text" xml:space="preserve">
+    <value>add waypnt</value>
   </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BserverAddWP.Name" xml:space="preserve">
+    <value>BserverAddWP</value>
+  </data>
+  <data name="&gt;&gt;BserverAddWP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BserverAddWP.Parent" xml:space="preserve">
     <value>tabPage4</value>
   </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BserverAddWP.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="BserverTp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="BserverTp.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BserverTp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 122</value>
+  </data>
+  <data name="BserverTp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 23</value>
+  </data>
+  <data name="BserverTp.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="BserverTp.Text" xml:space="preserve">
+    <value>teleport</value>
+  </data>
+  <data name="&gt;&gt;BserverTp.Name" xml:space="preserve">
+    <value>BserverTp</value>
+  </data>
+  <data name="&gt;&gt;BserverTp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BserverTp.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;BserverTp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CBserverTpList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="CBserverTpList.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CBserverTpList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 95</value>
+  </data>
+  <data name="CBserverTpList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="CBserverTpList.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;CBserverTpList.Name" xml:space="preserve">
+    <value>CBserverTpList</value>
+  </data>
+  <data name="&gt;&gt;CBserverTpList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CBserverTpList.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;CBserverTpList.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="CBpasteOnlyPos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2602,7 +2782,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;CBpasteOnlyPos.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="BPasteSaveLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2632,7 +2812,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BPasteSaveLine.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="BCopySaveLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2659,7 +2839,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BCopySaveLine.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -2668,7 +2848,7 @@
     <value>True</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 153</value>
+    <value>108, 188</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>502, 13</value>
@@ -2689,13 +2869,13 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="BwriteServerSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="BwriteServerSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 148</value>
+    <value>616, 183</value>
   </data>
   <data name="BwriteServerSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -2716,13 +2896,13 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BwriteServerSave.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="BreloadServerSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="BreloadServerSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 148</value>
+    <value>2, 183</value>
   </data>
   <data name="BreloadServerSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
@@ -2743,7 +2923,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BreloadServerSave.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="DGVserverSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -2752,7 +2932,7 @@
     <value>0, 0</value>
   </data>
   <data name="DGVserverSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>631, 142</value>
+    <value>631, 177</value>
   </data>
   <data name="DGVserverSave.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2767,7 +2947,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;DGVserverSave.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2792,6 +2972,60 @@
   </data>
   <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 32.25pt, style=Bold</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 45</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 51</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>* under construction *</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>716, 209</value>
+  </data>
+  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Graphics/Controls tweaks</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
+    <value>tabControll</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tabControll.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 32</value>
