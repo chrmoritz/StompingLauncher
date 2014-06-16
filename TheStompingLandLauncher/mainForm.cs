@@ -50,7 +50,10 @@ namespace TheStompingLandLauncher
             {
                 CBserverConfig.Items.Add(config);
             }
-            CBserverConfig.SelectedIndex = 0;
+            if (CBserverConfig.Items.Count > 0)
+            {
+                CBserverConfig.SelectedIndex = 0;
+            }
 
             CBsoloTpList.SelectedIndex = 0;
             CBserverTpList.SelectedIndex = 0;
