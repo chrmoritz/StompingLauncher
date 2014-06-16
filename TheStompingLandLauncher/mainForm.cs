@@ -124,7 +124,7 @@ namespace TheStompingLandLauncher
             string cmd = "Server Capa_Island";
             if (CBsteamQuery.Checked)
             {
-                cmd += "?steamsockets?ServerName=\"" + TBhostname.Text + "\"";
+                cmd += "?steamsockets?ServerName=\"" + TBhostname.Text + "\"?Maxplayers=" + TBslots.Text;
             }
             cmd += (CBfriendlyFire.Checked ? "" : "?NoFriendlyFire=True") + ( CBplayerNames.Checked ? "?ShowAllPlayerNames=True" : "");
             cmd += (CBremoveDinos.Checked ? "?NoDinosaurs=True" : "") + " -Port=" + TBport.Text;
@@ -134,20 +134,6 @@ namespace TheStompingLandLauncher
             if (CBconfigDir.Checked)
             {
                 cmd += " --configsubdir=" + TBconfigDir.Text;
-            }
-            if (File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini"))
-            {
-                string[] serverConfigLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini");
-                Regex rgx = new Regex(@"^MaxPlayers=(\d*)$");
-                for (int i = 0; i < serverConfigLines.Length; i++)
-                {
-                    if (rgx.IsMatch(serverConfigLines[i]))
-                    {
-                        serverConfigLines[i] = "MaxPlayers=" + TBslots.Text;
-                        break;
-                    }
-                }
-                System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini", serverConfigLines);
             }
             Process[] pname = Process.GetProcessesByName("udk");
             if (pname.Length > 0)
@@ -224,8 +210,7 @@ namespace TheStompingLandLauncher
             //{
                 Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
                 Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
-                LBserverHistory.Items.Insert(0, server);
-                LBserverHistory.SelectedIndex = 0;
+                addToServerList(server);
                 Properties.Settings.Default.Save();
             //}
             //else
@@ -307,14 +292,13 @@ namespace TheStompingLandLauncher
         {
             if (LBserverHistory.Items.Contains(ip))
             {
-                int i = LBserverHistory.Items.IndexOf(ip);
-                LBserverHistory.Items[i] = LBserverHistory.Items[0].ToString();
-                LBserverHistory.Items[0] = ip;
+                LBserverHistory.Items.Remove(ip);
             }
             else
             {
                 LBserverHistory.Items.Insert(0, ip);
             }
+            LBserverHistory.Items.Insert(0, ip);
             saveServerHistory();
             LBserverHistory.SelectedIndex = 0;
         }
@@ -331,6 +315,7 @@ namespace TheStompingLandLauncher
             CBremoveDinos.Checked = ss.removeDinos;
             CBsteamQuery.Checked = ss.steamQuery;
             TBhostname.Text = ss.hostName;
+            TBslots.Text = ss.slots;
             TBport.Text = ss.port;
             TBqueryPort.Text = ss.QueryPort;
             CBconfigDir.Checked = ss.customConfig;
@@ -370,6 +355,7 @@ namespace TheStompingLandLauncher
             this.serverSettings[config].removeDinos = CBremoveDinos.Checked;
             this.serverSettings[config].steamQuery = CBsteamQuery.Checked;
             this.serverSettings[config].hostName = TBhostname.Text;
+            this.serverSettings[config].slots = TBslots.Text;
             this.serverSettings[config].port = TBport.Text;
             this.serverSettings[config].QueryPort = TBqueryPort.Text;
             this.serverSettings[config].customConfig = CBconfigDir.Checked;
@@ -389,7 +375,7 @@ namespace TheStompingLandLauncher
                     CBserverConfig.Items.Insert(0, configName);
                     CBserverConfig.SelectedIndex = 0;
                     this.serverSettings.Add(configName, new serverSetting(CBfriendlyFire.Checked, CBplayerNames.Checked, CBremoveDinos.Checked,
-                        CBsteamQuery.Checked, TBhostname.Text, TBport.Text, TBqueryPort.Text, CBconfigDir.Checked, TBconfigDir.Text, CBautoJoin.Checked));
+                        CBsteamQuery.Checked, TBhostname.Text, TBslots.Text, TBport.Text, TBqueryPort.Text, CBconfigDir.Checked, TBconfigDir.Text, CBautoJoin.Checked));
                     saveServerConfigToSettings();
                 }
                 else
@@ -494,33 +480,12 @@ namespace TheStompingLandLauncher
             int selectedTab = tabControll.SelectedIndex;
             switch (selectedTab)
             {
-                case 1:
-                    this.readServerSlotsCount();
-                    break;
                 case 2:
                     this.BreloadSoloSave_Click(null, null);
                     break;
                 case 3:
                     this.BreloadServerSave_Click(null, null);
                     break;
-            }
-        }
-
-        private void readServerSlotsCount()
-        {
-            if (File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini"))
-            {
-                string[] serverConfigLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDKGame.ini");
-                Regex rgx = new Regex(@"^MaxPlayers=(\d*)$");
-                for (int i = 0; i < serverConfigLines.Length; i++)
-                {
-                    Match match = rgx.Match(serverConfigLines[i]);
-                    if (match.Success)
-                    {
-                        TBslots.Text = match.Groups[1].Value;
-                        return;
-                    }
-                }
             }
         }
 
@@ -989,14 +954,15 @@ namespace TheStompingLandLauncher
     public class serverSetting
     {
         public bool friendlyFire, playerNames, removeDinos, steamQuery, customConfig, autoJoin;
-        public string hostName, port, QueryPort, configDir;
-        public serverSetting(bool ff, bool pn, bool rd, bool sq, string hn, string p, string qp, bool cc, string cd, bool aj)
+        public string hostName, slots, port, QueryPort, configDir;
+        public serverSetting(bool ff, bool pn, bool rd, bool sq, string hn, string sl, string p, string qp, bool cc, string cd, bool aj)
         {
             this.friendlyFire = ff;
             this.playerNames = pn;
             this.removeDinos = rd;
             this.steamQuery = sq;
             this.hostName = hn;
+            this.slots = sl;
             this.port = p;
             this.QueryPort = qp;
             this.customConfig = cc;
