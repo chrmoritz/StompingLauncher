@@ -945,11 +945,29 @@ namespace TheStompingLandLauncher
     class PlayerSave
     {
         public int index;
-        public string id;
-        public int expertise, hunger, thirst, herbs, arrows, ropes;
-        public string itemSlot1, itemSlot2, itemSlot3, itemSlot4, itemSlot5, itemSlot6, itemSlot7, itemSlot8, itemSlot9;
-        public double x, y, z;
-        public int pitch, yaw, roll;
+        public string id { get; set; }
+        public double x { get; set; }
+        public double y { get; set; }
+        public double z { get; set; }
+        public int pitch { get; set; }
+        public int yaw { get; set; }
+        public int roll { get; set; }
+        public int expertise { get; set; }
+        public int hunger { get; set; }
+        public int thirst { get; set; }
+        public int herbs { get; set; }
+        public int arrows { get; set; }
+        public int ropes { get; set; }
+        public string itemSlot1 { get; set; }
+        public string itemSlot2 { get; set; }
+        public string itemSlot3 { get; set; }
+        public string itemSlot4 { get; set; }
+        public string itemSlot5 { get; set; }
+        public string itemSlot6 { get; set; }
+        public string itemSlot7 { get; set; }
+        public string itemSlot8 { get; set; }
+        public string itemSlot9 { get; set; }
+        
         public PlayerSave(int index, string id, double x, double y, double z, int pitch, int yaw, int roll, int expertise, int hunger, int thirst, int arrows, int ropes, int herbs,
             string itemSlot1, string itemSlot2, string itemSlot3, string itemSlot4, string itemSlot5, string itemSlot6, string itemSlot7, string itemSlot8, string itemSlot9)
         {
@@ -977,27 +995,5 @@ namespace TheStompingLandLauncher
             this.itemSlot8 = itemSlot8;
             this.itemSlot9 = itemSlot9;
         }
-        public string ID { get { return id; } set { id = value; } }
-        public double X { get { return x; } set { x = value; } }
-        public double Y { get { return y; } set { y = value; } }
-        public double Z { get { return z; } set { z = value; } }
-        public int Pitch { get { return pitch; } set { pitch = value; } }
-        public int Yaw { get { return yaw; } set { yaw = value; } }
-        public int Roll { get { return roll; } set { roll = value; } }
-        public int Expertise { get { return expertise; } set { expertise = value; } }
-        public int Hunger { get { return hunger; } set { hunger = value; } }
-        public int Thirst { get { return thirst; } set { thirst = value; } }
-        public int Arrows { get { return arrows; } set { arrows = value; } }
-        public int Ropes { get { return ropes; } set { ropes = value; } }
-        public int Herbs { get { return herbs; } set { herbs = value; } }
-        public string ItemSlot1 { get { return itemSlot1; } set { itemSlot1 = value; } }
-        public string ItemSlot2 { get { return itemSlot2; } set { itemSlot2 = value; } }
-        public string ItemSlot3 { get { return itemSlot3; } set { itemSlot3 = value; } }
-        public string ItemSlot4 { get { return itemSlot4; } set { itemSlot4 = value; } }
-        public string ItemSlot5 { get { return itemSlot5; } set { itemSlot5 = value; } }
-        public string ItemSlot6 { get { return itemSlot6; } set { itemSlot6 = value; } }
-        public string ItemSlot7 { get { return itemSlot7; } set { itemSlot7 = value; } }
-        public string ItemSlot8 { get { return itemSlot8; } set { itemSlot8 = value; } }
-        public string ItemSlot9 { get { return itemSlot9; } set { itemSlot9 = value; } }
     }
 }

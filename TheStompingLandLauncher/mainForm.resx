@@ -2811,6 +2811,9 @@
   <data name="&gt;&gt;CBserverTpList.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="CBpasteOnlyPos.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="CBpasteOnlyPos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
