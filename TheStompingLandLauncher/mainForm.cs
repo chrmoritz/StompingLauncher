@@ -85,6 +85,35 @@ namespace TheStompingLandLauncher
             }
         }
 
+        private void BselectPath_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = TBpath.Text;
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                TBpath.Text = folderBrowserDialog1.SelectedPath;
+                Properties.Settings.Default["TSLpath"] = TBpath.Text;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e) { }
+
+        private void tabControll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedTab = tabControll.SelectedIndex;
+            switch (selectedTab)
+            {
+                case 2:
+                    this.BreloadSoloSave_Click(null, null);
+                    break;
+                case 3:
+                    this.BreloadServerSave_Click(null, null);
+                    break;
+            }
+        }
+
+        // ############################################### JOIN SERVER TAB ###############################################
+
         private void BjoinServer_Click(object sender, EventArgs e)
         {
             string server = TBjoinIP.Text;
@@ -101,6 +130,116 @@ namespace TheStompingLandLauncher
             //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
         }
+
+        private void BconnectSL_Click(object sender, EventArgs e)
+        {
+            if (LBserverHistory.SelectedIndex == -1)
+            {
+                return;
+            }
+            string server = (string)LBserverHistory.SelectedItem;
+            //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
+            //Match match = rgx.Match(server);
+            //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
+            //{
+            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
+            Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
+            addToServerList(server);
+            Properties.Settings.Default.Save();
+            //}
+            //else
+            //{
+            //    LBserverHistory.Items.RemoveAt(LBserverHistory.SelectedIndex);
+            //}
+        }
+
+        private void BaddSL_Click(object sender, EventArgs e)
+        {
+            addHistoryServerForm addForm = new addHistoryServerForm();
+            if (addForm.ShowDialog(this) == DialogResult.OK)
+            {
+                string addIP = addForm.TBaddServerIP.Text;
+                //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
+                //Match match = rgx.Match(addIP);
+                //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
+                //{
+                addToServerList(addIP);
+                //}
+                //else
+                //{
+                //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+                addForm.Dispose();
+            }
+        }
+
+        private void BeditSL_Click(object sender, EventArgs e)
+        {
+            // ToDo
+            return;
+        }
+
+        private void BremoveSL_Click(object sender, EventArgs e)
+        {
+            if (LBserverHistory.SelectedIndex == -1)
+            {
+                return;
+            }
+            LBserverHistory.Items.RemoveAt(LBserverHistory.SelectedIndex);
+            saveServerHistory();
+        }
+
+        private void BupSL_Click(object sender, EventArgs e)
+        {
+            int i = LBserverHistory.SelectedIndex;
+            if (i < 1)
+            {
+                return;
+            }
+            string tmp = LBserverHistory.Items[i].ToString();
+            LBserverHistory.Items[i] = LBserverHistory.Items[i - 1].ToString();
+            LBserverHistory.Items[i - 1] = tmp;
+            saveServerHistory();
+            LBserverHistory.SelectedIndex = i - 1;
+        }
+
+        private void BdownSL_Click(object sender, EventArgs e)
+        {
+            int i = LBserverHistory.SelectedIndex;
+            if (i == LBserverHistory.Items.Count - 1 || i == -1)
+            {
+                return;
+            }
+            string tmp = LBserverHistory.Items[i].ToString();
+            LBserverHistory.Items[i] = LBserverHistory.Items[i + 1].ToString();
+            LBserverHistory.Items[i + 1] = tmp;
+            saveServerHistory();
+            LBserverHistory.SelectedIndex = i + 1;
+        }
+
+        private void saveServerHistory()
+        {
+            string serverHistory = "";
+            for (int i = 0; i < LBserverHistory.Items.Count; i++)
+            {
+                serverHistory += LBserverHistory.Items[i].ToString() + (i == LBserverHistory.Items.Count - 1 ? "" : "|");
+            }
+            Properties.Settings.Default["ServerHistory"] = serverHistory;
+            Properties.Settings.Default.Save();
+        }
+
+        private void addToServerList(string ip)
+        {
+            if (LBserverHistory.Items.Contains(ip))
+            {
+                LBserverHistory.Items.Remove(ip);
+            }
+            LBserverHistory.Items.Insert(0, ip);
+            saveServerHistory();
+            LBserverHistory.SelectedIndex = 0;
+        }
+
+        // ############################################### HOST SERVER TAB ###############################################
 
         private void BhostServer_Click(object sender, EventArgs e)
         {
@@ -161,158 +300,13 @@ namespace TheStompingLandLauncher
             }
         }
 
-        private void CBsteamQuery_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CBsteamQuery.Checked)
-            {
-                TBhostname.Enabled = true;
-                TBqueryPort.Enabled = true;
-            }
-            else
-            {
-                TBhostname.Enabled = false;
-                TBqueryPort.Enabled = false;
-            }
-        }
-
-        private void CBconfigDir_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CBconfigDir.Checked)
-            {
-                TBconfigDir.Enabled = true;
-            }
-            else
-            {
-                TBconfigDir.Enabled = false;
-            }
-        }
-
-        private void BselectPath_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog1.SelectedPath = TBpath.Text;
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                TBpath.Text = folderBrowserDialog1.SelectedPath;
-                Properties.Settings.Default["TSLpath"] = TBpath.Text;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e) { }
-
-        private void BconnectSL_Click(object sender, EventArgs e)
-        {
-            if (LBserverHistory.SelectedIndex == -1)
-            {
-                return;
-            }
-            string server = (string) LBserverHistory.SelectedItem;
-            //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-            //Match match = rgx.Match(server);
-            //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-            //{
-                Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
-                Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
-                addToServerList(server);
-                Properties.Settings.Default.Save();
-            //}
-            //else
-            //{
-            //    LBserverHistory.Items.RemoveAt(LBserverHistory.SelectedIndex);
-            //}
-        }
-
-        private void BaddSL_Click(object sender, EventArgs e)
-        {
-            addHistoryServerForm addForm = new addHistoryServerForm();
-            if (addForm.ShowDialog(this) == DialogResult.OK)
-            {
-                string addIP = addForm.TBaddServerIP.Text;
-                //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-                //Match match = rgx.Match(addIP);
-                //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-                //{
-                    addToServerList(addIP);
-                //}
-                //else
-                //{
-                //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
-                addForm.Dispose();
-            }
-        }
-
-        private void BremoveSL_Click(object sender, EventArgs e)
-        {
-            if (LBserverHistory.SelectedIndex == -1)
-            {
-                return;
-            }
-            LBserverHistory.Items.RemoveAt(LBserverHistory.SelectedIndex);
-            saveServerHistory();
-        }
-
-        private void saveServerHistory()
-        {
-            string serverHistory = "";
-            for (int i = 0; i < LBserverHistory.Items.Count; i++)
-            {
-                serverHistory += LBserverHistory.Items[i].ToString() + (i==LBserverHistory.Items.Count-1 ? "" : "|");
-            }
-            Properties.Settings.Default["ServerHistory"] = serverHistory;
-            Properties.Settings.Default.Save();
-        }
-
-        private void BupSL_Click(object sender, EventArgs e)
-        {
-            int i = LBserverHistory.SelectedIndex;
-            if (i < 1)
-            {
-                return;
-            }
-            string tmp = LBserverHistory.Items[i].ToString();
-            LBserverHistory.Items[i] = LBserverHistory.Items[i - 1].ToString();
-            LBserverHistory.Items[i - 1] = tmp;
-            saveServerHistory();
-            LBserverHistory.SelectedIndex = i - 1;
-        }
-
-        private void BdownSL_Click(object sender, EventArgs e)
-        {
-            int i = LBserverHistory.SelectedIndex;
-            if (i == LBserverHistory.Items.Count - 1 || i == -1)
-            {
-                return;
-            }
-            string tmp = LBserverHistory.Items[i].ToString();
-            LBserverHistory.Items[i] = LBserverHistory.Items[i + 1].ToString();
-            LBserverHistory.Items[i + 1] = tmp;
-            saveServerHistory();
-            LBserverHistory.SelectedIndex = i + 1;
-        }
-
-        private void addToServerList(string ip)
-        {
-            if (LBserverHistory.Items.Contains(ip))
-            {
-                LBserverHistory.Items.Remove(ip);
-            }
-            else
-            {
-                LBserverHistory.Items.Insert(0, ip);
-            }
-            LBserverHistory.Items.Insert(0, ip);
-            saveServerHistory();
-            LBserverHistory.SelectedIndex = 0;
-        }
-
         private void BloadSC_Click(object sender, EventArgs e)
         {
             if (CBserverConfig.SelectedIndex == -1)
             {
                 return;
             }
-            serverSetting ss = this.serverSettings[(string) CBserverConfig.SelectedItem];
+            serverSetting ss = this.serverSettings[(string)CBserverConfig.SelectedItem];
             CBfriendlyFire.Checked = ss.friendlyFire;
             CBplayerNames.Checked = ss.playerNames;
             CBremoveDinos.Checked = ss.removeDinos;
@@ -389,6 +383,45 @@ namespace TheStompingLandLauncher
             }
         }
 
+        private void CBsteamQuery_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBsteamQuery.Checked)
+            {
+                TBhostname.Enabled = true;
+                TBqueryPort.Enabled = true;
+            }
+            else
+            {
+                TBhostname.Enabled = false;
+                TBqueryPort.Enabled = false;
+            }
+        }
+
+        private void CBconfigDir_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBconfigDir.Checked)
+            {
+                TBconfigDir.Enabled = true;
+            }
+            else
+            {
+                TBconfigDir.Enabled = false;
+            }
+        }
+
+        private void TBsoloHunger_TextChanged(object sender, EventArgs e)
+        {
+            int i;
+            if (int.TryParse(TBsoloHunger.Text, out i) && i >= 3000)
+            {
+                TBsoloHunger.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                TBsoloHunger.BackColor = Color.White;
+            }
+        }
+
         private void saveServerConfigToSettings()
         {
             MemoryStream ms = new MemoryStream();
@@ -402,120 +435,7 @@ namespace TheStompingLandLauncher
             Properties.Settings.Default.Save();
         }
 
-        enum weapons {Bow, Spear, Shield, Bola};
-
-        private void BreloadServerSave_Click(object sender, EventArgs e)
-        {
-            Process[] pname = Process.GetProcessesByName("udk");
-            if (pname.Length > 0)
-            {
-                DialogResult result = DialogResult.Retry;
-                while (result == DialogResult.Retry && pname.Length > 0)
-                {
-                    result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
-                    if (result == DialogResult.Abort)
-                    {
-                        return;
-                    }
-                    pname = Process.GetProcessesByName("udk");
-                }
-            }
-            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini")){
-                MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            List<PlayerSave> serverSave = new List<PlayerSave>();
-            this.serverSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
-            Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
-            for (int i = 0; i < this.serverSaveLines.Length; i++)
-            {
-                Match match = rgx.Match(this.serverSaveLines[i]);
-                if (match.Success) {
-                    serverSave.Add(new PlayerSave(i, match.Groups[1].Value, double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[4].Value, CultureInfo.InvariantCulture), 
-                        int.Parse(match.Groups[5].Value), int.Parse(match.Groups[6].Value), int.Parse(match.Groups[7].Value), int.Parse(match.Groups[8].Value), int.Parse(match.Groups[9].Value), int.Parse(match.Groups[10].Value), int.Parse(match.Groups[11].Value), int.Parse(match.Groups[12].Value), int.Parse(match.Groups[13].Value), 
-                        match.Groups[14].Value, match.Groups[15].Value, match.Groups[16].Value, match.Groups[17].Value, match.Groups[18].Value, match.Groups[19].Value, match.Groups[20].Value, match.Groups[21].Value, match.Groups[22].Value));
-                }
-            }
-            DGVserverSave.DataSource = serverSave;
-        }
-
-        private void BwriteServerSave_Click(object sender, EventArgs e)
-        {
-            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini"))
-            {
-                MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            List<PlayerSave> serverSave = (List<PlayerSave>) DGVserverSave.DataSource;
-            if (serverSave.Count == 0)
-            {
-                return;
-            }
-            Process[] pname = Process.GetProcessesByName("udk");
-            if (pname.Length > 0)
-            {
-                DialogResult result = DialogResult.Retry;
-                while (result == DialogResult.Retry && pname.Length > 0)
-                {
-                    result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
-                    if (result == DialogResult.Abort)
-                    {
-                        return;
-                    }
-                    pname = Process.GetProcessesByName("udk");
-                }
-            }
-            foreach (PlayerSave save in serverSave)
-            {
-                this.serverSaveLines[save.index] = "PlayerData=(SteamID=" + save.id + ",Location=(X=" + save.x.ToString(CultureInfo.InvariantCulture) + ",Y=" + save.y.ToString(CultureInfo.InvariantCulture) + ",Z=" + save.z.ToString(CultureInfo.InvariantCulture) 
-                    + "),Rotation=(Pitch=" + save.pitch + ",Yaw=" + save.yaw + ",Roll=" + save.roll 
-                    + "),Stat_Expertise=" + save.expertise + ",N_Hunger=" + save.hunger + ",N_Thirst=" + save.thirst + ",R_Arrows=" + save.arrows + ",R_Rope=" + save.ropes + ",R_Herbs=" + save.herbs + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=," 
-                    + "ItemSlot[1]=" + save.itemSlot1 + ",ItemSlot[2]=" + save.itemSlot2 + ",ItemSlot[3]=" + save.itemSlot3 + ",ItemSlot[4]=" + save.itemSlot4 + ",ItemSlot[5]=" + save.itemSlot5 
-                    + ",ItemSlot[6]=" + save.itemSlot6 + ",ItemSlot[7]=" + save.itemSlot7 + ",ItemSlot[8]=" + save.itemSlot8 + ",ItemSlot[9]=" + save.itemSlot9 + ")";
-            }
-            System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini", this.serverSaveLines);
-        }
-
-        private void tabControll_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedTab = tabControll.SelectedIndex;
-            switch (selectedTab)
-            {
-                case 2:
-                    this.BreloadSoloSave_Click(null, null);
-                    break;
-                case 3:
-                    this.BreloadServerSave_Click(null, null);
-                    break;
-            }
-        }
-
-        private void BCopySaveLine_Click(object sender, EventArgs e)
-        {
-            this.copiedSaveLine = DGVserverSave.CurrentRow.Index;
-            BPasteSaveLine.Enabled = true;
-        }
-
-        private void BPasteSaveLine_Click(object sender, EventArgs e)
-        {
-            int line = DGVserverSave.CurrentRow.Index;
-            if (CBpasteOnlyPos.Checked)
-            {
-                for (int i = 1; i < 7; i++)
-                {
-                    DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
-                }
-            }
-            else
-            {
-                for (int i = 1; i < DGVserverSave.ColumnCount; i++)
-                {
-                    DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
-                }
-            }
-        }
+        // ############################################### SOLO SAVEFILE EDITOR ###############################################
 
         private void BreloadSoloSave_Click(object sender, EventArgs e)
         {
@@ -569,23 +489,6 @@ namespace TheStompingLandLauncher
                     CBsoloItemSlot9.SelectedIndex = this.itemToCBindex(match.Groups[21].Value);
                     return;
                 }
-            }
-        }
-
-        private int itemToCBindex(string item)
-        {
-            switch (item)
-            {
-                case "\"Bow\"":
-                    return 1;
-                case "\"Spear\"":
-                    return 2;
-                case "\"Bolas\"":
-                    return 3;
-                case "\"Shield\"":
-                    return 4;
-                default:
-                    return 0;
             }
         }
 
@@ -660,98 +563,6 @@ namespace TheStompingLandLauncher
             }
         }
 
-        private string CBindexToItem(int index)
-        {
-            switch (index)
-            {
-                case 1:
-                    return "\"Bow\"";
-                case 2:
-                    return "\"Spear\"";
-                case 3:
-                    return "\"Bolas\"";
-                case 4:
-                    return "\"Shield\"";
-                default:
-                    return "";
-            }
-        }
-
-        private void validateNumberInput(object sender, KeyPressEventArgs e)
-        {
-            int i;
-            TextBox tb = (TextBox)sender;
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                return;
-            }
-            if (char.IsDigit(e.KeyChar) && (!int.TryParse(tb.Text + e.KeyChar, out i) || !(i >= 0)))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void validateDouble(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-')
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void validatePort(object sender, KeyPressEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                return;
-            }
-            if (char.IsDigit(e.KeyChar) && !(int.Parse(tb.Text + e.KeyChar) < 65536))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void validateNegNumberInput(object sender, KeyPressEventArgs e)
-        {
-            int i;
-            TextBox tb = (TextBox)sender;
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
-            {
-                e.Handled = true;
-                return;
-            }
-            if (char.IsDigit(e.KeyChar) && !int.TryParse(tb.Text + e.KeyChar, out i))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void BsoloUnlimitedAmmo_Click(object sender, EventArgs e)
-        {
-            TBsoloExpertise.Text = "2147000000";
-            TBsoloHerbs.Text = "2147483647";
-            TBsoloArrows.Text = "2147483647";
-            TBsoloRope.Text = "2147483647";
-            CBsoloItemSlot1.SelectedIndex = 1;
-            CBsoloItemSlot2.SelectedIndex = 2;
-            CBsoloItemSlot3.SelectedIndex = 3;
-            CBsoloItemSlot4.SelectedIndex = 4;
-            CBsoloItemSlot5.SelectedIndex = 4;
-            CBsoloItemSlot6.SelectedIndex = 4;
-            CBsoloItemSlot7.SelectedIndex = 4;
-            CBsoloItemSlot8.SelectedIndex = 4;
-            CBsoloItemSlot9.SelectedIndex = 4;
-        }
-
-        private void BsoloDisableHunger_Click(object sender, EventArgs e)
-        {
-            TBsoloHunger.Text = "-2147483648";
-            TBsoloThirst.Text = "-2147483648";
-        }
-
         private void BsoloTp_Click(object sender, EventArgs e)
         {
             int selectedWP = CBsoloTpList.SelectedIndex;
@@ -763,7 +574,7 @@ namespace TheStompingLandLauncher
                     TBsoloZ.Text = "113.925491";
                     TBsoloPitch.Text = "0";
                     TBsoloYaw.Text = "10833";
-                    TBsoloRoll.Text  = "0";
+                    TBsoloRoll.Text = "0";
                     break;
                 case 1:
                     TBsoloX.Text = "-48754.703125";
@@ -771,7 +582,7 @@ namespace TheStompingLandLauncher
                     TBsoloZ.Text = "1724.750244";
                     TBsoloPitch.Text = "0";
                     TBsoloYaw.Text = "17271";
-                    TBsoloRoll.Text  = "0";
+                    TBsoloRoll.Text = "0";
                     break;
                 case 2:
                     TBsoloX.Text = "-35461.242188";
@@ -779,7 +590,7 @@ namespace TheStompingLandLauncher
                     TBsoloZ.Text = "918.003479";
                     TBsoloPitch.Text = "0";
                     TBsoloYaw.Text = "10137";
-                    TBsoloRoll.Text  = "0";
+                    TBsoloRoll.Text = "0";
                     break;
                 case 3:
                     TBsoloX.Text = "-19371.386719";
@@ -813,6 +624,172 @@ namespace TheStompingLandLauncher
                     TBsoloYaw.Text = "5135";
                     TBsoloRoll.Text = "0";
                     break;
+            }
+        }
+
+        private void BsoloAddWP_Click(object sender, EventArgs e)
+        {
+            // ToDo
+            return;
+        }
+
+        private void BsoloDisableHunger_Click(object sender, EventArgs e)
+        {
+            TBsoloHunger.Text = "-2147483648";
+            TBsoloThirst.Text = "-2147483648";
+        }
+
+        private void BsoloUnlimitedAmmo_Click(object sender, EventArgs e)
+        {
+            TBsoloExpertise.Text = "2147000000";
+            TBsoloHerbs.Text = "2147483647";
+            TBsoloArrows.Text = "2147483647";
+            TBsoloRope.Text = "2147483647";
+            CBsoloItemSlot1.SelectedIndex = 1;
+            CBsoloItemSlot2.SelectedIndex = 2;
+            CBsoloItemSlot3.SelectedIndex = 3;
+            CBsoloItemSlot4.SelectedIndex = 4;
+            CBsoloItemSlot5.SelectedIndex = 4;
+            CBsoloItemSlot6.SelectedIndex = 4;
+            CBsoloItemSlot7.SelectedIndex = 4;
+            CBsoloItemSlot8.SelectedIndex = 4;
+            CBsoloItemSlot9.SelectedIndex = 4;
+        }
+
+        private int itemToCBindex(string item)
+        {
+            switch (item)
+            {
+                case "\"Bow\"":
+                    return 1;
+                case "\"Spear\"":
+                    return 2;
+                case "\"Bolas\"":
+                    return 3;
+                case "\"Shield\"":
+                    return 4;
+                default:
+                    return 0;
+            }
+        }
+
+        private string CBindexToItem(int index)
+        {
+            switch (index)
+            {
+                case 1:
+                    return "\"Bow\"";
+                case 2:
+                    return "\"Spear\"";
+                case 3:
+                    return "\"Bolas\"";
+                case 4:
+                    return "\"Shield\"";
+                default:
+                    return "";
+            }
+        }
+
+        // ############################################### SERVER SAVEFILE EDITOR ###############################################
+
+        private void BreloadServerSave_Click(object sender, EventArgs e)
+        {
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
+            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini"))
+            {
+                MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            List<PlayerSave> serverSave = new List<PlayerSave>();
+            this.serverSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
+            Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
+            for (int i = 0; i < this.serverSaveLines.Length; i++)
+            {
+                Match match = rgx.Match(this.serverSaveLines[i]);
+                if (match.Success)
+                {
+                    serverSave.Add(new PlayerSave(i, match.Groups[1].Value, double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture), double.Parse(match.Groups[4].Value, CultureInfo.InvariantCulture),
+                        int.Parse(match.Groups[5].Value), int.Parse(match.Groups[6].Value), int.Parse(match.Groups[7].Value), int.Parse(match.Groups[8].Value), int.Parse(match.Groups[9].Value), int.Parse(match.Groups[10].Value), int.Parse(match.Groups[11].Value), int.Parse(match.Groups[12].Value), int.Parse(match.Groups[13].Value),
+                        match.Groups[14].Value, match.Groups[15].Value, match.Groups[16].Value, match.Groups[17].Value, match.Groups[18].Value, match.Groups[19].Value, match.Groups[20].Value, match.Groups[21].Value, match.Groups[22].Value));
+                }
+            }
+            DGVserverSave.DataSource = serverSave;
+        }
+
+        private void BwriteServerSave_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini"))
+            {
+                MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            List<PlayerSave> serverSave = (List<PlayerSave>)DGVserverSave.DataSource;
+            if (serverSave.Count == 0)
+            {
+                return;
+            }
+            Process[] pname = Process.GetProcessesByName("udk");
+            if (pname.Length > 0)
+            {
+                DialogResult result = DialogResult.Retry;
+                while (result == DialogResult.Retry && pname.Length > 0)
+                {
+                    result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
+                    Console.WriteLine(result);
+                    if (result == DialogResult.Abort)
+                    {
+                        return;
+                    }
+                    pname = Process.GetProcessesByName("udk");
+                }
+            }
+            foreach (PlayerSave save in serverSave)
+            {
+                this.serverSaveLines[save.index] = "PlayerData=(SteamID=" + save.id + ",Location=(X=" + save.x.ToString(CultureInfo.InvariantCulture) + ",Y=" + save.y.ToString(CultureInfo.InvariantCulture) + ",Z=" + save.z.ToString(CultureInfo.InvariantCulture)
+                    + "),Rotation=(Pitch=" + save.pitch + ",Yaw=" + save.yaw + ",Roll=" + save.roll
+                    + "),Stat_Expertise=" + save.expertise + ",N_Hunger=" + save.hunger + ",N_Thirst=" + save.thirst + ",R_Arrows=" + save.arrows + ",R_Rope=" + save.ropes + ",R_Herbs=" + save.herbs + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,"
+                    + "ItemSlot[1]=" + save.itemSlot1 + ",ItemSlot[2]=" + save.itemSlot2 + ",ItemSlot[3]=" + save.itemSlot3 + ",ItemSlot[4]=" + save.itemSlot4 + ",ItemSlot[5]=" + save.itemSlot5
+                    + ",ItemSlot[6]=" + save.itemSlot6 + ",ItemSlot[7]=" + save.itemSlot7 + ",ItemSlot[8]=" + save.itemSlot8 + ",ItemSlot[9]=" + save.itemSlot9 + ")";
+            }
+            System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini", this.serverSaveLines);
+        }
+
+        private void BCopySaveLine_Click(object sender, EventArgs e)
+        {
+            this.copiedSaveLine = DGVserverSave.CurrentRow.Index;
+            BPasteSaveLine.Enabled = true;
+        }
+
+        private void BPasteSaveLine_Click(object sender, EventArgs e)
+        {
+            int line = DGVserverSave.CurrentRow.Index;
+            if (CBpasteOnlyPos.Checked)
+            {
+                for (int i = 1; i < 7; i++)
+                {
+                    DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
+                }
+            }
+            else
+            {
+                for (int i = 1; i < DGVserverSave.ColumnCount; i++)
+                {
+                    DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
+                }
             }
         }
 
@@ -881,17 +858,87 @@ namespace TheStompingLandLauncher
             }
         }
 
-        private void TBsoloHunger_TextChanged(object sender, EventArgs e)
+        private void BserverAddWP_Click(object sender, EventArgs e)
+        {
+            // ToDo
+            return;
+        }
+
+        // ############################################### HELPER FUNCTION ###############################################
+
+        private void validateNumberInput(object sender, KeyPressEventArgs e)
         {
             int i;
-            if (int.TryParse(TBsoloHunger.Text, out i) && i >= 3000)
+            TextBox tb = (TextBox)sender;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                TBsoloHunger.BackColor = Color.LightCoral;
+                e.Handled = true;
+                return;
             }
-            else
+            if (char.IsDigit(e.KeyChar) && (!int.TryParse(tb.Text + e.KeyChar, out i) || !(i >= 0)))
             {
-                TBsoloHunger.BackColor = Color.White;
+                e.Handled = true;
             }
+        }
+
+        private void validateNegNumberInput(object sender, KeyPressEventArgs e)
+        {
+            int i;
+            TextBox tb = (TextBox)sender;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
+            {
+                e.Handled = true;
+                return;
+            }
+            if (char.IsDigit(e.KeyChar) && !int.TryParse(tb.Text + e.KeyChar, out i))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void validateDouble(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void validatePort(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+            if (char.IsDigit(e.KeyChar) && !(int.Parse(tb.Text + e.KeyChar) < 65536))
+            {
+                e.Handled = true;
+            }
+        }
+    }
+
+    // ############################################### HELPER CLASSES ###############################################
+
+    [Serializable()]
+    public class serverSetting
+    {
+        public bool friendlyFire, playerNames, removeDinos, steamQuery, customConfig, autoJoin;
+        public string hostName, slots, port, QueryPort, configDir;
+        public serverSetting(bool ff, bool pn, bool rd, bool sq, string hn, string sl, string p, string qp, bool cc, string cd, bool aj)
+        {
+            this.friendlyFire = ff;
+            this.playerNames = pn;
+            this.removeDinos = rd;
+            this.steamQuery = sq;
+            this.hostName = hn;
+            this.slots = sl;
+            this.port = p;
+            this.QueryPort = qp;
+            this.customConfig = cc;
+            this.configDir = cd;
+            this.autoJoin = aj;
         }
     }
 
@@ -915,7 +962,8 @@ namespace TheStompingLandLauncher
             this.yaw = yaw;
             this.roll = roll;
             this.expertise = expertise;
-            this.hunger = hunger;            this.thirst = thirst;
+            this.hunger = hunger;
+            this.thirst = thirst;
             this.arrows = arrows;
             this.ropes = ropes;
             this.herbs = herbs;
@@ -951,26 +999,5 @@ namespace TheStompingLandLauncher
         public string ItemSlot7 { get { return itemSlot7; } set { itemSlot7 = value; } }
         public string ItemSlot8 { get { return itemSlot8; } set { itemSlot8 = value; } }
         public string ItemSlot9 { get { return itemSlot9; } set { itemSlot9 = value; } }
-    }
-
-    [Serializable()]
-    public class serverSetting
-    {
-        public bool friendlyFire, playerNames, removeDinos, steamQuery, customConfig, autoJoin;
-        public string hostName, slots, port, QueryPort, configDir;
-        public serverSetting(bool ff, bool pn, bool rd, bool sq, string hn, string sl, string p, string qp, bool cc, string cd, bool aj)
-        {
-            this.friendlyFire = ff;
-            this.playerNames = pn;
-            this.removeDinos = rd;
-            this.steamQuery = sq;
-            this.hostName = hn;
-            this.slots = sl;
-            this.port = p;
-            this.QueryPort = qp;
-            this.customConfig = cc;
-            this.configDir = cd;
-            this.autoJoin = aj;
-        }
     }
 }

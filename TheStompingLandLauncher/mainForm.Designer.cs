@@ -190,6 +190,7 @@
             resources.ApplyResources(this.BeditSL, "BeditSL");
             this.BeditSL.Name = "BeditSL";
             this.BeditSL.UseVisualStyleBackColor = true;
+            this.BeditSL.Click += new System.EventHandler(this.BeditSL_Click);
             // 
             // BdownSL
             // 
@@ -789,6 +790,7 @@
             resources.ApplyResources(this.BsoloAddWP, "BsoloAddWP");
             this.BsoloAddWP.Name = "BsoloAddWP";
             this.BsoloAddWP.UseVisualStyleBackColor = true;
+            this.BsoloAddWP.Click += new System.EventHandler(this.BsoloAddWP_Click);
             // 
             // BsoloTp
             // 
@@ -904,6 +906,7 @@
             resources.ApplyResources(this.BserverAddWP, "BserverAddWP");
             this.BserverAddWP.Name = "BserverAddWP";
             this.BserverAddWP.UseVisualStyleBackColor = true;
+            this.BserverAddWP.Click += new System.EventHandler(this.BserverAddWP_Click);
             // 
             // BserverTp
             // 
