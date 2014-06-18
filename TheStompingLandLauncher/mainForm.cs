@@ -45,6 +45,7 @@ namespace TheStompingLandLauncher
                 MemoryStream ms = new MemoryStream(Convert.FromBase64String(settings));
                 BinaryFormatter bf = new BinaryFormatter();
                 this.serverSettings = (Dictionary<String, serverSetting>)bf.Deserialize(ms);
+                ms.Close();
             }
             foreach (string config in this.serverSettings.Keys)
             {
@@ -431,6 +432,8 @@ namespace TheStompingLandLauncher
             ms.Position = 0;
             byte[] buffer = new byte[(int)ms.Length];
             ms.Read(buffer, 0, buffer.Length);
+            sr.Close();
+            ms.Close();
             Properties.Settings.Default["ServerSettings"] = Convert.ToBase64String(buffer);
             Properties.Settings.Default.Save();
         }
