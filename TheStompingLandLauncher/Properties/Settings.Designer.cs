@@ -70,5 +70,17 @@ namespace TheStompingLandLauncher.Properties {
                 this["ServerSettings"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string wayPoints {
+            get {
+                return ((string)(this["wayPoints"]));
+            }
+            set {
+                this["wayPoints"] = value;
+            }
+        }
     }
 }

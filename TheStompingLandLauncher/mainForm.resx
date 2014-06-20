@@ -2247,9 +2247,6 @@
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="BsoloAddWP.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="BsoloAddWP.Location" type="System.Drawing.Point, System.Drawing">
     <value>212, 71</value>
   </data>
@@ -2297,27 +2294,6 @@
   </data>
   <data name="&gt;&gt;BsoloTp.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="CBsoloTpList.Items" xml:space="preserve">
-    <value>Waterfall cave</value>
-  </data>
-  <data name="CBsoloTpList.Items1" xml:space="preserve">
-    <value>big water cave entrance</value>
-  </data>
-  <data name="CBsoloTpList.Items2" xml:space="preserve">
-    <value>big water cave exit</value>
-  </data>
-  <data name="CBsoloTpList.Items3" xml:space="preserve">
-    <value>vulcano</value>
-  </data>
-  <data name="CBsoloTpList.Items4" xml:space="preserve">
-    <value>vulcano cave entrance</value>
-  </data>
-  <data name="CBsoloTpList.Items5" xml:space="preserve">
-    <value>southern lake</value>
-  </data>
-  <data name="CBsoloTpList.Items6" xml:space="preserve">
-    <value>western river mouth</value>
   </data>
   <data name="CBsoloTpList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 71</value>
@@ -2709,9 +2685,6 @@
   <data name="BserverAddWP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="BserverAddWP.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="BserverAddWP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2768,27 +2741,6 @@
   </data>
   <data name="CBserverTpList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
-  </data>
-  <data name="CBserverTpList.Items" xml:space="preserve">
-    <value>Waterfall cave</value>
-  </data>
-  <data name="CBserverTpList.Items1" xml:space="preserve">
-    <value>big water cave entrance</value>
-  </data>
-  <data name="CBserverTpList.Items2" xml:space="preserve">
-    <value>big water cave exit</value>
-  </data>
-  <data name="CBserverTpList.Items3" xml:space="preserve">
-    <value>vulcano</value>
-  </data>
-  <data name="CBserverTpList.Items4" xml:space="preserve">
-    <value>vulcano cave entrance</value>
-  </data>
-  <data name="CBserverTpList.Items5" xml:space="preserve">
-    <value>southern lake</value>
-  </data>
-  <data name="CBserverTpList.Items6" xml:space="preserve">
-    <value>western river mouth</value>
   </data>
   <data name="CBserverTpList.Location" type="System.Drawing.Point, System.Drawing">
     <value>637, 95</value>

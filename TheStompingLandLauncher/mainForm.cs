@@ -18,9 +18,10 @@ namespace TheStompingLandLauncher
 {
     public partial class mainForm : Form
     {
-        public Dictionary<String, serverSetting> serverSettings;
-        public string[] serverSaveLines;
-        public int copiedSaveLine;
+        private Dictionary<String, serverSetting> serverSettings;
+        public List<WayPoint> wayPoints;
+        private string[] serverSaveLines;
+        private int copiedSaveLine;
 
         public mainForm()
         {
@@ -35,6 +36,7 @@ namespace TheStompingLandLauncher
                 LBserverHistory.Items.AddRange(history);
             }
 
+            // load saved serverConfig
             string settings = (string)Properties.Settings.Default["ServerSettings"];
             if (String.IsNullOrEmpty(settings))
             {
@@ -56,9 +58,32 @@ namespace TheStompingLandLauncher
                 CBserverConfig.SelectedIndex = 0;
             }
 
-            CBsoloTpList.SelectedIndex = 0;
-            CBserverTpList.SelectedIndex = 0;
+            // Load WayPoints
+            string points = (string)Properties.Settings.Default["wayPoints"];
+            if (String.IsNullOrEmpty(points))
+            {
+                this.wayPoints = new List<WayPoint>();
+                this.restoreDefaultWaypoints();
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(Convert.FromBase64String(points));
+                BinaryFormatter bf = new BinaryFormatter();
+                this.wayPoints = (List<WayPoint>)bf.Deserialize(ms);
+                ms.Close();
+                foreach (WayPoint wp in this.wayPoints)
+                {
+                    CBsoloTpList.Items.Add(wp.name);
+                    CBserverTpList.Items.Add(wp.name);
+                }
+            }
+            if (CBsoloTpList.Items.Count > 0)
+            {
+                CBsoloTpList.SelectedIndex = 0;
+                CBserverTpList.SelectedIndex = 0;
+            }
 
+            // detect TSL path
             string TSLpath = (string)Properties.Settings.Default["TSLpath"];
             if (Directory.Exists(TSLpath))
             {
@@ -170,7 +195,6 @@ namespace TheStompingLandLauncher
                 //{
                 //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //}
-                addForm.Dispose();
             }
         }
 
@@ -285,7 +309,6 @@ namespace TheStompingLandLauncher
                 while (result == DialogResult.Retry && pname.Length > 0)
                 {
                     result = MessageBox.Show(GlobalStrings.ServerAlreadyRunningBody, GlobalStrings.ServerAlreadyRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
                     if (result == DialogResult.Abort)
                     {
                         return;
@@ -380,7 +403,6 @@ namespace TheStompingLandLauncher
                 {
                     MessageBox.Show(GlobalStrings.ConfigurationNameBody, GlobalStrings.ConfigurationNameHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                addForm.Dispose();
             }
         }
 
@@ -454,7 +476,6 @@ namespace TheStompingLandLauncher
                 while (result == DialogResult.Retry && pname.Length > 0)
                 {
                     result = MessageBox.Show(GlobalStrings.GameStillRunningBody, GlobalStrings.GameStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
                     if (result == DialogResult.Abort)
                     {
                         return;
@@ -515,7 +536,6 @@ namespace TheStompingLandLauncher
                 while (result == DialogResult.Retry && pname.Length > 0)
                 {
                     result = MessageBox.Show(GlobalStrings.GameStillRunningBody, GlobalStrings.GameStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
                     if (result == DialogResult.Abort)
                     {
                         return;
@@ -568,72 +588,26 @@ namespace TheStompingLandLauncher
 
         private void BsoloTp_Click(object sender, EventArgs e)
         {
-            int selectedWP = CBsoloTpList.SelectedIndex;
-            switch (selectedWP)
-            {
-                case 0:
-                    TBsoloX.Text = "89.725906";
-                    TBsoloY.Text = "-34004.398438";
-                    TBsoloZ.Text = "113.925491";
-                    TBsoloPitch.Text = "0";
-                    TBsoloYaw.Text = "10833";
-                    TBsoloRoll.Text = "0";
-                    break;
-                case 1:
-                    TBsoloX.Text = "-48754.703125";
-                    TBsoloY.Text = "-8867.308594";
-                    TBsoloZ.Text = "1724.750244";
-                    TBsoloPitch.Text = "0";
-                    TBsoloYaw.Text = "17271";
-                    TBsoloRoll.Text = "0";
-                    break;
-                case 2:
-                    TBsoloX.Text = "-35461.242188";
-                    TBsoloY.Text = "-21397.582031";
-                    TBsoloZ.Text = "918.003479";
-                    TBsoloPitch.Text = "0";
-                    TBsoloYaw.Text = "10137";
-                    TBsoloRoll.Text = "0";
-                    break;
-                case 3:
-                    TBsoloX.Text = "-19371.386719";
-                    TBsoloY.Text = "21350.605469";
-                    TBsoloZ.Text = "5841.007813";
-                    TBsoloPitch.Text = "0";
-                    TBsoloYaw.Text = "-19733";
-                    TBsoloRoll.Text = "0";
-                    break;
-                case 4:
-                    TBsoloX.Text = "-22653.009766";
-                    TBsoloY.Text = "23101.542969";
-                    TBsoloZ.Text = "3110.780518";
-                    TBsoloPitch.Text = "0";
-                    TBsoloYaw.Text = "17315";
-                    TBsoloRoll.Text = "0";
-                    break;
-                case 5:
-                    TBsoloX.Text = "21226.568359";
-                    TBsoloY.Text = "28516.144531";
-                    TBsoloZ.Text = "913.588501";
-                    TBsoloPitch.Text = "0";
-                    TBsoloYaw.Text = "14213";
-                    TBsoloRoll.Text = "0";
-                    break;
-                case 6:
-                    TBsoloX.Text = "46529.703125";
-                    TBsoloY.Text = "-19490.609375";
-                    TBsoloZ.Text = "151.390274";
-                    TBsoloPitch.Text = "0";
-                    TBsoloYaw.Text = "5135";
-                    TBsoloRoll.Text = "0";
-                    break;
-            }
+            WayPoint wp = this.wayPoints[CBsoloTpList.SelectedIndex];
+            TBsoloX.Text = wp.x.ToString(CultureInfo.InvariantCulture);
+            TBsoloY.Text = wp.y.ToString(CultureInfo.InvariantCulture);
+            TBsoloZ.Text = wp.z.ToString(CultureInfo.InvariantCulture);
+            TBsoloPitch.Text = "0";
+            TBsoloYaw.Text = wp.yaw.ToString(CultureInfo.InvariantCulture);
+            TBsoloRoll.Text = "0";
         }
 
         private void BsoloAddWP_Click(object sender, EventArgs e)
         {
-            // ToDo
-            return;
+            double x, y, z;
+            int yaw;
+            if (Double.TryParse(TBsoloX.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out x) && Double.TryParse(TBsoloY.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out y) && Double.TryParse(TBsoloZ.Text, NumberStyles.Float, CultureInfo.InvariantCulture, out z) && int.TryParse(TBsoloYaw.Text, out yaw))
+            {
+                this.addCustomWayPoint(x, y, z, yaw);
+            }
+            else {
+                MessageBox.Show(GlobalStrings.InvalidPositionBody, GlobalStrings.InvalidPositionHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BsoloDisableHunger_Click(object sender, EventArgs e)
@@ -704,7 +678,6 @@ namespace TheStompingLandLauncher
                 while (result == DialogResult.Retry && pname.Length > 0)
                 {
                     result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
                     if (result == DialogResult.Abort)
                     {
                         return;
@@ -752,7 +725,6 @@ namespace TheStompingLandLauncher
                 while (result == DialogResult.Retry && pname.Length > 0)
                 {
                     result = MessageBox.Show(GlobalStrings.ServerStillRunningBody, GlobalStrings.ServerStillRunningHeader, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Warning);
-                    Console.WriteLine(result);
                     if (result == DialogResult.Abort)
                     {
                         return;
@@ -799,72 +771,98 @@ namespace TheStompingLandLauncher
         private void BserverTp_Click(object sender, EventArgs e)
         {
             int line = DGVserverSave.CurrentRow.Index;
-            int selectedWP = CBserverTpList.SelectedIndex;
-            switch (selectedWP)
-            {
-                case 0:
-                    DGVserverSave.Rows[line].Cells[1].Value = 89.725906;
-                    DGVserverSave.Rows[line].Cells[2].Value = -34004.398438;
-                    DGVserverSave.Rows[line].Cells[3].Value = 113.925491;
-                    DGVserverSave.Rows[line].Cells[4].Value = 0;
-                    DGVserverSave.Rows[line].Cells[5].Value = 10833;
-                    DGVserverSave.Rows[line].Cells[6].Value = 0;
-                    break;
-                case 1:
-                    DGVserverSave.Rows[line].Cells[1].Value = -48754.703125;
-                    DGVserverSave.Rows[line].Cells[2].Value = -8867.308594;
-                    DGVserverSave.Rows[line].Cells[3].Value = 1724.750244;
-                    DGVserverSave.Rows[line].Cells[4].Value = 0;
-                    DGVserverSave.Rows[line].Cells[5].Value = 17271;
-                    DGVserverSave.Rows[line].Cells[6].Value = 0;
-                    break;
-                case 2:
-                    DGVserverSave.Rows[line].Cells[1].Value = -35461.242188;
-                    DGVserverSave.Rows[line].Cells[2].Value = -21397.582031;
-                    DGVserverSave.Rows[line].Cells[3].Value = 918.003479;
-                    DGVserverSave.Rows[line].Cells[4].Value = 0;
-                    DGVserverSave.Rows[line].Cells[5].Value = 10137;
-                    DGVserverSave.Rows[line].Cells[6].Value = 0;
-                    break;
-                case 3:
-                    DGVserverSave.Rows[line].Cells[1].Value = -19371.386719;
-                    DGVserverSave.Rows[line].Cells[2].Value = 21350.605469;
-                    DGVserverSave.Rows[line].Cells[3].Value = 5841.007813;
-                    DGVserverSave.Rows[line].Cells[4].Value = 0;
-                    DGVserverSave.Rows[line].Cells[5].Value = -19733;
-                    DGVserverSave.Rows[line].Cells[6].Value = 0;
-                    break;
-                case 4:
-                    DGVserverSave.Rows[line].Cells[1].Value = -22653.009766;
-                    DGVserverSave.Rows[line].Cells[2].Value = 23101.542969;
-                    DGVserverSave.Rows[line].Cells[3].Value = 3110.780518;
-                    DGVserverSave.Rows[line].Cells[4].Value = 0;
-                    DGVserverSave.Rows[line].Cells[5].Value = 17315;
-                    DGVserverSave.Rows[line].Cells[6].Value = 0;
-                    break;
-                case 5:
-                    DGVserverSave.Rows[line].Cells[1].Value = 21226.568359;
-                    DGVserverSave.Rows[line].Cells[2].Value = 28516.144531;
-                    DGVserverSave.Rows[line].Cells[3].Value = 913.588501;
-                    DGVserverSave.Rows[line].Cells[4].Value = 0;
-                    DGVserverSave.Rows[line].Cells[5].Value = 14213;
-                    DGVserverSave.Rows[line].Cells[6].Value = 0;
-                    break;
-                case 6:
-                    DGVserverSave.Rows[line].Cells[1].Value = 46529.703125;
-                    DGVserverSave.Rows[line].Cells[2].Value = -19490.609375;
-                    DGVserverSave.Rows[line].Cells[3].Value = 151.390274;
-                    DGVserverSave.Rows[line].Cells[4].Value = 0;
-                    DGVserverSave.Rows[line].Cells[5].Value = 5135;
-                    DGVserverSave.Rows[line].Cells[6].Value = 0;
-                    break;
-            }
+            WayPoint wp = this.wayPoints[CBserverTpList.SelectedIndex];
+            DGVserverSave.Rows[line].Cells[1].Value = wp.x;
+            DGVserverSave.Rows[line].Cells[2].Value = wp.y;
+            DGVserverSave.Rows[line].Cells[3].Value = wp.z;
+            DGVserverSave.Rows[line].Cells[4].Value = 0;
+            DGVserverSave.Rows[line].Cells[5].Value = wp.yaw;
+            DGVserverSave.Rows[line].Cells[6].Value = 0;
         }
 
         private void BserverAddWP_Click(object sender, EventArgs e)
         {
-            // ToDo
-            return;
+            int line = DGVserverSave.CurrentRow.Index;
+            double x, y, z;
+            int yaw;
+            if (Double.TryParse(DGVserverSave.Rows[line].Cells[1].Value.ToString(), out x) && Double.TryParse(DGVserverSave.Rows[line].Cells[2].Value.ToString(), out y) && Double.TryParse(DGVserverSave.Rows[line].Cells[3].Value.ToString(), out z) && int.TryParse(DGVserverSave.Rows[line].Cells[5].Value.ToString(), out yaw))
+            {
+                this.addCustomWayPoint(x, y, z, yaw);
+            }
+            else
+            {
+                MessageBox.Show(GlobalStrings.InvalidPositionBody, GlobalStrings.InvalidPositionHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // ############################################### WAYPOINT MANAGER ###############################################
+
+        public void restoreDefaultWaypoints()
+        {
+            bool german = CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "de";
+            this.wayPoints.Add(new WayPoint(german ? "Wasserfallhöhle" : "Waterfall cave", 89.725906, -34004.398438, 113.925491, 10833));
+            CBsoloTpList.Items.Add(german ? "Wasserfallhöhle" : "Waterfall cave");
+            CBserverTpList.Items.Add(german ? "Wasserfallhöhle" : "Waterfall cave");
+            this.wayPoints.Add(new WayPoint(german ? "Große Wasserhöhle Eingang" : "big water cave entrance", -48754.703125, -8867.308594, 1724.750244, 17271));
+            CBsoloTpList.Items.Add(german ? "Große Wasserhöhle Eingang" : "big water cave entrance");
+            CBserverTpList.Items.Add(german ? "Große Wasserhöhle Eingang" : "big water cave entrance");
+            this.wayPoints.Add(new WayPoint(german ? "Große Wasserhöhle Ausgang" : "big water cave exit", -35461.242188, -21397.582031, 918.003479, 10137));
+            CBsoloTpList.Items.Add(german ? "Große Wasserhöhle Ausgang" : "big water cave exit");
+            CBserverTpList.Items.Add(german ? "Große Wasserhöhle Ausgang" : "big water cave exit");
+            this.wayPoints.Add(new WayPoint(german ? "Vulkan" : "vulcano", -19371.386719, 21350.605469, 5841.007813, -19733));
+            CBsoloTpList.Items.Add(german ? "Vulkan" : "vulcano");
+            CBserverTpList.Items.Add(german ? "Vulkan" : "vulcano");
+            this.wayPoints.Add(new WayPoint(german ? "Vulkanhöhle Eingang" : "vulcano cave entrance", -22653.009766, 23101.542969, 3110.780518, 17315));
+            CBsoloTpList.Items.Add(german ? "Vulkanhöhle Eingang" : "vulcano cave entrance");
+            CBserverTpList.Items.Add(german ? "Vulkanhöhle Eingang" : "vulcano cave entrance");
+            this.wayPoints.Add(new WayPoint(german ? "Südlicher See" : "southern lake", 21226.568359, 28516.144531, 913.588501, 14213));
+            CBsoloTpList.Items.Add(german ? "Südlicher See" : "southern lake");
+            CBserverTpList.Items.Add(german ? "Südlicher See" : "southern lake");
+            this.wayPoints.Add(new WayPoint(german ? "Westliche Flussmündung" : "western river mouth", 46529.703125, -19490.609375, 151.390274, 5135));
+            CBsoloTpList.Items.Add(german ? "Westliche Flussmündung" : "western river mouth");
+            CBserverTpList.Items.Add(german ? "Westliche Flussmündung" : "western river mouth");
+            saveWayPoints();
+        }
+
+        private void saveWayPoints()
+        {
+            MemoryStream ms = new MemoryStream();
+            StreamReader sr = new StreamReader(ms);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(ms, this.wayPoints);
+            ms.Position = 0;
+            byte[] buffer = new byte[(int)ms.Length];
+            ms.Read(buffer, 0, buffer.Length);
+            sr.Close();
+            ms.Close();
+            Properties.Settings.Default["wayPoints"] = Convert.ToBase64String(buffer);
+            Properties.Settings.Default.Save();
+        }
+
+        private void addCustomWayPoint(double x, double y, double z, int yaw)
+        {
+            WayPointManager wpman = new WayPointManager();
+            wpman.TBwayPointX.Text = x.ToString();
+            wpman.TBwayPointY.Text = y.ToString();
+            wpman.TBwayPointZ.Text = z.ToString();
+            wpman.TBwayPointYaw.Text = yaw.ToString();
+            wpman.DGVwayPoints.DataSource = this.wayPoints;
+            if (wpman.ShowDialog(this) == DialogResult.OK)
+            {
+                CBsoloTpList.Items.Clear();
+                CBserverTpList.Items.Clear();
+                foreach (WayPoint wp in this.wayPoints)
+                {
+                    CBsoloTpList.Items.Add(wp.name);
+                    CBserverTpList.Items.Add(wp.name);
+                }
+                if (CBsoloTpList.Items.Count > 0)
+                {
+                    CBsoloTpList.SelectedIndex = 0;
+                    CBserverTpList.SelectedIndex = 0;
+                }
+                this.saveWayPoints();
+            }
         }
 
         // ############################################### HELPER FUNCTION ###############################################
@@ -945,7 +943,7 @@ namespace TheStompingLandLauncher
         }
     }
 
-    class PlayerSave
+    public class PlayerSave
     {
         public int index;
         public string id { get; set; }
@@ -997,6 +995,25 @@ namespace TheStompingLandLauncher
             this.itemSlot7 = itemSlot7;
             this.itemSlot8 = itemSlot8;
             this.itemSlot9 = itemSlot9;
+        }
+    }
+
+    [Serializable()]
+    public class WayPoint
+    {
+        public string name { get; set; }
+        public double x { get; set; }
+        public double y { get; set; }
+        public double z { get; set; }
+        public int yaw { get; set; }
+
+        public WayPoint(string name, double x, double y, double z, int yaw)
+        {
+            this.name = name;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.yaw = yaw;
         }
     }
 }

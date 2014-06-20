@@ -117,21 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Server mittels Adresse beitreten</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Eigenen Server hosten</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Savefile Editor (Solo)</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>Savefile Editor (Server)</value>
-  </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>Grafik/Steuerung Optimierungen</value>
-  </data>
   <data name="BeditSL.Text" xml:space="preserve">
     <value>bearbeiten ...</value>
   </data>
@@ -178,8 +163,8 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Verbinde zu:</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Server-Konfigurations-Verwaltung:</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Server mittels Adresse beitreten</value>
   </data>
   <data name="BnewSC.Text" xml:space="preserve">
     <value>neue Konfiguration ...</value>
@@ -189,6 +174,9 @@
   </data>
   <data name="BloadSC.Text" xml:space="preserve">
     <value>Konfiguration laden</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Server-Konfigurations-Verwaltung:</value>
   </data>
   <data name="CBautoJoin.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 17</value>
@@ -204,15 +192,6 @@
   </data>
   <data name="BhostServer.Text" xml:space="preserve">
     <value>Server erstellen/hosten ...</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>537, 98</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Hosting-Optionen</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 46</value>
@@ -244,11 +223,14 @@
   <data name="CBsteamQuery.Text" xml:space="preserve">
     <value>in die Steam Serverliste eintragen</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 98</value>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 6</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Server-Konfiguration</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>537, 98</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Hosting-Optionen</value>
   </data>
   <data name="CBremoveDinos.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
@@ -267,6 +249,15 @@
   </data>
   <data name="CBfriendlyFire.Text" xml:space="preserve">
     <value>Verbündetenbeschuss</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 98</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Server-Konfiguration</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Eigenen Server hosten</value>
   </data>
   <data name="CBsoloAutoStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>242, 187</value>
@@ -291,9 +282,6 @@
   </data>
   <data name="BreloadSoloSave.Text" xml:space="preserve">
     <value>Savefile erneut laden</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Waffen/Gegenstands-Belegung (Slots):</value>
   </data>
   <data name="CBsoloItemSlot9.Items" xml:space="preserve">
     <value>Leer</value>
@@ -430,8 +418,8 @@
   <data name="CBsoloItemSlot1.Items4" xml:space="preserve">
     <value>Schild</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Resourcen:</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Waffen/Gegenstands-Belegung (Slots):</value>
   </data>
   <data name="BsoloUnlimitedAmmo.Text" xml:space="preserve">
     <value>unendlich Muntion/Waffen</value>
@@ -469,6 +457,9 @@
   <data name="label19.Text" xml:space="preserve">
     <value>Erfahrung:</value>
   </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Resourcen:</value>
+  </data>
   <data name="BsoloAddWP.Location" type="System.Drawing.Point, System.Drawing">
     <value>221, 71</value>
   </data>
@@ -487,29 +478,11 @@
   <data name="BsoloTp.Text" xml:space="preserve">
     <value>teleportieren</value>
   </data>
-  <data name="CBsoloTpList.Items" xml:space="preserve">
-    <value>Wasserfallhöhle</value>
-  </data>
-  <data name="CBsoloTpList.Items1" xml:space="preserve">
-    <value>Große Wasserhöhle Eingang</value>
-  </data>
-  <data name="CBsoloTpList.Items2" xml:space="preserve">
-    <value>Große Wasserhöhle Ausgang</value>
-  </data>
-  <data name="CBsoloTpList.Items3" xml:space="preserve">
-    <value>Vulkan</value>
-  </data>
-  <data name="CBsoloTpList.Items4" xml:space="preserve">
-    <value>Vulkanhöhle Eingang</value>
-  </data>
-  <data name="CBsoloTpList.Items5" xml:space="preserve">
-    <value>Südlicher See</value>
-  </data>
-  <data name="CBsoloTpList.Items6" xml:space="preserve">
-    <value>Westliche Flussmündung</value>
-  </data>
   <data name="CBsoloTpList.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 21</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Savefile Editor (Solo)</value>
   </data>
   <data name="BserverAddWP.Location" type="System.Drawing.Point, System.Drawing">
     <value>623, 151</value>
@@ -528,27 +501,6 @@
   </data>
   <data name="BserverTp.Text" xml:space="preserve">
     <value>teleportieren</value>
-  </data>
-  <data name="CBserverTpList.Items" xml:space="preserve">
-    <value>Wasserfallhöhle</value>
-  </data>
-  <data name="CBserverTpList.Items1" xml:space="preserve">
-    <value>Große Wasserhöhle Eingang</value>
-  </data>
-  <data name="CBserverTpList.Items2" xml:space="preserve">
-    <value>Große Wasserhöhle Ausgang</value>
-  </data>
-  <data name="CBserverTpList.Items3" xml:space="preserve">
-    <value>Vulkan</value>
-  </data>
-  <data name="CBserverTpList.Items4" xml:space="preserve">
-    <value>Vulkanhöhle Eingang</value>
-  </data>
-  <data name="CBserverTpList.Items5" xml:space="preserve">
-    <value>Südlicher See</value>
-  </data>
-  <data name="CBserverTpList.Items6" xml:space="preserve">
-    <value>Westliche Flussmündung</value>
   </data>
   <data name="CBserverTpList.Location" type="System.Drawing.Point, System.Drawing">
     <value>623, 95</value>
@@ -595,6 +547,9 @@
   <data name="DGVserverSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>617, 177</value>
   </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Savefile Editor (Server)</value>
+  </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 44</value>
   </data>
@@ -603,6 +558,9 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>* in Entwicklung *</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Grafik/Steuerung Optimierungen</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>

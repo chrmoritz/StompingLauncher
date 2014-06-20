@@ -195,4 +195,10 @@
   <data name="SoloSaveNotExistHeader" xml:space="preserve">
     <value>Solo savefile doesn't exists</value>
   </data>
+  <data name="InvalidWayPointNameBody" xml:space="preserve">
+    <value>Error: Invalid waypoint name</value>
+  </data>
+  <data name="InvalidWayPointNameHeader" xml:space="preserve">
+    <value>Please enter a at least 5 characters long waypoint name.</value>
+  </data>
 </root>

@@ -195,4 +195,10 @@
   <data name="SoloSaveNotExistHeader" xml:space="preserve">
     <value>Solo Savefile nicht gefunden</value>
   </data>
+  <data name="InvalidWayPointNameBody" xml:space="preserve">
+    <value>Fehler: Ungültiger Wegpunktname</value>
+  </data>
+  <data name="InvalidWayPointNameHeader" xml:space="preserve">
+    <value>Bitte gebe einen mindestens 5 Zeichen langen Wegpunktnamen ein.</value>
+  </data>
 </root>

@@ -117,99 +117,71 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="BWayPointAdd.Text" xml:space="preserve">
+    <value>neuer benutzerdefinierter Wegpunkt hinzufügen</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Wegpunkt hinzufügen:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Wegpunkte verwalten:</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="BwayPointRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 23</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="BwayPointRemove.Text" xml:space="preserve">
+    <value>ausgewählten Wegpunkt entfernen</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Configuration name:</value>
+  <data name="BwayPointsRestore.Text" xml:space="preserve">
+    <value>Standard-Wegpunkte wiederherstellen</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>addNewServerConfig</value>
+  <data name="BwayPointClose.Text" xml:space="preserve">
+    <value>speichern und schließen</value>
   </data>
-  <data name="&gt;&gt;TBconfigName.Name" xml:space="preserve">
-    <value>TBconfigName</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 15</value>
-  </data>
-  <data name="&gt;&gt;TBconfigName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 69</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 23</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="TBconfigName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 20</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TBconfigName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TBconfigName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 13</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TBconfigName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="TBconfigName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 12</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Add new server configuration ...</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 38</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEACACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAEAAAACIAAAAAABAAAAAiAAAQAADMAAAAERERACIiIgAAMTIAMzMzAAAyZgAyMmUAREREAAAy
+        mAAzM5kAVVVVADJlMgAAZWYAMmVlAGZmZgAAZZgAM2WZAGVlmAB3d3cAMmXLAGZmzAAzmTMAM5lmAGWY
+        ZQAzmJkAZZiYADKYywBmmMwAmJjLAKqqqgBmy8wAmMvLADP+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEw8WFgAAAAAAABMWExMAAAAA
+        FhYWABcXIwwAAAAAAAAADBYAAAAAAAAAABciBQAAABYAAAAAFhYWFgAAAAAAAAAADBYAAAAAAAAAFiEI
+        AAAAAAAAAAAAFhYBAAAAAAAAAAAWDBYAAAAAAAAAHxcAAAAAAAAAAAATABYWAAAAAAAAAAAMCQwDAAAA
+        AAAWFhYBAAAAAAAACwwSBRcAAAAAAAAAAAsLCRMAAwAAAAAWFhMBAAAAAAATCwwAFgAAAAAAAAAAAAwF
+        ABYXBQMAABYfIRYAAAAAAAAWAAAWAAAAAAADBAUBBRcfHx8MCgMWFxYhAAwDAAAAABMAFhYAAAAhAB8X
+        FgUhJSEWDRMADBMfIR8ACQwFAAAMDAAWFwAAAAAhAAAhFgAhHwwMAA0JCh8fAAwKFg4DFhMTFgAhAAAA
+        FgAWJQAhHwAACgsCCAwTGR8BCgkWEwsFExYTABYAAAAAFhYXJAAXFhMBDQsMEwwRGhYNDBYTDAATExMW
+        AAAAAAAAFhYUEyETHBYADQgMAAwTFgwNEwweAxMTDBMPAAAAAAAAFhYTBhMTEwAMEwAfCAwTExYKFxYT
+        ExENFQAAAAAAAQAWFgEmABcWFgADIiETAAoWFhMWHwweEwoTDAAAABYWDQcWFgAWFhYWIR8fFhYAFhMM
+        FhMWDRUWCh8XAAAWFgElDQAWAAAWISUfFg8TFhYADRMTGRMMExYLFh8AABYAIQcWFgAlJQcXFhYWExYP
+        EwMLEBYeExMMEwwWHwAAACEIFhYBHyEIACEfIR8PFhYWAAwSFhYVExYWExYfAAAACBYWCBYhAB8hHwwW
+        HyETDwATFgoTGRMTFh4TGCEAAAAAFgAhAAEXIR8LFhMPHxYWABMKEx4TDxYTHhMWAgAAAAAAJQAWFiEk
+        FxYMFhMMFgAKEyAWERYVERMWFhMAAAAAAAAADAsWHyIfDBYOFhYAExEWHgwTEw8cESATEwAAAAAAAAAW
+        FgwTISETExYWAA0fIBYTGw8WFhEdFhYAAAAAAAAAAAADFhYXFhYWAAATExYeGBEXHx4fGxMWAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAExMTHB8hFxwTEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhMWFhYTFgAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAOBwPAPgeBgB8PwwAfh8M8H4Pg/A/B4PgPwHB4D+AQPA0AABwIAAAIDAAAAAgAAAAAAA
+        AABgAAAA8AAAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAFgAAABwAAAAZAAAAN4AAAH/gYAD///
+        gB///8B/////////////////
+</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Add new server configuration</value>
+    <value>Wegpunkte Verwaltung</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
-  </metadata>
 </root>

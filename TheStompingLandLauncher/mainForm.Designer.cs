@@ -803,14 +803,6 @@
             // 
             this.CBsoloTpList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBsoloTpList.FormattingEnabled = true;
-            this.CBsoloTpList.Items.AddRange(new object[] {
-            resources.GetString("CBsoloTpList.Items"),
-            resources.GetString("CBsoloTpList.Items1"),
-            resources.GetString("CBsoloTpList.Items2"),
-            resources.GetString("CBsoloTpList.Items3"),
-            resources.GetString("CBsoloTpList.Items4"),
-            resources.GetString("CBsoloTpList.Items5"),
-            resources.GetString("CBsoloTpList.Items6")});
             resources.ApplyResources(this.CBsoloTpList, "CBsoloTpList");
             this.CBsoloTpList.Name = "CBsoloTpList";
             // 
@@ -920,14 +912,6 @@
             resources.ApplyResources(this.CBserverTpList, "CBserverTpList");
             this.CBserverTpList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBserverTpList.FormattingEnabled = true;
-            this.CBserverTpList.Items.AddRange(new object[] {
-            resources.GetString("CBserverTpList.Items"),
-            resources.GetString("CBserverTpList.Items1"),
-            resources.GetString("CBserverTpList.Items2"),
-            resources.GetString("CBserverTpList.Items3"),
-            resources.GetString("CBserverTpList.Items4"),
-            resources.GetString("CBserverTpList.Items5"),
-            resources.GetString("CBserverTpList.Items6")});
             this.CBserverTpList.Name = "CBserverTpList";
             // 
             // CBpasteOnlyPos
