@@ -61,6 +61,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add server to server list ... ähnelt.
+        /// </summary>
+        internal static string addHistoryButton {
+            get {
+                return ResourceManager.GetString("addHistoryButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add server to history ähnelt.
+        /// </summary>
+        internal static string addHistoryTitle {
+            get {
+                return ResourceManager.GetString("addHistoryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a valid (not empty) configdir. ähnelt.
         /// </summary>
         internal static string ConfigdirBody {
@@ -93,6 +111,24 @@ namespace TheStompingLandLauncher {
         internal static string ConfigurationNameHeader {
             get {
                 return ResourceManager.GetString("ConfigurationNameHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Edit server ... ähnelt.
+        /// </summary>
+        internal static string editHistoryButton {
+            get {
+                return ResourceManager.GetString("editHistoryButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Edit server ähnelt.
+        /// </summary>
+        internal static string editHistoryTitle {
+            get {
+                return ResourceManager.GetString("editHistoryTitle", resourceCulture);
             }
         }
         

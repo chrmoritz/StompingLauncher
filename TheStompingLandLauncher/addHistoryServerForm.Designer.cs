@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TBaddServerIP = new System.Windows.Forms.TextBox();
             this.BaddServer = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TBaddServerDesc = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -47,15 +49,27 @@
             // 
             // BaddServer
             // 
-            this.BaddServer.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.BaddServer, "BaddServer");
+            this.BaddServer.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BaddServer.Name = "BaddServer";
             this.BaddServer.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // TBaddServerDesc
+            // 
+            resources.ApplyResources(this.TBaddServerDesc, "TBaddServerDesc");
+            this.TBaddServerDesc.Name = "TBaddServerDesc";
             // 
             // addHistoryServerForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TBaddServerDesc);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BaddServer);
             this.Controls.Add(this.TBaddServerIP);
             this.Controls.Add(this.label1);
@@ -70,6 +84,8 @@
 
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox TBaddServerIP;
-        private System.Windows.Forms.Button BaddServer;
+        public System.Windows.Forms.Button BaddServer;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox TBaddServerDesc;
     }
 }

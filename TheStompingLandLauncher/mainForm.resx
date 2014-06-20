@@ -124,10 +124,6 @@
   <data name="BeditSL.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BeditSL.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BeditSL.Location" type="System.Drawing.Point, System.Drawing">
     <value>602, 117</value>
@@ -135,6 +131,7 @@
   <data name="BeditSL.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 23</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BeditSL.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>

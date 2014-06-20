@@ -143,18 +143,9 @@ namespace TheStompingLandLauncher
         private void BjoinServer_Click(object sender, EventArgs e)
         {
             string server = TBjoinIP.Text;
-            //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-            //Match match = rgx.Match(server);
-            //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-            //{
-                Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
-                Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
-                addToServerList(server);
-            //}
-            //else
-            //{
-            //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
+            Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
+            this.addToServerList(server, null);
         }
 
         private void BconnectSL_Click(object sender, EventArgs e)
@@ -164,44 +155,46 @@ namespace TheStompingLandLauncher
                 return;
             }
             string server = (string)LBserverHistory.SelectedItem;
-            //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-            //Match match = rgx.Match(server);
-            //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-            //{
-            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", server);
+            int i = server.IndexOf(" (");
+            string ip = (i == -1) ? server : server.Substring(0, i);
+            string desc = (i == -1) ? "" : server.Substring(i + 2, server.Length - i - 3);
+            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", ip);
             Properties.Settings.Default["lastConnected"] = TBjoinIP.Text;
-            addToServerList(server);
-            Properties.Settings.Default.Save();
-            //}
-            //else
-            //{
-            //    LBserverHistory.Items.RemoveAt(LBserverHistory.SelectedIndex);
-            //}
+            this.addToServerList(ip, desc);
         }
 
         private void BaddSL_Click(object sender, EventArgs e)
         {
             addHistoryServerForm addForm = new addHistoryServerForm();
+            addForm.Text = GlobalStrings.addHistoryTitle;
+            addForm.BaddServer.Text = GlobalStrings.addHistoryButton;
             if (addForm.ShowDialog(this) == DialogResult.OK)
             {
-                string addIP = addForm.TBaddServerIP.Text;
-                //Regex rgx = new Regex(@"^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?):(\d\d?\d?\d?\d?)$");
-                //Match match = rgx.Match(addIP);
-                //if (match.Success && int.Parse(match.Groups[1].Value) < 257 && int.Parse(match.Groups[2].Value) < 257 && int.Parse(match.Groups[3].Value) < 257 && int.Parse(match.Groups[4].Value) < 257 && int.Parse(match.Groups[5].Value) < 65536 && int.Parse(match.Groups[5].Value) > 0)
-                //{
-                addToServerList(addIP);
-                //}
-                //else
-                //{
-                //    MessageBox.Show(GlobalStrings.ServerAddressBody, GlobalStrings.ServerAddressHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                this.addToServerList(addForm.TBaddServerIP.Text, addForm.TBaddServerDesc.Text);
             }
         }
 
         private void BeditSL_Click(object sender, EventArgs e)
         {
-            // ToDo
-            return;
+            if (LBserverHistory.SelectedIndex == -1)
+            {
+                return;
+            }
+            addHistoryServerForm addForm = new addHistoryServerForm();
+            addForm.Text = GlobalStrings.editHistoryTitle;
+            addForm.BaddServer.Text = GlobalStrings.editHistoryButton;
+            int index = LBserverHistory.SelectedIndex;
+            string server = (string)LBserverHistory.SelectedItem;
+            int i = server.IndexOf(" (");
+            addForm.TBaddServerIP.Text = (i == -1) ? server : server.Substring(0, i);
+            addForm.TBaddServerDesc.Text = (i == -1) ? "" : server.Substring(i + 2, server.Length - i - 3);
+            if (addForm.ShowDialog(this) == DialogResult.OK)
+            {
+                string ip = addForm.TBaddServerIP.Text;
+                string desc = addForm.TBaddServerDesc.Text;
+                LBserverHistory.Items[index] = ip + (String.IsNullOrEmpty(desc) ? "" : " (" + desc + ")");
+                this.saveServerHistory();
+            }
         }
 
         private void BremoveSL_Click(object sender, EventArgs e)
@@ -253,13 +246,16 @@ namespace TheStompingLandLauncher
             Properties.Settings.Default.Save();
         }
 
-        private void addToServerList(string ip)
+        private void addToServerList(string ip, string desc)
         {
-            if (LBserverHistory.Items.Contains(ip))
+            for (int i = 0; i < LBserverHistory.Items.Count; i++)
             {
-                LBserverHistory.Items.Remove(ip);
+                if (LBserverHistory.Items[i].ToString().StartsWith(ip + " (") || LBserverHistory.Items[i].ToString().Equals(ip))
+                {
+                    LBserverHistory.Items.RemoveAt(i);
+                }
             }
-            LBserverHistory.Items.Insert(0, ip);
+            LBserverHistory.Items.Insert(0, ip + (String.IsNullOrEmpty(desc) ? "" : " (" + desc + ")"));
             saveServerHistory();
             LBserverHistory.SelectedIndex = 0;
         }

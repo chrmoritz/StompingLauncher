@@ -201,4 +201,16 @@
   <data name="InvalidWayPointNameHeader" xml:space="preserve">
     <value>Please enter a at least 5 characters long waypoint name.</value>
   </data>
+  <data name="addHistoryButton" xml:space="preserve">
+    <value>Add server to server list ...</value>
+  </data>
+  <data name="addHistoryTitle" xml:space="preserve">
+    <value>Add server to history</value>
+  </data>
+  <data name="editHistoryButton" xml:space="preserve">
+    <value>Edit server ...</value>
+  </data>
+  <data name="editHistoryTitle" xml:space="preserve">
+    <value>Edit server</value>
+  </data>
 </root>

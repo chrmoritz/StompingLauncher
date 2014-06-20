@@ -201,4 +201,16 @@
   <data name="InvalidWayPointNameHeader" xml:space="preserve">
     <value>Bitte gebe einen mindestens 5 Zeichen langen Wegpunktnamen ein.</value>
   </data>
+  <data name="addHistoryButton" xml:space="preserve">
+    <value>Server zur Verlaufsliste hinzufügen ...</value>
+  </data>
+  <data name="addHistoryTitle" xml:space="preserve">
+    <value>Server zum Verlauf hinzufügen</value>
+  </data>
+  <data name="editHistoryButton" xml:space="preserve">
+    <value>Server bearbeiten ...</value>
+  </data>
+  <data name="editHistoryTitle" xml:space="preserve">
+    <value>Server bearbeiten</value>
+  </data>
 </root>
