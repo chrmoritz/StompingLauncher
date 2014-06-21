@@ -31,7 +31,6 @@ namespace TheStompingLandLauncher
         public mainForm()
         {
             InitializeComponent();
-            CBserverRestartTime.SelectedIndex = 1;
             //Load stored Settings
             TBjoinIP.Text = (string)Properties.Settings.Default["lastConnected"];
             string serverHistory = (string)Properties.Settings.Default["ServerHistory"];
@@ -336,7 +335,48 @@ namespace TheStompingLandLauncher
             }
             if (RBserverTypeCreative.Checked)
             {
+                BrestartCreativeServer.Enabled = true;
+                BdelayRestartCreative.Enabled = true;
+                this.creativeRestartTimer = new System.Timers.Timer(int.Parse(TBserverRestartTime.Text) * 60000);
+                this.creativeRestartTimer.Elapsed += new ElapsedEventHandler(creativeRestart);
+                this.creativeRestartTimer.Start();
+            }
+        }
 
+        private void creativeRestart(object source, ElapsedEventArgs e)
+        {
+            this.serverProcess.CloseMainWindow();
+            System.Timers.Timer timer = new System.Timers.Timer(5000);
+            timer.Elapsed += new ElapsedEventHandler(creativeKillHangingServer);
+            timer.AutoReset = false;
+            timer.Start();
+        }
+
+        private void creativeKillHangingServer(object source, ElapsedEventArgs e)
+        {
+            if (!this.serverProcess.HasExited)
+            {
+                this.serverProcess.Kill();
+                System.Timers.Timer timer = new System.Timers.Timer(5000);
+                timer.Elapsed += new ElapsedEventHandler(creativeKillHangingServer);
+                timer.AutoReset = false;
+                timer.Start();
+            }
+            else
+            {
+                string[] creativeServerSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
+                Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=");
+                for (int i = 0; i < creativeServerSaveLines.Length; i++)
+                {
+                    Match match = rgx.Match(creativeServerSaveLines[i]);
+                    if (match.Success)
+                    {
+                        creativeServerSaveLines[i] = match.Groups[0].Value + "(X=-35461.242188,Y=-21397.582031,Z=918.003479),Rotation=(Pitch=0,Yaw=10137,Roll=0),Stat_Expertise=2147000000,N_Hunger=-2147483648,N_Thirst=-2147483648,R_Arrows=2147483647,R_Rope=2147483647,R_Herbs=2147483647,"
+                            + "MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,ItemSlot[1]=\"Bow\",ItemSlot[2]=\"Spear\",ItemSlot[3]=\"Bolas\",ItemSlot[4]=\"Shield\",ItemSlot[5]=\"Shield\",ItemSlot[6]=\"Shield\",ItemSlot[7]=\"Shield\",ItemSlot[8]=\"Shield\",ItemSlot[9]=\"Shield\")";
+                    }
+                }
+                System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini", creativeServerSaveLines);
+                this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
             }
         }
 
@@ -390,6 +430,8 @@ namespace TheStompingLandLauncher
                 }
                 this.serverProcess.CloseMainWindow();
                 BshutDownServer.Enabled = false;
+                BrestartCreativeServer.Enabled = false;
+                BdelayRestartCreative.Enabled = false;
                 System.Timers.Timer timer = new System.Timers.Timer(5000);
                 timer.Elapsed += new ElapsedEventHandler(killHangingServer);
                 timer.AutoReset = false;
@@ -546,14 +588,29 @@ namespace TheStompingLandLauncher
         {
             if (RBserverTypeCreative.Checked)
             {
-                CBserverRestartTime.Enabled = true;
-                BrestartCreativeServer.Enabled = true;
+                TBserverRestartTime.Enabled = true;
             }
             else
             {
-                CBserverRestartTime.Enabled = false;
-                BrestartCreativeServer.Enabled = false;
+                TBserverRestartTime.Enabled = false;
             }
+        }
+
+        private void BrestartCreativeServer_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(GlobalStrings.ServerShutdownBody, GlobalStrings.ServerShutdownHeader, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK && this.serverProcess != null)
+            {
+                this.creativeRestartTimer.Stop();
+                this.creativeRestart(null, null);
+                this.creativeRestartTimer.Start();
+            }
+        }
+
+        private void BdelayRestartCreative_Click(object sender, EventArgs e)
+        {
+            this.creativeRestartTimer.Stop();
+            this.creativeRestartTimer.Start();
         }
 
         // ############################################### SOLO SAVEFILE EDITOR ###############################################

@@ -44,8 +44,10 @@
             this.TBjoinIP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BdelayRestartCreative = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.TBserverRestartTime = new System.Windows.Forms.TextBox();
             this.BrestartCreativeServer = new System.Windows.Forms.Button();
-            this.CBserverRestartTime = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.RBserverTypeCreative = new System.Windows.Forms.RadioButton();
             this.RBserverTypeService = new System.Windows.Forms.RadioButton();
@@ -269,8 +271,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.BdelayRestartCreative);
+            this.tabPage2.Controls.Add(this.label35);
+            this.tabPage2.Controls.Add(this.TBserverRestartTime);
             this.tabPage2.Controls.Add(this.BrestartCreativeServer);
-            this.tabPage2.Controls.Add(this.CBserverRestartTime);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.RBserverTypeCreative);
             this.tabPage2.Controls.Add(this.RBserverTypeService);
@@ -285,27 +289,30 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // BdelayRestartCreative
+            // 
+            resources.ApplyResources(this.BdelayRestartCreative, "BdelayRestartCreative");
+            this.BdelayRestartCreative.Name = "BdelayRestartCreative";
+            this.BdelayRestartCreative.UseVisualStyleBackColor = true;
+            this.BdelayRestartCreative.Click += new System.EventHandler(this.BdelayRestartCreative_Click);
+            // 
+            // label35
+            // 
+            resources.ApplyResources(this.label35, "label35");
+            this.label35.Name = "label35";
+            // 
+            // TBserverRestartTime
+            // 
+            resources.ApplyResources(this.TBserverRestartTime, "TBserverRestartTime");
+            this.TBserverRestartTime.Name = "TBserverRestartTime";
+            this.TBserverRestartTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateNumberInput);
+            // 
             // BrestartCreativeServer
             // 
             resources.ApplyResources(this.BrestartCreativeServer, "BrestartCreativeServer");
             this.BrestartCreativeServer.Name = "BrestartCreativeServer";
             this.BrestartCreativeServer.UseVisualStyleBackColor = true;
-            // 
-            // CBserverRestartTime
-            // 
-            this.CBserverRestartTime.AutoCompleteCustomSource.AddRange(new string[] {
-            resources.GetString("CBserverRestartTime.AutoCompleteCustomSource"),
-            resources.GetString("CBserverRestartTime.AutoCompleteCustomSource1"),
-            resources.GetString("CBserverRestartTime.AutoCompleteCustomSource2")});
-            this.CBserverRestartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.CBserverRestartTime, "CBserverRestartTime");
-            this.CBserverRestartTime.FormattingEnabled = true;
-            this.CBserverRestartTime.Items.AddRange(new object[] {
-            resources.GetString("CBserverRestartTime.Items"),
-            resources.GetString("CBserverRestartTime.Items1"),
-            resources.GetString("CBserverRestartTime.Items2")});
-            this.CBserverRestartTime.Name = "CBserverRestartTime";
-            this.CBserverRestartTime.Tag = "";
+            this.BrestartCreativeServer.Click += new System.EventHandler(this.BrestartCreativeServer_Click);
             // 
             // label11
             // 
@@ -1220,13 +1227,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button BsoloDisableHunger;
         private System.Windows.Forms.Button BsoloUnlimitedAmmo;
-        private System.Windows.Forms.ComboBox CBserverRestartTime;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton RBserverTypeCreative;
         private System.Windows.Forms.RadioButton RBserverTypeService;
         private System.Windows.Forms.RadioButton RBserverTypeNormal;
         private System.Windows.Forms.Button BshutDownServer;
         private System.Windows.Forms.Button BrestartCreativeServer;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox TBserverRestartTime;
+        private System.Windows.Forms.Button BdelayRestartCreative;
     }
 }
 
