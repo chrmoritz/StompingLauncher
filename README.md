@@ -2,7 +2,7 @@
 
 # Download: 
 
-Current version (v0.3.2): https://github.com/chrmoritz/StompingLauncher/releases (57kb)
+Current version (v0.3.3): https://github.com/chrmoritz/StompingLauncher/releases (62kb)
 
 # Features:
 
@@ -23,6 +23,10 @@ Current version (v0.3.2): https://github.com/chrmoritz/StompingLauncher/releases
 * simply edit host options like:
   * hostname, port, public (steam) visibility, steam query port and choose a custom configuration directory
   * change slots / max players counts
+* multipe server start options:
+  * normal (the default one without something special)
+  * auto restart after crash (The Stomping Launcher monitors your server and restarts it, when its crashed / not responding)
+  * creative mode (the server will restart after a set amount of time and give all players full equip (expertise/herbs/weapons/ammo), PvE recommended)
 * ability to auto-join your server on startup (if you host it on a local PC)
 * support for multiple server profiles (save and load your server configurations)
 * Note: if you want your server be public available make sure you forward the port, port+1 and the steamQueryPort (all UDP) and have a steam client running on your computer (needed for server list visibility)
@@ -51,3 +55,8 @@ Current version (v0.3.2): https://github.com/chrmoritz/StompingLauncher/releases
   * please report bugs in the [Issue Tracker](https://github.com/chrmoritz/StompingLauncher/issues)
 * German translation
   * contribution of other translation are always welcome 
+
+# Roadmap:
+
+* ini tweaks: graphical interface for changing advanced (config file only) graphic settings and key mappings
+* improved server savefile editor / waypoint manager (DataGridView)
