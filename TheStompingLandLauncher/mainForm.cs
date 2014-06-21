@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -20,6 +21,9 @@ namespace TheStompingLandLauncher
     {
         private Dictionary<String, serverSetting> serverSettings;
         private Process serverProcess;
+        private string lastServerStartCmd;
+        private System.Timers.Timer serverMonitor;
+        private System.Timers.Timer creativeRestartTimer;
         public List<WayPoint> wayPoints;
         private string[] serverSaveLines;
         private int copiedSaveLine;
@@ -315,12 +319,64 @@ namespace TheStompingLandLauncher
                 }
             }
             this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", cmd);
+            this.lastServerStartCmd = cmd;
             BshutDownServer.Enabled = true;
             if (CBautoJoin.Checked)
             {
-                System.Threading.Thread.Sleep(5000);
-                Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:" + TBport.Text);
+                System.Timers.Timer timer = new System.Timers.Timer(5000);
+                timer.Elapsed += new ElapsedEventHandler(joinLocalServer);
+                timer.AutoReset = false;
+                timer.Start();
             }
+            if (RBserverTypeService.Checked)
+            {
+                this.serverMonitor = new System.Timers.Timer(10000);
+                this.serverMonitor.Elapsed += new ElapsedEventHandler(minitorServer);
+                this.serverMonitor.Start();
+            }
+            if (RBserverTypeCreative.Checked)
+            {
+
+            }
+        }
+
+        private void minitorServer(object source, ElapsedEventArgs e)
+        {
+            Console.WriteLine("start monitor server");
+            if (!this.serverProcess.Responding)
+            {
+                if (this.serverProcess.HasExited)
+                {
+                    this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
+                }
+                else
+                {
+                    this.serverMonitor.Stop();
+                    System.Timers.Timer timer = new System.Timers.Timer(5000);
+                    timer.Elapsed += new ElapsedEventHandler(recheckServerResponding);
+                    timer.AutoReset = false;
+                    timer.Start();
+                }
+            }
+            Console.WriteLine("finished monitor server");
+        }
+
+        private void recheckServerResponding(object source, ElapsedEventArgs e)
+        {
+            if (!this.serverProcess.Responding)
+            {
+                if (!this.serverProcess.HasExited)
+                {
+                    this.serverProcess.Kill();
+                }
+                this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
+                this.serverMonitor.Start();
+            }
+        }
+
+        private void joinLocalServer(object source, ElapsedEventArgs e)
+        {
+            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:" + TBport.Text);
         }
 
         private void BshutDownServer_Click(object sender, EventArgs e)
@@ -328,15 +384,26 @@ namespace TheStompingLandLauncher
             DialogResult result = MessageBox.Show(GlobalStrings.ServerShutdownBody, GlobalStrings.ServerShutdownHeader, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK && this.serverProcess != null)
             {
+                if (this.serverMonitor != null)
+                {
+                    this.serverMonitor.Stop();
+                }
                 this.serverProcess.CloseMainWindow();
                 BshutDownServer.Enabled = false;
-                System.Threading.Thread.Sleep(5000);
-                if (!this.serverProcess.HasExited)
-                {
-                    this.serverProcess.Kill();
-                }
-                this.serverProcess = null;
+                System.Timers.Timer timer = new System.Timers.Timer(5000);
+                timer.Elapsed += new ElapsedEventHandler(killHangingServer);
+                timer.AutoReset = false;
+                timer.Start();
             }
+        }
+
+        private void killHangingServer(object source, ElapsedEventArgs e)
+        {
+            if (!this.serverProcess.HasExited)
+            {
+                this.serverProcess.Kill();
+            }
+            this.serverProcess = null;
         }
 
         private void BloadSC_Click(object sender, EventArgs e)
