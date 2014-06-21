@@ -828,28 +828,27 @@ namespace TheStompingLandLauncher
 
         public void restoreDefaultWaypoints()
         {
-            bool german = CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "de";
-            this.wayPoints.Add(new WayPoint(german ? "Wasserfallhöhle" : "Waterfall cave", 89.725906, -34004.398438, 113.925491, 10833));
-            CBsoloTpList.Items.Add(german ? "Wasserfallhöhle" : "Waterfall cave");
-            CBserverTpList.Items.Add(german ? "Wasserfallhöhle" : "Waterfall cave");
-            this.wayPoints.Add(new WayPoint(german ? "Große Wasserhöhle Eingang" : "big water cave entrance", -48754.703125, -8867.308594, 1724.750244, 17271));
-            CBsoloTpList.Items.Add(german ? "Große Wasserhöhle Eingang" : "big water cave entrance");
-            CBserverTpList.Items.Add(german ? "Große Wasserhöhle Eingang" : "big water cave entrance");
-            this.wayPoints.Add(new WayPoint(german ? "Große Wasserhöhle Ausgang" : "big water cave exit", -35461.242188, -21397.582031, 918.003479, 10137));
-            CBsoloTpList.Items.Add(german ? "Große Wasserhöhle Ausgang" : "big water cave exit");
-            CBserverTpList.Items.Add(german ? "Große Wasserhöhle Ausgang" : "big water cave exit");
-            this.wayPoints.Add(new WayPoint(german ? "Vulkan" : "vulcano", -19371.386719, 21350.605469, 5841.007813, -19733));
-            CBsoloTpList.Items.Add(german ? "Vulkan" : "vulcano");
-            CBserverTpList.Items.Add(german ? "Vulkan" : "vulcano");
-            this.wayPoints.Add(new WayPoint(german ? "Vulkanhöhle Eingang" : "vulcano cave entrance", -22653.009766, 23101.542969, 3110.780518, 17315));
-            CBsoloTpList.Items.Add(german ? "Vulkanhöhle Eingang" : "vulcano cave entrance");
-            CBserverTpList.Items.Add(german ? "Vulkanhöhle Eingang" : "vulcano cave entrance");
-            this.wayPoints.Add(new WayPoint(german ? "Südlicher See" : "southern lake", 21226.568359, 28516.144531, 913.588501, 14213));
-            CBsoloTpList.Items.Add(german ? "Südlicher See" : "southern lake");
-            CBserverTpList.Items.Add(german ? "Südlicher See" : "southern lake");
-            this.wayPoints.Add(new WayPoint(german ? "Westliche Flussmündung" : "western river mouth", 46529.703125, -19490.609375, 151.390274, 5135));
-            CBsoloTpList.Items.Add(german ? "Westliche Flussmündung" : "western river mouth");
-            CBserverTpList.Items.Add(german ? "Westliche Flussmündung" : "western river mouth");
+            this.wayPoints.Add(new WayPoint(GlobalStrings.waterfallCave, 89.725906, -34004.398438, 113.925491, 10833));
+            CBsoloTpList.Items.Add(GlobalStrings.waterfallCave);
+            CBserverTpList.Items.Add(GlobalStrings.waterfallCave);
+            this.wayPoints.Add(new WayPoint(GlobalStrings.bigWaterCaveEntrance, -48754.703125, -8867.308594, 1724.750244, 17271));
+            CBsoloTpList.Items.Add(GlobalStrings.bigWaterCaveEntrance);
+            CBserverTpList.Items.Add(GlobalStrings.bigWaterCaveEntrance);
+            this.wayPoints.Add(new WayPoint(GlobalStrings.bigWaterCaveExit, -35461.242188, -21397.582031, 918.003479, 10137));
+            CBsoloTpList.Items.Add(GlobalStrings.bigWaterCaveExit);
+            CBserverTpList.Items.Add(GlobalStrings.bigWaterCaveExit);
+            this.wayPoints.Add(new WayPoint(GlobalStrings.vulcano, -19371.386719, 21350.605469, 5841.007813, -19733));
+            CBsoloTpList.Items.Add(GlobalStrings.vulcano);
+            CBserverTpList.Items.Add(GlobalStrings.vulcano);
+            this.wayPoints.Add(new WayPoint(GlobalStrings.vulcanoCaveEntrance, -22653.009766, 23101.542969, 3110.780518, 17315));
+            CBsoloTpList.Items.Add(GlobalStrings.vulcanoCaveEntrance);
+            CBserverTpList.Items.Add(GlobalStrings.vulcanoCaveEntrance);
+            this.wayPoints.Add(new WayPoint(GlobalStrings.southernLake, 21226.568359, 28516.144531, 913.588501, 14213));
+            CBsoloTpList.Items.Add(GlobalStrings.southernLake);
+            CBserverTpList.Items.Add(GlobalStrings.southernLake);
+            this.wayPoints.Add(new WayPoint(GlobalStrings.westernRiverMouth, 46529.703125, -19490.609375, 151.390274, 5135));
+            CBsoloTpList.Items.Add(GlobalStrings.westernRiverMouth);
+            CBserverTpList.Items.Add(GlobalStrings.westernRiverMouth);
             saveWayPoints();
         }
 

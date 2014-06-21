@@ -213,10 +213,31 @@
   <data name="editHistoryTitle" xml:space="preserve">
     <value>Edit server</value>
   </data>
+  <data name="bigWaterCaveEntrance" xml:space="preserve">
+    <value>big water cave entrance</value>
+  </data>
+  <data name="bigWaterCaveExit" xml:space="preserve">
+    <value>big water cave exit</value>
+  </data>
   <data name="ServerShutdownBody" xml:space="preserve">
     <value>Do you really want to shutdown the server? All progress from players currently still logged in will be lost.</value>
   </data>
   <data name="ServerShutdownHeader" xml:space="preserve">
     <value>Warning: Server shutdown?</value>
+  </data>
+  <data name="southernLake" xml:space="preserve">
+    <value>southern lake</value>
+  </data>
+  <data name="vulcano" xml:space="preserve">
+    <value>vulcano</value>
+  </data>
+  <data name="vulcanoCaveEntrance" xml:space="preserve">
+    <value>vulcano cave entrance</value>
+  </data>
+  <data name="waterfallCave" xml:space="preserve">
+    <value>Waterfall cave</value>
+  </data>
+  <data name="westernRiverMouth" xml:space="preserve">
+    <value>western river mouth</value>
   </data>
 </root>

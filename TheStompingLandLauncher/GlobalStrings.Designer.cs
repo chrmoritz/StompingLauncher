@@ -79,6 +79,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die big water cave entrance ähnelt.
+        /// </summary>
+        internal static string bigWaterCaveEntrance {
+            get {
+                return ResourceManager.GetString("bigWaterCaveEntrance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die big water cave exit ähnelt.
+        /// </summary>
+        internal static string bigWaterCaveExit {
+            get {
+                return ResourceManager.GetString("bigWaterCaveExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a valid (not empty) configdir. ähnelt.
         /// </summary>
         internal static string ConfigdirBody {
@@ -349,6 +367,15 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die southern lake ähnelt.
+        /// </summary>
+        internal static string southernLake {
+            get {
+                return ResourceManager.GetString("southernLake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a valid SteamQueryPort. (between 1 and 65535) ähnelt.
         /// </summary>
         internal static string SteamQueryPortBody {
@@ -363,6 +390,42 @@ namespace TheStompingLandLauncher {
         internal static string SteamQueryPortHeader {
             get {
                 return ResourceManager.GetString("SteamQueryPortHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die vulcano ähnelt.
+        /// </summary>
+        internal static string vulcano {
+            get {
+                return ResourceManager.GetString("vulcano", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die vulcano cave entrance ähnelt.
+        /// </summary>
+        internal static string vulcanoCaveEntrance {
+            get {
+                return ResourceManager.GetString("vulcanoCaveEntrance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Waterfall cave ähnelt.
+        /// </summary>
+        internal static string waterfallCave {
+            get {
+                return ResourceManager.GetString("waterfallCave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die western river mouth ähnelt.
+        /// </summary>
+        internal static string westernRiverMouth {
+            get {
+                return ResourceManager.GetString("westernRiverMouth", resourceCulture);
             }
         }
     }
