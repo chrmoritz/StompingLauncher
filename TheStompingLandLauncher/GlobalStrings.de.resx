@@ -213,4 +213,10 @@
   <data name="editHistoryTitle" xml:space="preserve">
     <value>Server bearbeiten</value>
   </data>
+  <data name="ServerShutdownBody" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie den Server jetzt herrunterfahren wollen? Jeglicher Fortschritt von momentan noch eingeloggten Spielern wird verlorengehen!</value>
+  </data>
+  <data name="ServerShutdownHeader" xml:space="preserve">
+    <value>Warnung: Server herrunterfahren?</value>
+  </data>
 </root>

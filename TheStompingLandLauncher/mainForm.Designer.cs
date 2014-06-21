@@ -44,6 +44,13 @@
             this.TBjoinIP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BrestartCreativeServer = new System.Windows.Forms.Button();
+            this.CBserverRestartTime = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.RBserverTypeCreative = new System.Windows.Forms.RadioButton();
+            this.RBserverTypeService = new System.Windows.Forms.RadioButton();
+            this.RBserverTypeNormal = new System.Windows.Forms.RadioButton();
+            this.BshutDownServer = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.BnewSC = new System.Windows.Forms.Button();
             this.BsaveSC = new System.Windows.Forms.Button();
@@ -262,6 +269,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.BrestartCreativeServer);
+            this.tabPage2.Controls.Add(this.CBserverRestartTime);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.RBserverTypeCreative);
+            this.tabPage2.Controls.Add(this.RBserverTypeService);
+            this.tabPage2.Controls.Add(this.RBserverTypeNormal);
+            this.tabPage2.Controls.Add(this.BshutDownServer);
             this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.CBautoJoin);
             this.tabPage2.Controls.Add(this.BhostServer);
@@ -270,6 +284,61 @@
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // BrestartCreativeServer
+            // 
+            resources.ApplyResources(this.BrestartCreativeServer, "BrestartCreativeServer");
+            this.BrestartCreativeServer.Name = "BrestartCreativeServer";
+            this.BrestartCreativeServer.UseVisualStyleBackColor = true;
+            // 
+            // CBserverRestartTime
+            // 
+            this.CBserverRestartTime.AutoCompleteCustomSource.AddRange(new string[] {
+            resources.GetString("CBserverRestartTime.AutoCompleteCustomSource"),
+            resources.GetString("CBserverRestartTime.AutoCompleteCustomSource1"),
+            resources.GetString("CBserverRestartTime.AutoCompleteCustomSource2")});
+            this.CBserverRestartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.CBserverRestartTime, "CBserverRestartTime");
+            this.CBserverRestartTime.FormattingEnabled = true;
+            this.CBserverRestartTime.Items.AddRange(new object[] {
+            resources.GetString("CBserverRestartTime.Items"),
+            resources.GetString("CBserverRestartTime.Items1"),
+            resources.GetString("CBserverRestartTime.Items2")});
+            this.CBserverRestartTime.Name = "CBserverRestartTime";
+            this.CBserverRestartTime.Tag = "";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // RBserverTypeCreative
+            // 
+            resources.ApplyResources(this.RBserverTypeCreative, "RBserverTypeCreative");
+            this.RBserverTypeCreative.Name = "RBserverTypeCreative";
+            this.RBserverTypeCreative.UseVisualStyleBackColor = true;
+            this.RBserverTypeCreative.CheckedChanged += new System.EventHandler(this.RBserverTypeCreative_CheckedChanged);
+            // 
+            // RBserverTypeService
+            // 
+            resources.ApplyResources(this.RBserverTypeService, "RBserverTypeService");
+            this.RBserverTypeService.Name = "RBserverTypeService";
+            this.RBserverTypeService.UseVisualStyleBackColor = true;
+            // 
+            // RBserverTypeNormal
+            // 
+            resources.ApplyResources(this.RBserverTypeNormal, "RBserverTypeNormal");
+            this.RBserverTypeNormal.Checked = true;
+            this.RBserverTypeNormal.Name = "RBserverTypeNormal";
+            this.RBserverTypeNormal.TabStop = true;
+            this.RBserverTypeNormal.UseVisualStyleBackColor = true;
+            // 
+            // BshutDownServer
+            // 
+            resources.ApplyResources(this.BshutDownServer, "BshutDownServer");
+            this.BshutDownServer.Name = "BshutDownServer";
+            this.BshutDownServer.UseVisualStyleBackColor = true;
+            this.BshutDownServer.Click += new System.EventHandler(this.BshutDownServer_Click);
             // 
             // groupBox6
             // 
@@ -1151,6 +1220,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button BsoloDisableHunger;
         private System.Windows.Forms.Button BsoloUnlimitedAmmo;
+        private System.Windows.Forms.ComboBox CBserverRestartTime;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton RBserverTypeCreative;
+        private System.Windows.Forms.RadioButton RBserverTypeService;
+        private System.Windows.Forms.RadioButton RBserverTypeNormal;
+        private System.Windows.Forms.Button BshutDownServer;
+        private System.Windows.Forms.Button BrestartCreativeServer;
     }
 }
 

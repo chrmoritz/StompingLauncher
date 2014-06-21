@@ -477,6 +477,213 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="BrestartCreativeServer.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BrestartCreativeServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>635, 107</value>
+  </data>
+  <data name="BrestartCreativeServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="BrestartCreativeServer.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="BrestartCreativeServer.Text" xml:space="preserve">
+    <value>restart now</value>
+  </data>
+  <data name="&gt;&gt;BrestartCreativeServer.Name" xml:space="preserve">
+    <value>BrestartCreativeServer</value>
+  </data>
+  <data name="&gt;&gt;BrestartCreativeServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BrestartCreativeServer.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;BrestartCreativeServer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CBserverRestartTime.AutoCompleteCustomSource" xml:space="preserve">
+    <value>30 min</value>
+  </data>
+  <data name="CBserverRestartTime.AutoCompleteCustomSource1" xml:space="preserve">
+    <value>1 hour</value>
+  </data>
+  <data name="CBserverRestartTime.AutoCompleteCustomSource2" xml:space="preserve">
+    <value>2 hour</value>
+  </data>
+  <data name="CBserverRestartTime.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CBserverRestartTime.Items" xml:space="preserve">
+    <value>30 min</value>
+  </data>
+  <data name="CBserverRestartTime.Items1" xml:space="preserve">
+    <value>1 hours</value>
+  </data>
+  <data name="CBserverRestartTime.Items2" xml:space="preserve">
+    <value>2 hours</value>
+  </data>
+  <data name="CBserverRestartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>571, 109</value>
+  </data>
+  <data name="CBserverRestartTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="CBserverRestartTime.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;CBserverRestartTime.Name" xml:space="preserve">
+    <value>CBserverRestartTime</value>
+  </data>
+  <data name="&gt;&gt;CBserverRestartTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CBserverRestartTime.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;CBserverRestartTime.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 112</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Start type:</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RBserverTypeCreative.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RBserverTypeCreative.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 110</value>
+  </data>
+  <data name="RBserverTypeCreative.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 17</value>
+  </data>
+  <data name="RBserverTypeCreative.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="RBserverTypeCreative.Text" xml:space="preserve">
+    <value>creative: restart + give players full equip (exp, herbs...) every</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeCreative.Name" xml:space="preserve">
+    <value>RBserverTypeCreative</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeCreative.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeCreative.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeCreative.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RBserverTypeService.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RBserverTypeService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 110</value>
+  </data>
+  <data name="RBserverTypeService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="RBserverTypeService.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="RBserverTypeService.Text" xml:space="preserve">
+    <value>auto restart after crash</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeService.Name" xml:space="preserve">
+    <value>RBserverTypeService</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeService.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeService.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="RBserverTypeNormal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RBserverTypeNormal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 110</value>
+  </data>
+  <data name="RBserverTypeNormal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="RBserverTypeNormal.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="RBserverTypeNormal.Text" xml:space="preserve">
+    <value>normal</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeNormal.Name" xml:space="preserve">
+    <value>RBserverTypeNormal</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeNormal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeNormal.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;RBserverTypeNormal.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="BshutDownServer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="BshutDownServer.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BshutDownServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>571, 132</value>
+  </data>
+  <data name="BshutDownServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 23</value>
+  </data>
+  <data name="BshutDownServer.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="BshutDownServer.Text" xml:space="preserve">
+    <value>shut down server</value>
+  </data>
+  <data name="&gt;&gt;BshutDownServer.Name" xml:space="preserve">
+    <value>BshutDownServer</value>
+  </data>
+  <data name="&gt;&gt;BshutDownServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BshutDownServer.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;BshutDownServer.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="groupBox6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -490,7 +697,7 @@
     <value>120, 23</value>
   </data>
   <data name="BnewSC.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>21</value>
   </data>
   <data name="BnewSC.Text" xml:space="preserve">
     <value>New configuration ...</value>
@@ -517,7 +724,7 @@
     <value>140, 23</value>
   </data>
   <data name="BsaveSC.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>20</value>
   </data>
   <data name="BsaveSC.Text" xml:space="preserve">
     <value>Save server configuration</value>
@@ -544,7 +751,7 @@
     <value>140, 23</value>
   </data>
   <data name="BloadSC.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>19</value>
   </data>
   <data name="BloadSC.Text" xml:space="preserve">
     <value>Load server configuration</value>
@@ -571,7 +778,7 @@
     <value>274, 21</value>
   </data>
   <data name="CBserverConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;CBserverConfig.Name" xml:space="preserve">
     <value>CBserverConfig</value>
@@ -589,7 +796,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 151</value>
+    <value>6, 157</value>
   </data>
   <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
     <value>704, 52</value>
@@ -610,19 +817,19 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="CBautoJoin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="CBautoJoin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 114</value>
+    <value>6, 136</value>
   </data>
   <data name="CBautoJoin.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 17</value>
   </data>
   <data name="CBautoJoin.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="CBautoJoin.Text" xml:space="preserve">
     <value>Autojoin this server</value>
@@ -637,19 +844,19 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;CBautoJoin.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="BhostServer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="BhostServer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 110</value>
+    <value>127, 132</value>
   </data>
   <data name="BhostServer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 23</value>
+    <value>438, 23</value>
   </data>
   <data name="BhostServer.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="BhostServer.Text" xml:space="preserve">
     <value>Start/host server ...</value>
@@ -664,7 +871,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;BhostServer.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>9</value>
   </data>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -994,7 +1201,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>10</value>
   </data>
   <data name="CBremoveDinos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1099,7 +1306,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

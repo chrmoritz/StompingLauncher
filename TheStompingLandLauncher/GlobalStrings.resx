@@ -213,4 +213,10 @@
   <data name="editHistoryTitle" xml:space="preserve">
     <value>Edit server</value>
   </data>
+  <data name="ServerShutdownBody" xml:space="preserve">
+    <value>Do you really want to shutdown the server? All progress from players currently still logged in will be lost.</value>
+  </data>
+  <data name="ServerShutdownHeader" xml:space="preserve">
+    <value>Warning: Server shutdown?</value>
+  </data>
 </root>

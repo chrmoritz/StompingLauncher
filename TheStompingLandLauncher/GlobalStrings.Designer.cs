@@ -277,6 +277,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Do you really want to shutdown the server? All progress from players currently still logged in will be lost. ähnelt.
+        /// </summary>
+        internal static string ServerShutdownBody {
+            get {
+                return ResourceManager.GetString("ServerShutdownBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Warning: Server shutdown? ähnelt.
+        /// </summary>
+        internal static string ServerShutdownHeader {
+            get {
+                return ResourceManager.GetString("ServerShutdownHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die You have to shut down your server before editing savefiles. Otherwise your changes will be overwritten. ähnelt.
         /// </summary>
         internal static string ServerStillRunningBody {

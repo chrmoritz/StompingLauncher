@@ -19,6 +19,7 @@ namespace TheStompingLandLauncher
     public partial class mainForm : Form
     {
         private Dictionary<String, serverSetting> serverSettings;
+        private Process serverProcess;
         public List<WayPoint> wayPoints;
         private string[] serverSaveLines;
         private int copiedSaveLine;
@@ -26,6 +27,7 @@ namespace TheStompingLandLauncher
         public mainForm()
         {
             InitializeComponent();
+            CBserverRestartTime.SelectedIndex = 1;
             //Load stored Settings
             TBjoinIP.Text = (string)Properties.Settings.Default["lastConnected"];
             string serverHistory = (string)Properties.Settings.Default["ServerHistory"];
@@ -312,11 +314,28 @@ namespace TheStompingLandLauncher
                     pname = Process.GetProcessesByName("udk");
                 }
             }
-            Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", cmd);
+            this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", cmd);
+            BshutDownServer.Enabled = true;
             if (CBautoJoin.Checked)
             {
                 System.Threading.Thread.Sleep(5000);
                 Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:" + TBport.Text);
+            }
+        }
+
+        private void BshutDownServer_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(GlobalStrings.ServerShutdownBody, GlobalStrings.ServerShutdownHeader, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK && this.serverProcess != null)
+            {
+                this.serverProcess.CloseMainWindow();
+                BshutDownServer.Enabled = false;
+                System.Threading.Thread.Sleep(5000);
+                if (!this.serverProcess.HasExited)
+                {
+                    this.serverProcess.Kill();
+                }
+                this.serverProcess = null;
             }
         }
 
@@ -454,6 +473,20 @@ namespace TheStompingLandLauncher
             ms.Close();
             Properties.Settings.Default["ServerSettings"] = Convert.ToBase64String(buffer);
             Properties.Settings.Default.Save();
+        }
+
+        private void RBserverTypeCreative_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBserverTypeCreative.Checked)
+            {
+                CBserverRestartTime.Enabled = true;
+                BrestartCreativeServer.Enabled = true;
+            }
+            else
+            {
+                CBserverRestartTime.Enabled = false;
+                BrestartCreativeServer.Enabled = false;
+            }
         }
 
         // ############################################### SOLO SAVEFILE EDITOR ###############################################
