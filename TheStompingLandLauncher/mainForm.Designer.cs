@@ -1065,6 +1065,7 @@
             // 
             resources.ApplyResources(this.TBpath, "TBpath");
             this.TBpath.Name = "TBpath";
+            this.TBpath.ReadOnly = true;
             // 
             // BselectPath
             // 

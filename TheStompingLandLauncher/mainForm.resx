@@ -477,6 +477,9 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="BdelayRestartCreative.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="BdelayRestartCreative.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -557,6 +560,9 @@
   </data>
   <data name="&gt;&gt;TBserverRestartTime.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="BrestartCreativeServer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="BrestartCreativeServer.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2926,7 +2932,7 @@
     <value>2</value>
   </data>
   <data name="BserverAddWP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="BserverAddWP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

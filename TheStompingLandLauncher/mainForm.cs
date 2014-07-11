@@ -90,30 +90,26 @@ namespace TheStompingLandLauncher
 
             // detect TSL path
             string TSLpath = (string)Properties.Settings.Default["TSLpath"];
-            if (Directory.Exists(TSLpath))
+            if (String.IsNullOrEmpty(TSLpath) || File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
             {
-                TBpath.Text = TSLpath;
-            }
-            else
-            {
-                //try to detect TSLpath via steams registry entry
-                string steamPath = (string)Registry.GetValue("HKEY_CURRENT_USER\\Software\\Valve\\Steam", "SteamPath", "C:\\Program Files (x86)\\Steam");
-                string path = steamPath.Replace("/", "\\") + "\\steamapps\\common\\the stomping land";
-                if (Directory.Exists(path))
+                TSLpath = (string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Steam App 263440", "InstallLocation", null);
+                if (String.IsNullOrEmpty(TSLpath) || !File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
                 {
-                    TBpath.Text = path;
-                }
-                else
-                {
-                    MessageBox.Show(GlobalStrings.SLfolderPathBody, GlobalStrings.SLfolderPathHeader, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                    TSLpath = (string)Registry.GetValue("HKEY_CURRENT_USER\\Software\\Valve\\Steam", "SteamPath", "C:\\Program Files (x86)\\Steam");
+                    TSLpath = TSLpath.Replace("/", "\\") + "\\steamapps\\common\\the stomping land";
+                    while (String.IsNullOrEmpty(TSLpath) || !File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
                     {
-                        TBpath.Text = folderBrowserDialog1.SelectedPath;
-                        Properties.Settings.Default["TSLpath"] = TBpath.Text;
-                        Properties.Settings.Default.Save();
+                        MessageBox.Show(GlobalStrings.SLfolderPathBody, GlobalStrings.SLfolderPathHeader, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            TSLpath = folderBrowserDialog1.SelectedPath;
+                        }
                     }
                 }
             }
+            TBpath.Text = TSLpath;
+            Properties.Settings.Default["TSLpath"] = TSLpath;
+            Properties.Settings.Default.Save();
         }
 
         private void BselectPath_Click(object sender, EventArgs e)
@@ -121,8 +117,22 @@ namespace TheStompingLandLauncher
             folderBrowserDialog1.SelectedPath = TBpath.Text;
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                TBpath.Text = folderBrowserDialog1.SelectedPath;
-                Properties.Settings.Default["TSLpath"] = TBpath.Text;
+                string TSLpath = folderBrowserDialog1.SelectedPath;
+                while (String.IsNullOrEmpty(TSLpath) || !File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
+                {
+                    MessageBox.Show(GlobalStrings.SLfolderPathBody, GlobalStrings.SLfolderPathHeader, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult result = folderBrowserDialog1.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        TSLpath = folderBrowserDialog1.SelectedPath;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                TBpath.Text = TSLpath;
+                Properties.Settings.Default["TSLpath"] = TSLpath;
                 Properties.Settings.Default.Save();
             }
         }
