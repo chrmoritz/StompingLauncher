@@ -133,13 +133,16 @@
             this.TBsoloY = new System.Windows.Forms.TextBox();
             this.TBsoloZ = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BserverArrest = new System.Windows.Forms.Button();
+            this.BserverCreative = new System.Windows.Forms.Button();
             this.BserverAddWP = new System.Windows.Forms.Button();
             this.BserverTp = new System.Windows.Forms.Button();
             this.CBserverTpList = new System.Windows.Forms.ComboBox();
             this.CBpasteOnlyPos = new System.Windows.Forms.CheckBox();
             this.BPasteSaveLine = new System.Windows.Forms.Button();
             this.BCopySaveLine = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.BwriteServerSave = new System.Windows.Forms.Button();
             this.BreloadServerSave = new System.Windows.Forms.Button();
             this.DGVserverSave = new System.Windows.Forms.DataGridView();
@@ -955,19 +958,48 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.BserverArrest);
+            this.tabPage4.Controls.Add(this.BserverCreative);
             this.tabPage4.Controls.Add(this.BserverAddWP);
             this.tabPage4.Controls.Add(this.BserverTp);
             this.tabPage4.Controls.Add(this.CBserverTpList);
             this.tabPage4.Controls.Add(this.CBpasteOnlyPos);
             this.tabPage4.Controls.Add(this.BPasteSaveLine);
             this.tabPage4.Controls.Add(this.BCopySaveLine);
-            this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.BwriteServerSave);
             this.tabPage4.Controls.Add(this.BreloadServerSave);
             this.tabPage4.Controls.Add(this.DGVserverSave);
             resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // comboBox1
+            // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items")});
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // BserverArrest
+            // 
+            resources.ApplyResources(this.BserverArrest, "BserverArrest");
+            this.BserverArrest.Name = "BserverArrest";
+            this.BserverArrest.UseVisualStyleBackColor = true;
+            // 
+            // BserverCreative
+            // 
+            resources.ApplyResources(this.BserverCreative, "BserverCreative");
+            this.BserverCreative.Name = "BserverCreative";
+            this.BserverCreative.UseVisualStyleBackColor = true;
             // 
             // BserverAddWP
             // 
@@ -1009,12 +1041,6 @@
             this.BCopySaveLine.Name = "BCopySaveLine";
             this.BCopySaveLine.UseVisualStyleBackColor = true;
             this.BCopySaveLine.Click += new System.EventHandler(this.BCopySaveLine_Click);
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            this.label10.UseWaitCursor = true;
             // 
             // BwriteServerSave
             // 
@@ -1153,7 +1179,6 @@
         private System.Windows.Forms.Button BdownSL;
         private System.Windows.Forms.Button BupSL;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BwriteServerSave;
         private System.Windows.Forms.Button BreloadServerSave;
         private System.Windows.Forms.DataGridView DGVserverSave;
@@ -1237,6 +1262,10 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox TBserverRestartTime;
         private System.Windows.Forms.Button BdelayRestartCreative;
+        private System.Windows.Forms.Button BserverArrest;
+        private System.Windows.Forms.Button BserverCreative;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label10;
     }
 }
 

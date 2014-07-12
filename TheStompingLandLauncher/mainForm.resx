@@ -2931,6 +2931,120 @@
   <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 188</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Config dir:</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="comboBox1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>default</value>
+  </data>
+  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 184</value>
+  </data>
+  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 21</value>
+  </data>
+  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
+    <value>comboBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BserverArrest.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BserverArrest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>557, 91</value>
+  </data>
+  <data name="BserverArrest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 23</value>
+  </data>
+  <data name="BserverArrest.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BserverArrest.Text" xml:space="preserve">
+    <value>arrest player (stuck in map)</value>
+  </data>
+  <data name="&gt;&gt;BserverArrest.Name" xml:space="preserve">
+    <value>BserverArrest</value>
+  </data>
+  <data name="&gt;&gt;BserverArrest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BserverArrest.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;BserverArrest.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BserverCreative.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BserverCreative.Location" type="System.Drawing.Point, System.Drawing">
+    <value>557, 62</value>
+  </data>
+  <data name="BserverCreative.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 23</value>
+  </data>
+  <data name="BserverCreative.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="BserverCreative.Text" xml:space="preserve">
+    <value>give player creative mode</value>
+  </data>
+  <data name="&gt;&gt;BserverCreative.Name" xml:space="preserve">
+    <value>BserverCreative</value>
+  </data>
+  <data name="&gt;&gt;BserverCreative.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BserverCreative.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;BserverCreative.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="BserverAddWP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -2938,16 +3052,16 @@
     <value>NoControl</value>
   </data>
   <data name="BserverAddWP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>636, 151</value>
+    <value>623, 154</value>
   </data>
   <data name="BserverAddWP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>90, 23</value>
   </data>
   <data name="BserverAddWP.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="BserverAddWP.Text" xml:space="preserve">
-    <value>add waypnt</value>
+    <value>add waypoint</value>
   </data>
   <data name="&gt;&gt;BserverAddWP.Name" xml:space="preserve">
     <value>BserverAddWP</value>
@@ -2959,19 +3073,19 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BserverAddWP.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="BserverTp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="BserverTp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 122</value>
+    <value>557, 154</value>
   </data>
   <data name="BserverTp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 23</value>
+    <value>60, 23</value>
   </data>
   <data name="BserverTp.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="BserverTp.Text" xml:space="preserve">
     <value>teleport</value>
@@ -2986,19 +3100,19 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BserverTp.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="CBserverTpList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="CBserverTpList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 95</value>
+    <value>558, 127</value>
   </data>
   <data name="CBserverTpList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
+    <value>155, 21</value>
   </data>
   <data name="CBserverTpList.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;CBserverTpList.Name" xml:space="preserve">
     <value>CBserverTpList</value>
@@ -3010,7 +3124,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;CBserverTpList.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="CBpasteOnlyPos.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -3019,16 +3133,16 @@
     <value>True</value>
   </data>
   <data name="CBpasteOnlyPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>632, 61</value>
+    <value>557, 32</value>
   </data>
   <data name="CBpasteOnlyPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
+    <value>151, 17</value>
   </data>
   <data name="CBpasteOnlyPos.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="CBpasteOnlyPos.Text" xml:space="preserve">
-    <value>position only</value>
+    <value>position only (teleportation)</value>
   </data>
   <data name="&gt;&gt;CBpasteOnlyPos.Name" xml:space="preserve">
     <value>CBpasteOnlyPos</value>
@@ -3040,7 +3154,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;CBpasteOnlyPos.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="BPasteSaveLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -3049,7 +3163,7 @@
     <value>False</value>
   </data>
   <data name="BPasteSaveLine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 32</value>
+    <value>638, 3</value>
   </data>
   <data name="BPasteSaveLine.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -3070,13 +3184,13 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BPasteSaveLine.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="BCopySaveLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="BCopySaveLine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 3</value>
+    <value>557, 3</value>
   </data>
   <data name="BCopySaveLine.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -3097,52 +3211,22 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BCopySaveLine.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 188</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 13</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Make sure to shutdown your server before saving or your changes will be overwritten on servershutdown.</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="BwriteServerSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="BwriteServerSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 183</value>
+    <value>558, 183</value>
   </data>
   <data name="BwriteServerSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>154, 23</value>
   </data>
   <data name="BwriteServerSave.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>12</value>
   </data>
   <data name="BwriteServerSave.Text" xml:space="preserve">
-    <value>write/save</value>
+    <value>write server savefile</value>
   </data>
   <data name="&gt;&gt;BwriteServerSave.Name" xml:space="preserve">
     <value>BwriteServerSave</value>
@@ -3154,22 +3238,22 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BwriteServerSave.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="BreloadServerSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="BreloadServerSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 183</value>
+    <value>385, 183</value>
   </data>
   <data name="BreloadServerSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
+    <value>167, 23</value>
   </data>
   <data name="BreloadServerSave.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="BreloadServerSave.Text" xml:space="preserve">
-    <value>reload</value>
+    <value>reload server savefile</value>
   </data>
   <data name="&gt;&gt;BreloadServerSave.Name" xml:space="preserve">
     <value>BreloadServerSave</value>
@@ -3181,7 +3265,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;BreloadServerSave.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="DGVserverSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3190,10 +3274,10 @@
     <value>0, 0</value>
   </data>
   <data name="DGVserverSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>631, 177</value>
+    <value>551, 177</value>
   </data>
   <data name="DGVserverSave.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;DGVserverSave.Name" xml:space="preserve">
     <value>DGVserverSave</value>
@@ -3205,7 +3289,7 @@
     <value>tabPage4</value>
   </data>
   <data name="&gt;&gt;DGVserverSave.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

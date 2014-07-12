@@ -90,7 +90,7 @@ namespace TheStompingLandLauncher
 
             // detect TSL path
             string TSLpath = (string)Properties.Settings.Default["TSLpath"];
-            if (String.IsNullOrEmpty(TSLpath) || File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
+            if (String.IsNullOrEmpty(TSLpath) || !File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
             {
                 TSLpath = (string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Steam App 263440", "InstallLocation", null);
                 if (String.IsNullOrEmpty(TSLpath) || !File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
