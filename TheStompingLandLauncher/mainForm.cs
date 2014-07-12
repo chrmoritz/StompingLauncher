@@ -309,7 +309,7 @@ namespace TheStompingLandLauncher
                 MessageBox.Show(GlobalStrings.HostnameBody, GlobalStrings.HostnameHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (String.IsNullOrEmpty(TBconfigDir.Text))
+            if (CBconfigDir.Checked && String.IsNullOrEmpty(TBconfigDir.Text))
             {
                 MessageBox.Show(GlobalStrings.ConfigdirBody, GlobalStrings.ConfigdirHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -359,7 +359,7 @@ namespace TheStompingLandLauncher
             if (RBserverTypeService.Checked)
             {
                 this.serverMonitor = new System.Timers.Timer(10000);
-                this.serverMonitor.Elapsed += new ElapsedEventHandler(minitorServer);
+                this.serverMonitor.Elapsed += new ElapsedEventHandler(monitorServer);
                 this.serverMonitor.Start();
             }
             if (RBserverTypeCreative.Checked)
@@ -410,7 +410,7 @@ namespace TheStompingLandLauncher
             }
         }
 
-        private void minitorServer(object source, ElapsedEventArgs e)
+        private void monitorServer(object source, ElapsedEventArgs e)
         {
             Console.WriteLine("start monitor server");
             if (!this.serverProcess.Responding)
