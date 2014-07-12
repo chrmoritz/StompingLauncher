@@ -101,6 +101,8 @@ namespace TheStompingLandLauncher
                 CBserverTpList.SelectedIndex = 0;
             }
 
+            CBserverConfigDirs.SelectedIndex = 0;
+
             // detect TSL path
             string TSLpath = (string)Properties.Settings.Default["TSLpath"];
             if (String.IsNullOrEmpty(TSLpath) || !File.Exists(TSLpath + "\\Binaries\\Win32\\UDK.exe"))
@@ -324,7 +326,11 @@ namespace TheStompingLandLauncher
             }
             if (CBconfigDir.Checked)
             {
-                cmd += " --configsubdir=" + TBconfigDir.Text;
+                cmd += " --configsubdir=\"" + TBconfigDir.Text + "\"";
+                if (!TBconfigDir.Items.Contains(TBconfigDir.Text))
+                {
+                    TBconfigDir.Items.Add(TBconfigDir.Text);
+                }
             }
             Process[] pname = Process.GetProcessesByName("udk");
             if (pname.Length > 0)
@@ -387,7 +393,8 @@ namespace TheStompingLandLauncher
             }
             else
             {
-                string[] creativeServerSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
+                string savefile = TBpath.Text + "\\UDKGame\\Config\\" + ((CBconfigDir.Checked) ? TBconfigDir.Text + "\\" : "") + "UDK_TheStompingLand_Server.ini";
+                string[] creativeServerSaveLines = System.IO.File.ReadAllLines(savefile);
                 Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=");
                 for (int i = 0; i < creativeServerSaveLines.Length; i++)
                 {
@@ -398,7 +405,7 @@ namespace TheStompingLandLauncher
                             + "MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,ItemSlot[1]=\"Bow\",ItemSlot[2]=\"Spear\",ItemSlot[3]=\"Bolas\",ItemSlot[4]=\"Shield\",ItemSlot[5]=\"Shield\",ItemSlot[6]=\"Shield\",ItemSlot[7]=\"Shield\",ItemSlot[8]=\"Shield\",ItemSlot[9]=\"Shield\")";
                     }
                 }
-                System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini", creativeServerSaveLines);
+                System.IO.File.WriteAllLines(savefile, creativeServerSaveLines);
                 this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
             }
         }
@@ -572,6 +579,15 @@ namespace TheStompingLandLauncher
             if (CBconfigDir.Checked)
             {
                 TBconfigDir.Enabled = true;
+                string[] confirDirs = Directory.GetDirectories(TBpath.Text + "\\UDKGame\\Config");
+                foreach (String dir in confirDirs)
+                {
+                    string name = new DirectoryInfo(dir).Name;
+                    if (!TBconfigDir.Items.Contains(name))
+                    {
+                        TBconfigDir.Items.Add(name);
+                    }
+                }
             }
             else
             {
@@ -861,13 +877,23 @@ namespace TheStompingLandLauncher
                     pname = Process.GetProcessesByName("udk");
                 }
             }
-            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini"))
+            string[] confirDirs = Directory.GetDirectories(TBpath.Text + "\\UDKGame\\Config");
+            foreach (String dir in confirDirs)
+            {
+                string name = new DirectoryInfo(dir).Name;
+                if (!CBserverConfigDirs.Items.Contains(name))
+                {
+                    CBserverConfigDirs.Items.Add(name);
+                }
+            }
+            string savefile = TBpath.Text + "\\UDKGame\\Config\\" + ((CBserverConfigDirs.SelectedIndex == 0) ? "" : CBserverConfigDirs.SelectedItem.ToString() + "\\") + "UDK_TheStompingLand_Server.ini";
+            if (!File.Exists(savefile))
             {
                 MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             List<PlayerSave> serverSave = new List<PlayerSave>();
-            this.serverSaveLines = System.IO.File.ReadAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini");
+            this.serverSaveLines = System.IO.File.ReadAllLines(savefile);
             Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
             for (int i = 0; i < this.serverSaveLines.Length; i++)
             {
@@ -884,7 +910,8 @@ namespace TheStompingLandLauncher
 
         private void BwriteServerSave_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini"))
+            string savefile = TBpath.Text + "\\UDKGame\\Config\\" + ((CBserverConfigDirs.SelectedIndex == 0) ? "" : CBserverConfigDirs.SelectedItem.ToString() + "\\") + "UDK_TheStompingLand_Server.ini";
+            if (!File.Exists(savefile))
             {
                 MessageBox.Show(GlobalStrings.ServerSaveNotExistBody, GlobalStrings.ServerSaveNotExistHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -916,7 +943,7 @@ namespace TheStompingLandLauncher
                     + "ItemSlot[1]=" + save.itemSlot1 + ",ItemSlot[2]=" + save.itemSlot2 + ",ItemSlot[3]=" + save.itemSlot3 + ",ItemSlot[4]=" + save.itemSlot4 + ",ItemSlot[5]=" + save.itemSlot5
                     + ",ItemSlot[6]=" + save.itemSlot6 + ",ItemSlot[7]=" + save.itemSlot7 + ",ItemSlot[8]=" + save.itemSlot8 + ",ItemSlot[9]=" + save.itemSlot9 + ")";
             }
-            System.IO.File.WriteAllLines(TBpath.Text + "\\UDKGame\\Config\\UDK_TheStompingLand_Server.ini", this.serverSaveLines);
+            System.IO.File.WriteAllLines(savefile, this.serverSaveLines);
         }
 
         private void BCopySaveLine_Click(object sender, EventArgs e)

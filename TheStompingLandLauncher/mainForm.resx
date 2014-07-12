@@ -921,6 +921,30 @@
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="TBconfigDir.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TBconfigDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 68</value>
+  </data>
+  <data name="TBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 21</value>
+  </data>
+  <data name="TBconfigDir.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;TBconfigDir.Name" xml:space="preserve">
+    <value>TBconfigDir</value>
+  </data>
+  <data name="&gt;&gt;TBconfigDir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TBconfigDir.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;TBconfigDir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -952,7 +976,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="TBslots.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -982,7 +1006,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;TBslots.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="CBconfigDir.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1009,7 +1033,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;CBconfigDir.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1036,7 +1060,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1063,36 +1087,6 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="TBconfigDir.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="TBconfigDir.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="TBconfigDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 68</value>
-  </data>
-  <data name="TBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
-  </data>
-  <data name="TBconfigDir.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="TBconfigDir.Text" xml:space="preserve">
-    <value>serverconfig</value>
-  </data>
-  <data name="&gt;&gt;TBconfigDir.Name" xml:space="preserve">
-    <value>TBconfigDir</value>
-  </data>
-  <data name="&gt;&gt;TBconfigDir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TBconfigDir.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;TBconfigDir.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="TBqueryPort.Location" type="System.Drawing.Point, System.Drawing">
@@ -2961,34 +2955,31 @@
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="comboBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="CBserverConfigDirs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
-  <data name="comboBox1.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="CBserverConfigDirs.Items" xml:space="preserve">
+    <value>default (without custom config dir)</value>
   </data>
-  <data name="comboBox1.Items" xml:space="preserve">
-    <value>default</value>
-  </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CBserverConfigDirs.Location" type="System.Drawing.Point, System.Drawing">
     <value>63, 184</value>
   </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CBserverConfigDirs.Size" type="System.Drawing.Size, System.Drawing">
     <value>315, 21</value>
   </data>
-  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="CBserverConfigDirs.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
-    <value>comboBox1</value>
+  <data name="&gt;&gt;CBserverConfigDirs.Name" xml:space="preserve">
+    <value>CBserverConfigDirs</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;CBserverConfigDirs.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CBserverConfigDirs.Parent" xml:space="preserve">
     <value>tabPage4</value>
   </data>
-  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CBserverConfigDirs.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="BserverArrest.Enabled" type="System.Boolean, mscorlib">

@@ -66,7 +66,6 @@
             this.CBconfigDir = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.TBconfigDir = new System.Windows.Forms.TextBox();
             this.TBqueryPort = new System.Windows.Forms.TextBox();
             this.TBport = new System.Windows.Forms.TextBox();
             this.TBhostname = new System.Windows.Forms.TextBox();
@@ -134,7 +133,7 @@
             this.TBsoloZ = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBserverConfigDirs = new System.Windows.Forms.ComboBox();
             this.BserverArrest = new System.Windows.Forms.Button();
             this.BserverCreative = new System.Windows.Forms.Button();
             this.BserverAddWP = new System.Windows.Forms.Button();
@@ -152,6 +151,7 @@
             this.TBpath = new System.Windows.Forms.TextBox();
             this.BselectPath = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.TBconfigDir = new System.Windows.Forms.ComboBox();
             this.tabControll.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -406,12 +406,12 @@
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.TBconfigDir);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.TBslots);
             this.groupBox2.Controls.Add(this.CBconfigDir);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.TBconfigDir);
             this.groupBox2.Controls.Add(this.TBqueryPort);
             this.groupBox2.Controls.Add(this.TBport);
             this.groupBox2.Controls.Add(this.TBhostname);
@@ -448,11 +448,6 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            // 
-            // TBconfigDir
-            // 
-            resources.ApplyResources(this.TBconfigDir, "TBconfigDir");
-            this.TBconfigDir.Name = "TBconfigDir";
             // 
             // TBqueryPort
             // 
@@ -959,7 +954,7 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.CBserverConfigDirs);
             this.tabPage4.Controls.Add(this.BserverArrest);
             this.tabPage4.Controls.Add(this.BserverCreative);
             this.tabPage4.Controls.Add(this.BserverAddWP);
@@ -980,14 +975,14 @@
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
             // 
-            // comboBox1
+            // CBserverConfigDirs
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items")});
-            this.comboBox1.Name = "comboBox1";
+            resources.ApplyResources(this.CBserverConfigDirs, "CBserverConfigDirs");
+            this.CBserverConfigDirs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBserverConfigDirs.FormattingEnabled = true;
+            this.CBserverConfigDirs.Items.AddRange(new object[] {
+            resources.GetString("CBserverConfigDirs.Items")});
+            this.CBserverConfigDirs.Name = "CBserverConfigDirs";
             // 
             // BserverArrest
             // 
@@ -1104,6 +1099,12 @@
             // 
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
+            // TBconfigDir
+            // 
+            resources.ApplyResources(this.TBconfigDir, "TBconfigDir");
+            this.TBconfigDir.FormattingEnabled = true;
+            this.TBconfigDir.Name = "TBconfigDir";
+            // 
             // mainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1165,7 +1166,6 @@
         private System.Windows.Forms.CheckBox CBconfigDir;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TBconfigDir;
         private System.Windows.Forms.TextBox TBqueryPort;
         private System.Windows.Forms.TextBox TBport;
         private System.Windows.Forms.TextBox TBhostname;
@@ -1264,8 +1264,9 @@
         private System.Windows.Forms.Button BdelayRestartCreative;
         private System.Windows.Forms.Button BserverArrest;
         private System.Windows.Forms.Button BserverCreative;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBserverConfigDirs;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox TBconfigDir;
     }
 }
 

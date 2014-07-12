@@ -535,11 +535,11 @@
   <data name="label10.Text" xml:space="preserve">
     <value>Konfig.-Ordner:</value>
   </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CBserverConfigDirs.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 184</value>
   </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 21</value>
+  <data name="CBserverConfigDirs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 21</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BserverArrest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
