@@ -32,7 +32,10 @@ namespace TheStompingLandLauncher
         public mainForm()
         {
             InitializeComponent();
+        }
 
+        public mainForm init()
+        {
             //Check for new version
             WebRequest http = HttpWebRequest.Create("https://github.com/chrmoritz/StompingLauncher/releases/latest");
             if (http.GetResponse().ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.4")
@@ -125,6 +128,7 @@ namespace TheStompingLandLauncher
             TBpath.Text = TSLpath;
             Properties.Settings.Default["TSLpath"] = TSLpath;
             Properties.Settings.Default.Save();
+            return this;
         }
 
         private void BselectPath_Click(object sender, EventArgs e)
@@ -412,7 +416,6 @@ namespace TheStompingLandLauncher
 
         private void monitorServer(object source, ElapsedEventArgs e)
         {
-            Console.WriteLine("start monitor server");
             if (!this.serverProcess.Responding)
             {
                 if (this.serverProcess.HasExited)
@@ -428,7 +431,6 @@ namespace TheStompingLandLauncher
                     timer.Start();
                 }
             }
-            Console.WriteLine("finished monitor server");
         }
 
         private void recheckServerResponding(object source, ElapsedEventArgs e)
@@ -969,6 +971,52 @@ namespace TheStompingLandLauncher
                     DGVserverSave.Rows[line].Cells[i].Value = DGVserverSave.Rows[this.copiedSaveLine].Cells[i].Value;
                 }
             }
+        }
+
+        private void BserverCreative_Click(object sender, EventArgs e)
+        {
+            int line = DGVserverSave.CurrentRow.Index;
+            DGVserverSave.Rows[line].Cells[7].Value = 2147000000;
+            DGVserverSave.Rows[line].Cells[8].Value = -2147483648;
+            DGVserverSave.Rows[line].Cells[9].Value = -2147483648;
+            DGVserverSave.Rows[line].Cells[10].Value = 2147483647;
+            DGVserverSave.Rows[line].Cells[11].Value = 2147483647;
+            DGVserverSave.Rows[line].Cells[12].Value = 2147483647;
+            DGVserverSave.Rows[line].Cells[13].Value = "\"Bow\"";
+            DGVserverSave.Rows[line].Cells[14].Value = "\"Spear\"";
+            DGVserverSave.Rows[line].Cells[15].Value = "\"Bolas\"";
+            DGVserverSave.Rows[line].Cells[16].Value = "\"Shield\"";
+            DGVserverSave.Rows[line].Cells[17].Value = "\"Shield\"";
+            DGVserverSave.Rows[line].Cells[18].Value = "\"Shield\"";
+            DGVserverSave.Rows[line].Cells[19].Value = "\"Shield\"";
+            DGVserverSave.Rows[line].Cells[20].Value = "\"Shield\"";
+            DGVserverSave.Rows[line].Cells[21].Value = "\"Shield\"";
+        }
+
+        private void BserverArrest_Click(object sender, EventArgs e)
+        {
+            int line = DGVserverSave.CurrentRow.Index;
+            DGVserverSave.Rows[line].Cells[1].Value = 0;
+            DGVserverSave.Rows[line].Cells[2].Value = 0;
+            DGVserverSave.Rows[line].Cells[3].Value = -99999;
+            DGVserverSave.Rows[line].Cells[4].Value = 0;
+            DGVserverSave.Rows[line].Cells[5].Value = 0;
+            DGVserverSave.Rows[line].Cells[6].Value = 0;
+            DGVserverSave.Rows[line].Cells[7].Value = -9999;
+            DGVserverSave.Rows[line].Cells[8].Value = -2147483648;
+            DGVserverSave.Rows[line].Cells[9].Value = -2147483648;
+            DGVserverSave.Rows[line].Cells[10].Value = -42;
+            DGVserverSave.Rows[line].Cells[11].Value = 0;
+            DGVserverSave.Rows[line].Cells[12].Value = 0;
+            DGVserverSave.Rows[line].Cells[13].Value = "";
+            DGVserverSave.Rows[line].Cells[14].Value = "";
+            DGVserverSave.Rows[line].Cells[15].Value = "";
+            DGVserverSave.Rows[line].Cells[16].Value = "";
+            DGVserverSave.Rows[line].Cells[17].Value = "";
+            DGVserverSave.Rows[line].Cells[18].Value = "";
+            DGVserverSave.Rows[line].Cells[19].Value = "";
+            DGVserverSave.Rows[line].Cells[20].Value = "";
+            DGVserverSave.Rows[line].Cells[21].Value = "";
         }
 
         private void BserverTp_Click(object sender, EventArgs e)

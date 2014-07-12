@@ -61,6 +61,7 @@
             this.CBautoJoin = new System.Windows.Forms.CheckBox();
             this.BhostServer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TBconfigDir = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.TBslots = new System.Windows.Forms.TextBox();
             this.CBconfigDir = new System.Windows.Forms.CheckBox();
@@ -151,7 +152,6 @@
             this.TBpath = new System.Windows.Forms.TextBox();
             this.BselectPath = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.TBconfigDir = new System.Windows.Forms.ComboBox();
             this.tabControll.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -419,6 +419,12 @@
             this.groupBox2.Controls.Add(this.CBsteamQuery);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // TBconfigDir
+            // 
+            resources.ApplyResources(this.TBconfigDir, "TBconfigDir");
+            this.TBconfigDir.FormattingEnabled = true;
+            this.TBconfigDir.Name = "TBconfigDir";
             // 
             // label12
             // 
@@ -989,12 +995,14 @@
             resources.ApplyResources(this.BserverArrest, "BserverArrest");
             this.BserverArrest.Name = "BserverArrest";
             this.BserverArrest.UseVisualStyleBackColor = true;
+            this.BserverArrest.Click += new System.EventHandler(this.BserverArrest_Click);
             // 
             // BserverCreative
             // 
             resources.ApplyResources(this.BserverCreative, "BserverCreative");
             this.BserverCreative.Name = "BserverCreative";
             this.BserverCreative.UseVisualStyleBackColor = true;
+            this.BserverCreative.Click += new System.EventHandler(this.BserverCreative_Click);
             // 
             // BserverAddWP
             // 
@@ -1098,12 +1106,6 @@
             // folderBrowserDialog1
             // 
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
-            // 
-            // TBconfigDir
-            // 
-            resources.ApplyResources(this.TBconfigDir, "TBconfigDir");
-            this.TBconfigDir.FormattingEnabled = true;
-            this.TBconfigDir.Name = "TBconfigDir";
             // 
             // mainForm
             // 

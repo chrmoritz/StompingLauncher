@@ -2982,9 +2982,6 @@
   <data name="&gt;&gt;CBserverConfigDirs.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="BserverArrest.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="BserverArrest.Location" type="System.Drawing.Point, System.Drawing">
     <value>557, 91</value>
   </data>
@@ -3008,9 +3005,6 @@
   </data>
   <data name="&gt;&gt;BserverArrest.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="BserverCreative.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="BserverCreative.Location" type="System.Drawing.Point, System.Drawing">
     <value>557, 62</value>
