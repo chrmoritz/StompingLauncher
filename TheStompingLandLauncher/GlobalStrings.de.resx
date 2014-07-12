@@ -240,4 +240,10 @@
   <data name="westernRiverMouth" xml:space="preserve">
     <value>Westliche Flussmündung</value>
   </data>
+  <data name="NewVersionAvailableBody" xml:space="preserve">
+    <value>Eine neue Version des The Stomping Launchers ist verfügbar. Möchtest du diese jetzt herunterladen?</value>
+  </data>
+  <data name="NewVersionAvailableHeader" xml:space="preserve">
+    <value>Neue The Stomping Launcher Version verfügbar</value>
+  </data>
 </root>

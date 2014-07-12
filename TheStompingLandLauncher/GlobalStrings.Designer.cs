@@ -223,6 +223,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die A new version of The STomping Launcher is available? Would you like to download it now? ähnelt.
+        /// </summary>
+        internal static string NewVersionAvailableBody {
+            get {
+                return ResourceManager.GetString("NewVersionAvailableBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New The Stomping Launcher version available ähnelt.
+        /// </summary>
+        internal static string NewVersionAvailableHeader {
+            get {
+                return ResourceManager.GetString("NewVersionAvailableHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a valid port. (between 1 and 65535) ähnelt.
         /// </summary>
         internal static string PortBody {

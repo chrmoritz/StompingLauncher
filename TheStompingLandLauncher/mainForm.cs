@@ -14,6 +14,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Globalization;
+using System.Net;
 
 namespace TheStompingLandLauncher
 {
@@ -31,6 +32,18 @@ namespace TheStompingLandLauncher
         public mainForm()
         {
             InitializeComponent();
+
+            //Check for new version
+            WebRequest http = HttpWebRequest.Create("https://github.com/chrmoritz/StompingLauncher/releases/latest");
+            if (http.GetResponse().ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.4")
+            {
+                DialogResult result = MessageBox.Show(GlobalStrings.NewVersionAvailableBody, GlobalStrings.NewVersionAvailableHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    Process.Start("https://github.com/chrmoritz/StompingLauncher/releases");
+                }
+            }
+
             //Load stored Settings
             TBjoinIP.Text = (string)Properties.Settings.Default["lastConnected"];
             string serverHistory = (string)Properties.Settings.Default["ServerHistory"];

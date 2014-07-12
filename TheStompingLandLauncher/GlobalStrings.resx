@@ -240,4 +240,10 @@
   <data name="westernRiverMouth" xml:space="preserve">
     <value>western river mouth</value>
   </data>
+  <data name="NewVersionAvailableBody" xml:space="preserve">
+    <value>A new version of The STomping Launcher is available? Would you like to download it now?</value>
+  </data>
+  <data name="NewVersionAvailableHeader" xml:space="preserve">
+    <value>New The Stomping Launcher version available</value>
+  </data>
 </root>
