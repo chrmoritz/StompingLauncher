@@ -37,15 +37,19 @@ namespace TheStompingLandLauncher
         public mainForm init()
         {
             //Check for new version
-            WebRequest http = HttpWebRequest.Create("https://github.com/chrmoritz/StompingLauncher/releases/latest");
-            if (http.GetResponse().ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.4")
+            try
             {
-                DialogResult result = MessageBox.Show(GlobalStrings.NewVersionAvailableBody, GlobalStrings.NewVersionAvailableHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
+                WebRequest http = HttpWebRequest.Create("https://github.com/chrmoritz/StompingLauncher/releases/latest");
+                if (http.GetResponse().ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.4")
                 {
-                    Process.Start("https://github.com/chrmoritz/StompingLauncher/releases");
+                    DialogResult result = MessageBox.Show(GlobalStrings.NewVersionAvailableBody, GlobalStrings.NewVersionAvailableHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        Process.Start("https://github.com/chrmoritz/StompingLauncher/releases");
+                    }
                 }
             }
+            catch (Exception e){}
 
             //Load stored Settings
             TBjoinIP.Text = (string)Properties.Settings.Default["lastConnected"];
@@ -1043,6 +1047,15 @@ namespace TheStompingLandLauncher
             else
             {
                 MessageBox.Show(GlobalStrings.InvalidPositionBody, GlobalStrings.InvalidPositionHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CBserverConfigDirs_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(GlobalStrings.ReloadServerSaveBody, GlobalStrings.ReloadServerSaveHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.BreloadServerSave_Click(null, null);
             }
         }
 

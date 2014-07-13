@@ -259,6 +259,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The selected configuration dir for the server savefile editor has changed. Would you like to reload the server savefile? ähnelt.
+        /// </summary>
+        internal static string ReloadServerSaveBody {
+            get {
+                return ResourceManager.GetString("ReloadServerSaveBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Server Savefile config dir changed ähnelt.
+        /// </summary>
+        internal static string ReloadServerSaveHeader {
+            get {
+                return ResourceManager.GetString("ReloadServerSaveHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a valid server address. (eg. if you want to connect to a local server enter 127.0.0.1:7777) ähnelt.
         /// </summary>
         internal static string ServerAddressBody {

@@ -989,6 +989,7 @@
             this.CBserverConfigDirs.Items.AddRange(new object[] {
             resources.GetString("CBserverConfigDirs.Items")});
             this.CBserverConfigDirs.Name = "CBserverConfigDirs";
+            this.CBserverConfigDirs.SelectionChangeCommitted += new System.EventHandler(this.CBserverConfigDirs_SelectionChangeCommitted);
             // 
             // BserverArrest
             // 

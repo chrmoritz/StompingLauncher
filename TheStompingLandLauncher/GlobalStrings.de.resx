@@ -241,9 +241,15 @@
     <value>Westliche Flussmündung</value>
   </data>
   <data name="NewVersionAvailableBody" xml:space="preserve">
-    <value>Eine neue Version des The Stomping Launchers ist verfügbar. Möchtest du diese jetzt herunterladen?</value>
+    <value>Eine neue Version des The Stomping Launchers ist verfügbar. Möchtest Sie diese jetzt herunterladen?</value>
   </data>
   <data name="NewVersionAvailableHeader" xml:space="preserve">
     <value>Neue The Stomping Launcher Version verfügbar</value>
+  </data>
+  <data name="ReloadServerSaveHBody" xml:space="preserve">
+    <value>Der gewählte Konfigurations-Ordner des Server Savefile Editors hat sich geändert. Möchten Sie die Server Savefile jetzt erneut laden?</value>
+  </data>
+  <data name="ReloadServerSaveHeader" xml:space="preserve">
+    <value>Änderung des Server Savefile Konfig.-Ordner</value>
   </data>
 </root>

@@ -246,4 +246,10 @@
   <data name="NewVersionAvailableHeader" xml:space="preserve">
     <value>New The Stomping Launcher version available</value>
   </data>
+  <data name="ReloadServerSaveBody" xml:space="preserve">
+    <value>The selected configuration dir for the server savefile editor has changed. Would you like to reload the server savefile?</value>
+  </data>
+  <data name="ReloadServerSaveHeader" xml:space="preserve">
+    <value>Server Savefile config dir changed</value>
+  </data>
 </root>
