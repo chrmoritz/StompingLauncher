@@ -900,7 +900,7 @@ namespace TheStompingLandLauncher
             }
             List<PlayerSave> serverSave = new List<PlayerSave>();
             this.serverSaveLines = System.IO.File.ReadAllLines(savefile);
-            Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
+            Regex rgx = new Regex(@"^PlayerData=\(SteamID=""(.*?)"",Location=\(X=(.*?),Y=(.*?),Z=(.*?)\),Rotation=\(Pitch=(.*?),Yaw=(.*?),Roll=(.*?)\),Stat_Expertise=(.*?),N_Hunger=(.*?),N_Thirst=(.*?),R_Arrows=(.*?),R_Rope=(.*?),R_Herbs=(.*?),.*?,ItemSlot\[0\]=.*?,ItemSlot\[1\]=(.*?),ItemSlot\[2\]=(.*?),ItemSlot\[3\]=(.*?),ItemSlot\[4\]=(.*?),ItemSlot\[5\]=(.*?),ItemSlot\[6\]=(.*?),ItemSlot\[7\]=(.*?),ItemSlot\[8\]=(.*?),ItemSlot\[9\]=(.*?)\)");
             for (int i = 0; i < this.serverSaveLines.Length; i++)
             {
                 Match match = rgx.Match(this.serverSaveLines[i]);
@@ -912,6 +912,21 @@ namespace TheStompingLandLauncher
                 }
             }
             DGVserverSave.DataSource = serverSave;
+            for (int i = 0; i < DGVserverSave.Rows.Count; i++)
+            {
+                for (int j = 13; j <= 21; j++)
+                {
+                    DataGridViewComboBoxCell cbc = new DataGridViewComboBoxCell();
+                    cbc.Items.Add(new { Text = "Empty", Value = ""});
+                    cbc.Items.Add(new { Text = "Bow", Value = "\"Bow\"" });
+                    cbc.Items.Add(new { Text = "Spear", Value = "\"Spear\"" });
+                    cbc.Items.Add(new { Text = "Bolas", Value = "\"Bolas\"" });
+                    cbc.Items.Add(new { Text = "Shield", Value = "\"Shield\"" });
+                    cbc.DisplayMember = "Text";
+                    cbc.ValueMember = "Value";
+                    DGVserverSave.Rows[i].Cells[j] = cbc;
+                }
+            }
         }
 
         private void BwriteServerSave_Click(object sender, EventArgs e)
@@ -943,7 +958,7 @@ namespace TheStompingLandLauncher
             }
             foreach (PlayerSave save in serverSave)
             {
-                this.serverSaveLines[save.index] = "PlayerData=(SteamID=" + save.id + ",Location=(X=" + save.x.ToString(CultureInfo.InvariantCulture) + ",Y=" + save.y.ToString(CultureInfo.InvariantCulture) + ",Z=" + save.z.ToString(CultureInfo.InvariantCulture)
+                this.serverSaveLines[save.index] = "PlayerData=(SteamID=\"" + save.id + "\",Location=(X=" + save.x.ToString(CultureInfo.InvariantCulture) + ",Y=" + save.y.ToString(CultureInfo.InvariantCulture) + ",Z=" + save.z.ToString(CultureInfo.InvariantCulture)
                     + "),Rotation=(Pitch=" + save.pitch + ",Yaw=" + save.yaw + ",Roll=" + save.roll
                     + "),Stat_Expertise=" + save.expertise + ",N_Hunger=" + save.hunger + ",N_Thirst=" + save.thirst + ",R_Arrows=" + save.arrows + ",R_Rope=" + save.ropes + ",R_Herbs=" + save.herbs + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,"
                     + "ItemSlot[1]=" + save.itemSlot1 + ",ItemSlot[2]=" + save.itemSlot2 + ",ItemSlot[3]=" + save.itemSlot3 + ",ItemSlot[4]=" + save.itemSlot4 + ",ItemSlot[5]=" + save.itemSlot5
