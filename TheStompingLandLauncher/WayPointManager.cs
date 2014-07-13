@@ -85,5 +85,19 @@ namespace TheStompingLandLauncher
                 e.Handled = true;
             }
         }
+
+        private void DGVwayPoints_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            int i;
+            double d;
+            if (e.ColumnIndex == 4 && !int.TryParse(e.FormattedValue.ToString(), out i))
+            {
+                e.Cancel = true;
+            }
+            if (e.ColumnIndex > 0 && e.ColumnIndex < 4 && !double.TryParse(e.FormattedValue.ToString(), out d))
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

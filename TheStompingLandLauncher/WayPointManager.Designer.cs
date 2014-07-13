@@ -53,7 +53,6 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.BWayPointAdd);
             this.groupBox1.Controls.Add(this.TBwayPointYaw);
             this.groupBox1.Controls.Add(this.TBwayPointZ);
@@ -65,6 +64,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TBwayPointName);
             this.groupBox1.Controls.Add(this.label1);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -131,15 +131,14 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.DGVwayPoints);
             this.groupBox2.Controls.Add(this.BwayPointRemove);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // DGVwayPoints
             // 
-            resources.ApplyResources(this.DGVwayPoints, "DGVwayPoints");
             this.DGVwayPoints.AllowUserToAddRows = false;
             this.DGVwayPoints.AllowUserToDeleteRows = false;
             this.DGVwayPoints.AllowUserToResizeRows = false;
@@ -147,8 +146,10 @@
             this.DGVwayPoints.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVwayPoints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVwayPoints.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            resources.ApplyResources(this.DGVwayPoints, "DGVwayPoints");
             this.DGVwayPoints.MultiSelect = false;
             this.DGVwayPoints.Name = "DGVwayPoints";
+            this.DGVwayPoints.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DGVwayPoints_CellValidating);
             // 
             // BwayPointRemove
             // 
@@ -166,8 +167,8 @@
             // 
             // BwayPointClose
             // 
-            resources.ApplyResources(this.BwayPointClose, "BwayPointClose");
             this.BwayPointClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.BwayPointClose, "BwayPointClose");
             this.BwayPointClose.Name = "BwayPointClose";
             this.BwayPointClose.UseVisualStyleBackColor = true;
             // 
