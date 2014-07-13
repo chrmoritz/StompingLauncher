@@ -1073,6 +1073,7 @@
             this.DGVserverSave.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.DGVserverSave.MultiSelect = false;
             this.DGVserverSave.Name = "DGVserverSave";
+            this.DGVserverSave.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DGVserverSave_CellValidating);
             // 
             // tabPage5
             // 

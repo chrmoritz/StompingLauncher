@@ -1074,6 +1074,25 @@ namespace TheStompingLandLauncher
             }
         }
 
+        private void DGVserverSave_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            int i;
+            double d;
+            if (e.ColumnIndex > 3 && e.ColumnIndex < 13 && !int.TryParse(e.FormattedValue.ToString(), out i))
+            {
+                DGVserverSave.Rows[e.RowIndex].ErrorText = "invalid input";
+                e.Cancel = true;
+                return;
+            }
+            if (e.ColumnIndex < 4 && e.ColumnIndex > 0 && !double.TryParse(e.FormattedValue.ToString(), out d))
+            {
+                DGVserverSave.Rows[e.RowIndex].ErrorText = "invalid input";
+                e.Cancel = true;
+                return;
+            }
+            DGVserverSave.Rows[e.RowIndex].ErrorText = String.Empty;
+        }
+
         // ############################################### WAYPOINT MANAGER ###############################################
 
         public void restoreDefaultWaypoints()
