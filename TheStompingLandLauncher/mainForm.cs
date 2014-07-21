@@ -372,6 +372,7 @@ namespace TheStompingLandLauncher
             }
             if (RBserverTypeCreative.Checked)
             {
+                giveCreativeStuff();
                 BrestartCreativeServer.Enabled = true;
                 BdelayRestartCreative.Enabled = true;
                 this.creativeRestartTimer = new System.Timers.Timer(int.Parse(TBserverRestartTime.Text) * 60000);
@@ -401,21 +402,26 @@ namespace TheStompingLandLauncher
             }
             else
             {
-                string savefile = TBpath.Text + "\\UDKGame\\Config\\" + ((CBconfigDir.Checked) ? TBconfigDir.Text + "\\" : "") + "UDK_TheStompingLand_Server.ini";
-                string[] creativeServerSaveLines = System.IO.File.ReadAllLines(savefile);
-                Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=");
-                for (int i = 0; i < creativeServerSaveLines.Length; i++)
-                {
-                    Match match = rgx.Match(creativeServerSaveLines[i]);
-                    if (match.Success)
-                    {
-                        creativeServerSaveLines[i] = match.Groups[0].Value + "(X=-35461.242188,Y=-21397.582031,Z=918.003479),Rotation=(Pitch=0,Yaw=10137,Roll=0),Stat_Expertise=2147000000,N_Hunger=-2147483648,N_Thirst=-2147483648,R_Arrows=2147483647,R_Rope=2147483647,R_Herbs=2147483647,"
-                            + "MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,ItemSlot[1]=\"Bow\",ItemSlot[2]=\"Spear\",ItemSlot[3]=\"Bolas\",ItemSlot[4]=\"Shield\",ItemSlot[5]=\"Shield\",ItemSlot[6]=\"Shield\",ItemSlot[7]=\"Shield\",ItemSlot[8]=\"Shield\",ItemSlot[9]=\"Shield\")";
-                    }
-                }
-                System.IO.File.WriteAllLines(savefile, creativeServerSaveLines);
+                giveCreativeStuff();
                 this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
             }
+        }
+
+        public void giveCreativeStuff()
+        {
+            string savefile = TBpath.Text + "\\UDKGame\\Config\\" + ((CBconfigDir.Checked) ? TBconfigDir.Text + "\\" : "") + "UDK_TheStompingLand_Server.ini";
+            string[] creativeServerSaveLines = System.IO.File.ReadAllLines(savefile);
+            Regex rgx = new Regex(@"^PlayerData=\(SteamID=(.*?),Location=");
+            for (int i = 0; i < creativeServerSaveLines.Length; i++)
+            {
+                Match match = rgx.Match(creativeServerSaveLines[i]);
+                if (match.Success)
+                {
+                    creativeServerSaveLines[i] = match.Groups[0].Value + "(X=-35461.242188,Y=-21397.582031,Z=918.003479),Rotation=(Pitch=0,Yaw=10137,Roll=0),Stat_Expertise=2147000000,N_Hunger=-2147483648,N_Thirst=-2147483648,R_Arrows=2147483647,R_Rope=2147483647,R_Herbs=2147483647,"
+                        + "MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,ItemSlot[1]=\"Bow\",ItemSlot[2]=\"Spear\",ItemSlot[3]=\"Bolas\",ItemSlot[4]=\"Shield\",ItemSlot[5]=\"Shield\",ItemSlot[6]=\"Shield\",ItemSlot[7]=\"Shield\",ItemSlot[8]=\"Shield\",ItemSlot[9]=\"Shield\")";
+                }
+            }
+            System.IO.File.WriteAllLines(savefile, creativeServerSaveLines);
         }
 
         private void monitorServer(object source, ElapsedEventArgs e)
