@@ -2,7 +2,7 @@
 
 # Download: 
 
-Current version (v0.3.3): https://github.com/chrmoritz/StompingLauncher/releases (62kb)
+Current version (v0.3.4): https://github.com/chrmoritz/StompingLauncher/releases (66kb)
 
 # Features:
 
