@@ -34,22 +34,10 @@ namespace TheStompingLandLauncher
             InitializeComponent();
         }
 
-        public mainForm init()
+        private async void mainForm_Load(object sender, EventArgs e)
         {
             //Check for new version
-            try
-            {
-                WebRequest http = HttpWebRequest.Create("https://github.com/chrmoritz/StompingLauncher/releases/latest");
-                if (http.GetResponse().ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.4")
-                {
-                    DialogResult result = MessageBox.Show(GlobalStrings.NewVersionAvailableBody, GlobalStrings.NewVersionAvailableHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes)
-                    {
-                        Process.Start("https://github.com/chrmoritz/StompingLauncher/releases");
-                    }
-                }
-            }
-            catch (Exception e){}
+            Task updateCheckTask = updateCheckAsync();
 
             //Load stored Settings
             TBjoinIP.Text = (string)Properties.Settings.Default["lastConnected"];
@@ -132,7 +120,41 @@ namespace TheStompingLandLauncher
             TBpath.Text = TSLpath;
             Properties.Settings.Default["TSLpath"] = TSLpath;
             Properties.Settings.Default.Save();
-            return this;
+
+            await updateCheckTask;
+        }
+
+        async Task updateCheckAsync()
+        {
+            try
+            {
+                WebRequest http = HttpWebRequest.Create("https://github.com/chrmoritz/StompingLauncher/releases/latest");
+                Task<WebResponse> updateCheckTask = http.GetResponseAsync();
+                WebResponse wr = await updateCheckTask;
+                if (wr.ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.5")
+                {
+                    DialogResult result = MessageBox.Show(GlobalStrings.NewVersionAvailableBody, GlobalStrings.NewVersionAvailableHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        Process.Start("https://github.com/chrmoritz/StompingLauncher/releases");
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void tabControll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedTab = tabControll.SelectedIndex;
+            switch (selectedTab)
+            {
+                case 2:
+                    this.BreloadSoloSave_Click(null, null);
+                    break;
+                case 3:
+                    this.BreloadServerSave_Click(null, null);
+                    break;
+            }
         }
 
         private void BselectPath_Click(object sender, EventArgs e)
@@ -161,20 +183,6 @@ namespace TheStompingLandLauncher
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e) { }
-
-        private void tabControll_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedTab = tabControll.SelectedIndex;
-            switch (selectedTab)
-            {
-                case 2:
-                    this.BreloadSoloSave_Click(null, null);
-                    break;
-                case 3:
-                    this.BreloadServerSave_Click(null, null);
-                    break;
-            }
-        }
 
         // ############################################### JOIN SERVER TAB ###############################################
 

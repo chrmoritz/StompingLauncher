@@ -1118,6 +1118,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControll);
             this.Name = "mainForm";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.tabControll.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
