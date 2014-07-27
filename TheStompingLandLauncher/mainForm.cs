@@ -617,7 +617,7 @@ namespace TheStompingLandLauncher
                 MessageBox.Show(GlobalStrings.HostnameBody, GlobalStrings.HostnameHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (String.IsNullOrEmpty(TBconfigDir.Text))
+            if (CBconfigDir.Checked && String.IsNullOrEmpty(TBconfigDir.Text))
             {
                 MessageBox.Show(GlobalStrings.ConfigdirBody, GlobalStrings.ConfigdirHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -738,6 +738,7 @@ namespace TheStompingLandLauncher
             DialogResult result = MessageBox.Show(GlobalStrings.ServerShutdownBody, GlobalStrings.ServerShutdownHeader, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK && this.serverProcess != null)
             {
+                this.creativeRestartTimer.Stop();
                 this.creativeRestart(null, null);
             }
         }

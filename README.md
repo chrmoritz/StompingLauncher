@@ -2,7 +2,7 @@
 
 # Download: 
 
-Current version (v0.3.4): https://github.com/chrmoritz/StompingLauncher/releases (66kb)
+Current version (v0.3.5): https://github.com/chrmoritz/StompingLauncher/releases (72kb)
 
 # Features:
 
@@ -18,6 +18,7 @@ Current version (v0.3.4): https://github.com/chrmoritz/StompingLauncher/releases
 ![The Stomping Launcher join server tab](https://cloud.githubusercontent.com/assets/1686759/3336080/fa561e72-f822-11e3-9239-2ed76033a290.png)
 
 ### 2. Host your Own Server
+* auto setup of Port Forwarding (requires router with [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) support)
 * easily change your server configuration by (un)checking checkboxes:
   * enable/disable friendly fire, show all player names and remove dinosaurs
 * simply edit host options like:
@@ -29,7 +30,6 @@ Current version (v0.3.4): https://github.com/chrmoritz/StompingLauncher/releases
   * creative mode (the server will restart after a set amount of time and give all players full equip (expertise/herbs/weapons/ammo), PvE recommended)
 * ability to auto-join your server on startup (if you host it on a local PC)
 * support for multiple server profiles (save and load your server configurations)
-* Note: if you want your server be public available make sure you forward the port, port+1 and the steamQueryPort (all UDP) and have a steam client running on your computer (needed for server list visibility)
 
 ![The Stomping Launcher host server tab](https://cloud.githubusercontent.com/assets/1686759/3336083/fa8baa38-f822-11e3-9ba7-439d2395b567.png)
 
