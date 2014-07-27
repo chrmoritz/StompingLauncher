@@ -252,4 +252,10 @@
   <data name="ReloadServerSaveHeader" xml:space="preserve">
     <value>Änderung des Server Savefile Konfig.-Ordner</value>
   </data>
+  <data name="PortConflictBody" xml:space="preserve">
+    <value>Your Steam query port is either equal to the port (used by the game) or port+1 (used by the UDK engine). Assigning a port multiple times will result in conflicts. Would you like to continue anyway?</value>
+  </data>
+  <data name="PortConflictHeader" xml:space="preserve">
+    <value>Ports are conflicting</value>
+  </data>
 </root>

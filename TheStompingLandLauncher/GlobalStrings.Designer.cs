@@ -250,6 +250,24 @@ namespace TheStompingLandLauncher {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ihr gewählter SteamQueryPort ist entweder identisch mit den Port (benutzt vom Spiel) oder Port+1 (benutzt von der UDK engine). Die Mehrfachbelegung eines Ports wird zu Konflikten führen. Möchten Sie dennoch fortfahren? ähnelt.
+        /// </summary>
+        internal static string PortConflictBody {
+            get {
+                return ResourceManager.GetString("PortConflictBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ports stehen in Konflikt zueinander ähnelt.
+        /// </summary>
+        internal static string PortConflictHeader {
+            get {
+                return ResourceManager.GetString("PortConflictHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Error: Invalid port ähnelt.
         /// </summary>
         internal static string PortHeader {

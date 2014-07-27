@@ -310,15 +310,25 @@ namespace TheStompingLandLauncher
 
         private void BhostServer_Click(object sender, EventArgs e)
         {
-            if (int.Parse(TBport.Text) < 1 || int.Parse(TBport.Text) > 65535)
+            int port = int.Parse(TBport.Text);
+            int queryPort = int.Parse(TBqueryPort.Text);
+            if (port < 1 || port > 65535)
             {
                 MessageBox.Show(GlobalStrings.PortBody, GlobalStrings.PortHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (int.Parse(TBqueryPort.Text) < 1 || int.Parse(TBqueryPort.Text) > 65535)
+            if (queryPort < 1 || queryPort > 65535)
             {
                 MessageBox.Show(GlobalStrings.SteamQueryPortBody, GlobalStrings.SteamQueryPortHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            if (port == queryPort || port + 1 == queryPort)
+            {
+                DialogResult result = MessageBox.Show(GlobalStrings.PortConflictBody, GlobalStrings.PortConflictHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
             }
             if (String.IsNullOrEmpty(TBhostname.Text))
             {
@@ -336,9 +346,9 @@ namespace TheStompingLandLauncher
                 cmd += "?steamsockets?ServerName=\"" + TBhostname.Text + "\"?Maxplayers=" + TBslots.Text;
             }
             cmd += (CBfriendlyFire.Checked ? "" : "?NoFriendlyFire=True") + ( CBplayerNames.Checked ? "?ShowAllPlayerNames=True" : "");
-            cmd += (CBremoveDinos.Checked ? "?NoDinosaurs=True" : "") + " -Port=" + TBport.Text;
+            cmd += (CBremoveDinos.Checked ? "?NoDinosaurs=True" : "") + " -Port=" + port;
             if (CBsteamQuery.Checked){
-                cmd += " -QueryPort=" + TBqueryPort.Text;
+                cmd += " -QueryPort=" + queryPort;
             }
             if (CBconfigDir.Checked)
             {
@@ -372,12 +382,10 @@ namespace TheStompingLandLauncher
                     NATUPNPLib.IStaticPortMappingCollection mappings = upnpnat.StaticPortMappingCollection;
                     try
                     {
-                        int port = int.Parse(TBport.Text);
                         mappings.Add(port, "UDP", port, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port");
                         mappings.Add(port + 1, "UDP", port + 1, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port1");
                         if (CBsteamQuery.Checked)
                         {
-                            int queryPort = int.Parse(TBqueryPort.Text);
                             mappings.Add(queryPort, "UDP", queryPort, localIP, true, "TheStompingLauncher " + TBhostname.Text + " SteamQueryPort");
                         }
                     }
@@ -534,10 +542,14 @@ namespace TheStompingLandLauncher
                 {
                     this.serverMonitor.Stop();
                 }
-                this.serverProcess.CloseMainWindow();
                 BshutDownServer.Enabled = false;
                 BrestartCreativeServer.Enabled = false;
                 BdelayRestartCreative.Enabled = false;
+                if (this.serverProcess.HasExited) // if server closed manually
+                {
+                    return;
+                }
+                this.serverProcess.CloseMainWindow();
                 this.clearUPnPports();
                 System.Timers.Timer timer = new System.Timers.Timer(5000);
                 timer.Elapsed += new ElapsedEventHandler(killHangingServer);

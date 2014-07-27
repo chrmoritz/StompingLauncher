@@ -252,4 +252,10 @@
   <data name="ReloadServerSaveHeader" xml:space="preserve">
     <value>Server Savefile config dir changed</value>
   </data>
+  <data name="PortConflictBody" xml:space="preserve">
+    <value>Ihr gewählter SteamQueryPort ist entweder identisch mit den Port (benutzt vom Spiel) oder Port+1 (benutzt von der UDK engine). Die Mehrfachbelegung eines Ports wird zu Konflikten führen. Möchten Sie dennoch fortfahren?</value>
+  </data>
+  <data name="PortConflictHeader" xml:space="preserve">
+    <value>Ports stehen in Konflikt zueinander</value>
+  </data>
 </root>
