@@ -26,7 +26,7 @@ namespace TheStompingLandLauncher
         private System.Timers.Timer serverMonitor;
         private System.Timers.Timer creativeRestartTimer;
         private System.Timers.Timer serverShutdownTimer;
-        private int serverMode;
+        private int serverMode = 0;
         public List<WayPoint> wayPoints;
         private string[] serverSaveLines;
         private int copiedSaveLine;
@@ -517,6 +517,11 @@ namespace TheStompingLandLauncher
                 this.serverProcess.EnableRaisingEvents = true;
                 this.serverProcess.Exited += new EventHandler(afterServerShutdown);
                 this.serverMonitor.Start();
+            }
+            if (this.serverMode < 2)
+            {
+                this.serverMode = 0;
+                clearUPnPports();
             }
         }
 
