@@ -25,6 +25,8 @@ namespace TheStompingLandLauncher
         private string lastServerStartCmd;
         private System.Timers.Timer serverMonitor;
         private System.Timers.Timer creativeRestartTimer;
+        private System.Timers.Timer serverShutdownTimer;
+        private int serverMode;
         public List<WayPoint> wayPoints;
         private string[] serverSaveLines;
         private int copiedSaveLine;
@@ -393,6 +395,8 @@ namespace TheStompingLandLauncher
                 }
             }
             this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", cmd);
+            this.serverProcess.EnableRaisingEvents = true;
+            this.serverProcess.Exited += new EventHandler(afterServerShutdown);
             this.lastServerStartCmd = cmd;
             BshutDownServer.Enabled = true;
             if (CBautoJoin.Checked)
@@ -402,21 +406,28 @@ namespace TheStompingLandLauncher
                 timer.AutoReset = false;
                 timer.Start();
             }
-            if (RBserverTypeService.Checked)
+            this.serverMode = (RBserverTypeNormal.Checked ? 1 : (RBserverTypeService.Checked ? 2 : 3));
+            if (this.serverMode > 1)
             {
                 this.serverMonitor = new System.Timers.Timer(10000);
                 this.serverMonitor.Elapsed += new ElapsedEventHandler(monitorServer);
                 this.serverMonitor.Start();
             }
-            if (RBserverTypeCreative.Checked)
+            BrestartCreativeServer.Enabled = false;
+            BdelayRestartCreative.Enabled = false;
+            if (this.serverMode == 3)
             {
                 giveCreativeStuff();
                 BrestartCreativeServer.Enabled = true;
                 BdelayRestartCreative.Enabled = true;
                 this.creativeRestartTimer = new System.Timers.Timer(int.Parse(TBserverRestartTime.Text) * 60000);
                 this.creativeRestartTimer.Elapsed += new ElapsedEventHandler(creativeRestart);
+                this.creativeRestartTimer.AutoReset = false;
                 this.creativeRestartTimer.Start();
             }
+            this.serverShutdownTimer = new System.Timers.Timer(5000);
+            this.serverShutdownTimer.Elapsed += new ElapsedEventHandler(serverShutdownChecker);
+            this.serverShutdownTimer.AutoReset = false;
         }
 
         private String getLocalIpAddress()
@@ -453,30 +464,67 @@ namespace TheStompingLandLauncher
             }
         }
 
-        private void creativeRestart(object source, ElapsedEventArgs e)
+        private void monitorServer(object source, ElapsedEventArgs e)
         {
-            this.serverProcess.CloseMainWindow();
-            System.Timers.Timer timer = new System.Timers.Timer(5000);
-            timer.Elapsed += new ElapsedEventHandler(creativeKillHangingServer);
-            timer.AutoReset = false;
-            timer.Start();
+            if (!this.serverProcess.Responding)
+            {
+                this.serverMonitor.Stop();
+                System.Timers.Timer timer = new System.Timers.Timer(5000);
+                timer.Elapsed += new ElapsedEventHandler(recheckServerResponding);
+                timer.AutoReset = false;
+                timer.Start();
+            }
         }
 
-        private void creativeKillHangingServer(object source, ElapsedEventArgs e)
+        private void recheckServerResponding(object source, ElapsedEventArgs e)
+        {
+            if (!this.serverProcess.Responding)
+            {
+                this.serverShutdownChecker(null, null);
+            }
+            else
+            {
+                this.serverMonitor.Start();
+            }
+        }
+
+
+        private void serverShutdownChecker(object sender, ElapsedEventArgs e)
         {
             if (!this.serverProcess.HasExited)
             {
                 this.serverProcess.Kill();
-                System.Timers.Timer timer = new System.Timers.Timer(5000);
-                timer.Elapsed += new ElapsedEventHandler(creativeKillHangingServer);
-                timer.AutoReset = false;
-                timer.Start();
+                this.serverShutdownTimer.Start();
             }
-            else
+        }
+
+        private void afterServerShutdown(object sender, EventArgs e)
+        {
+            if (!this.serverProcess.Equals((Process)sender))
+            {
+                return; // no multi server monitor yet
+            }
+            this.serverShutdownTimer.Stop();
+            if (this.serverMode == 3)
             {
                 giveCreativeStuff();
-                this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
+                this.creativeRestartTimer.Stop();
+                this.creativeRestartTimer.Start();
             }
+            if (this.serverMode > 1)
+            {
+                this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
+                this.serverProcess.EnableRaisingEvents = true;
+                this.serverProcess.Exited += new EventHandler(afterServerShutdown);
+                this.serverMonitor.Start();
+            }
+        }
+
+        private void creativeRestart(object source, ElapsedEventArgs e)
+        {
+            this.serverMonitor.Stop();
+            this.serverProcess.CloseMainWindow();
+            this.serverShutdownTimer.Start();
         }
 
         public void giveCreativeStuff()
@@ -496,75 +544,36 @@ namespace TheStompingLandLauncher
             System.IO.File.WriteAllLines(savefile, creativeServerSaveLines);
         }
 
-        private void monitorServer(object source, ElapsedEventArgs e)
+        private void BshutDownServer_Click(object sender, EventArgs e)
         {
-            if (!this.serverProcess.Responding)
+            DialogResult result = MessageBox.Show(GlobalStrings.ServerShutdownBody, GlobalStrings.ServerShutdownHeader, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK && this.serverProcess != null)
             {
-                if (this.serverProcess.HasExited)
-                {
-                    this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
-                }
-                else
+                this.serverMode = 0;
+                if (this.serverMonitor != null)
                 {
                     this.serverMonitor.Stop();
-                    System.Timers.Timer timer = new System.Timers.Timer(5000);
-                    timer.Elapsed += new ElapsedEventHandler(recheckServerResponding);
-                    timer.AutoReset = false;
-                    timer.Start();
                 }
-            }
-        }
-
-        private void recheckServerResponding(object source, ElapsedEventArgs e)
-        {
-            if (!this.serverProcess.Responding)
-            {
-                if (!this.serverProcess.HasExited)
+                if (this.creativeRestartTimer != null)
                 {
-                    this.serverProcess.Kill();
+                    this.creativeRestartTimer.Stop();
                 }
-                this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", this.lastServerStartCmd);
-                this.serverMonitor.Start();
+                BshutDownServer.Enabled = false;
+                BrestartCreativeServer.Enabled = false;
+                BdelayRestartCreative.Enabled = false;
+                this.clearUPnPports();
+                if (this.serverProcess.HasExited) // if server closed manually
+                {
+                    return;
+                }
+                this.serverProcess.CloseMainWindow();
+                this.serverShutdownTimer.Start();
             }
         }
 
         private void joinLocalServer(object source, ElapsedEventArgs e)
         {
             Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", "127.0.0.1:" + TBport.Text);
-        }
-
-        private void BshutDownServer_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(GlobalStrings.ServerShutdownBody, GlobalStrings.ServerShutdownHeader, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.OK && this.serverProcess != null)
-            {
-                if (this.serverMonitor != null)
-                {
-                    this.serverMonitor.Stop();
-                }
-                BshutDownServer.Enabled = false;
-                BrestartCreativeServer.Enabled = false;
-                BdelayRestartCreative.Enabled = false;
-                if (this.serverProcess.HasExited) // if server closed manually
-                {
-                    return;
-                }
-                this.serverProcess.CloseMainWindow();
-                this.clearUPnPports();
-                System.Timers.Timer timer = new System.Timers.Timer(5000);
-                timer.Elapsed += new ElapsedEventHandler(killHangingServer);
-                timer.AutoReset = false;
-                timer.Start();
-            }
-        }
-
-        private void killHangingServer(object source, ElapsedEventArgs e)
-        {
-            if (!this.serverProcess.HasExited)
-            {
-                this.serverProcess.Kill();
-            }
-            this.serverProcess = null;
         }
 
         private void BloadSC_Click(object sender, EventArgs e)
@@ -729,9 +738,7 @@ namespace TheStompingLandLauncher
             DialogResult result = MessageBox.Show(GlobalStrings.ServerShutdownBody, GlobalStrings.ServerShutdownHeader, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK && this.serverProcess != null)
             {
-                this.creativeRestartTimer.Stop();
                 this.creativeRestart(null, null);
-                this.creativeRestartTimer.Start();
             }
         }
 
