@@ -368,16 +368,20 @@ namespace TheStompingLandLauncher
                 String localIP = this.getLocalIpAddress();
                 if (!String.IsNullOrEmpty(localIP))
                 {
-                    NATUPNPLib.UPnPNAT upnpnat = new NATUPNPLib.UPnPNAT();
+                    NATUPNPLib.UPnPNATClass upnpnat = new NATUPNPLib.UPnPNATClass();
                     NATUPNPLib.IStaticPortMappingCollection mappings = upnpnat.StaticPortMappingCollection;
-                    int port = int.Parse(TBport.Text);
-                    mappings.Add(port, "UDP", port, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port");
-                    mappings.Add(port + 1, "UDP", port + 1, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port1");
-                    if (CBsteamQuery.Checked)
+                    try
                     {
-                        int queryPort = int.Parse(TBqueryPort.Text);
-                        mappings.Add(queryPort, "UDP", queryPort, localIP, true, "TheStompingLauncher " + TBhostname.Text + " SteamQueryPort");
+                        int port = int.Parse(TBport.Text);
+                        mappings.Add(port, "UDP", port, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port");
+                        mappings.Add(port + 1, "UDP", port + 1, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port1");
+                        if (CBsteamQuery.Checked)
+                        {
+                            int queryPort = int.Parse(TBqueryPort.Text);
+                            mappings.Add(queryPort, "UDP", queryPort, localIP, true, "TheStompingLauncher " + TBhostname.Text + " SteamQueryPort");
+                        }
                     }
+                    catch { }
                 }
             }
             this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", cmd);
@@ -421,8 +425,12 @@ namespace TheStompingLandLauncher
 
         private void clearUPnPports()
         {
-            NATUPNPLib.UPnPNAT upnpnat = new NATUPNPLib.UPnPNAT();
+            NATUPNPLib.UPnPNATClass upnpnat = new NATUPNPLib.UPnPNATClass();
             NATUPNPLib.IStaticPortMappingCollection mappings = upnpnat.StaticPortMappingCollection;
+            if (mappings == null)
+            {
+                return;
+            }
             HashSet<int> ports = new HashSet<int>();
             foreach (NATUPNPLib.IStaticPortMapping pm in mappings)
             {
