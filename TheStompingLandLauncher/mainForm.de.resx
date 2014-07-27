@@ -253,6 +253,21 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Hosting-Optionen</value>
   </data>
+  <data name="CBuPnP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 19</value>
+  </data>
+  <data name="CBuPnP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 17</value>
+  </data>
+  <data name="CBuPnP.Text" xml:space="preserve">
+    <value>versuche Portfreigabe einzurichten (falls UPnP unterstützt)</value>
+  </data>
+  <data name="TBconfigDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>381, 68</value>
+  </data>
+  <data name="TBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 21</value>
+  </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 46</value>
   </data>
@@ -264,12 +279,6 @@
   </data>
   <data name="CBconfigDir.Text" xml:space="preserve">
     <value>benutzerdef. Konfig.-Ordner:</value>
-  </data>
-  <data name="TBconfigDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>381, 68</value>
-  </data>
-  <data name="TBconfigDir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
   </data>
   <data name="TBhostname.Size" type="System.Drawing.Size, System.Drawing">
     <value>393, 20</value>

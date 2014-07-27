@@ -362,6 +362,24 @@ namespace TheStompingLandLauncher
                     pname = Process.GetProcessesByName("udk");
                 }
             }
+            // UPnP
+            if (CBuPnP.Checked)
+            {
+                String localIP = this.getLocalIpAddress();
+                if (!String.IsNullOrEmpty(localIP))
+                {
+                    NATUPNPLib.UPnPNAT upnpnat = new NATUPNPLib.UPnPNAT();
+                    NATUPNPLib.IStaticPortMappingCollection mappings = upnpnat.StaticPortMappingCollection;
+                    int port = int.Parse(TBport.Text);
+                    mappings.Add(port, "UDP", port, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port");
+                    mappings.Add(port + 1, "UDP", port + 1, localIP, true, "TheStompingLauncher " + TBhostname.Text + " Port1");
+                    if (CBsteamQuery.Checked)
+                    {
+                        int queryPort = int.Parse(TBqueryPort.Text);
+                        mappings.Add(queryPort, "UDP", queryPort, localIP, true, "TheStompingLauncher " + TBhostname.Text + " SteamQueryPort");
+                    }
+                }
+            }
             this.serverProcess = Process.Start(TBpath.Text + "\\Binaries\\Win32\\UDK.exe", cmd);
             this.lastServerStartCmd = cmd;
             BshutDownServer.Enabled = true;
@@ -386,6 +404,36 @@ namespace TheStompingLandLauncher
                 this.creativeRestartTimer = new System.Timers.Timer(int.Parse(TBserverRestartTime.Text) * 60000);
                 this.creativeRestartTimer.Elapsed += new ElapsedEventHandler(creativeRestart);
                 this.creativeRestartTimer.Start();
+            }
+        }
+
+        private String getLocalIpAddress()
+        {
+            foreach (IPAddress ip in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            return null;
+        }
+
+        private void clearUPnPports()
+        {
+            NATUPNPLib.UPnPNAT upnpnat = new NATUPNPLib.UPnPNAT();
+            NATUPNPLib.IStaticPortMappingCollection mappings = upnpnat.StaticPortMappingCollection;
+            HashSet<int> ports = new HashSet<int>();
+            foreach (NATUPNPLib.IStaticPortMapping pm in mappings)
+            {
+                if (pm.Description.StartsWith("TheStompingLauncher"))
+                {
+                    ports.Add(pm.ExternalPort);
+                }
+            }
+            foreach (int p in ports)
+            {
+                mappings.Remove(p, "UDP");
             }
         }
 
@@ -482,6 +530,7 @@ namespace TheStompingLandLauncher
                 BshutDownServer.Enabled = false;
                 BrestartCreativeServer.Enabled = false;
                 BdelayRestartCreative.Enabled = false;
+                this.clearUPnPports();
                 System.Timers.Timer timer = new System.Timers.Timer(5000);
                 timer.Elapsed += new ElapsedEventHandler(killHangingServer);
                 timer.AutoReset = false;
