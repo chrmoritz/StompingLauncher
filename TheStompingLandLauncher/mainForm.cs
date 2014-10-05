@@ -543,7 +543,7 @@ namespace TheStompingLandLauncher
                 if (match.Success)
                 {
                     creativeServerSaveLines[i] = match.Groups[0].Value + "(X=-35461.242188,Y=-21397.582031,Z=918.003479),Rotation=(Pitch=0,Yaw=10137,Roll=0),Stat_Expertise=2147000000,N_Hunger=-2147483648,N_Thirst=-2147483648,R_Arrows=2147483647,R_Rope=2147483647,R_Herbs=2147483647,"
-                        + "MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,ItemSlot[1]=\"Bow\",ItemSlot[2]=\"Spear\",ItemSlot[3]=\"Bolas\",ItemSlot[4]=\"Shield\",ItemSlot[5]=\"Shield\",ItemSlot[6]=\"Shield\",ItemSlot[7]=\"Shield\",ItemSlot[8]=\"Shield\",ItemSlot[9]=\"Shield\")";
+                        + "MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=\"Tomahawk\",ItemSlot[1]=\"Bow\",ItemSlot[2]=\"Spear\",ItemSlot[3]=\"Bolas\",ItemSlot[4]=\"Shield\",ItemSlot[5]=\"Shield\",ItemSlot[6]=\"Shield\",ItemSlot[7]=\"Shield\",ItemSlot[8]=\"Shield\",ItemSlot[9]=\"Shield\")";
                 }
             }
             System.IO.File.WriteAllLines(savefile, creativeServerSaveLines);
@@ -1056,7 +1056,7 @@ namespace TheStompingLandLauncher
             {
                 this.serverSaveLines[save.index] = "PlayerData=(SteamID=\"" + save.id + "\",Location=(X=" + save.x.ToString(CultureInfo.InvariantCulture) + ",Y=" + save.y.ToString(CultureInfo.InvariantCulture) + ",Z=" + save.z.ToString(CultureInfo.InvariantCulture)
                     + "),Rotation=(Pitch=" + save.pitch + ",Yaw=" + save.yaw + ",Roll=" + save.roll
-                    + "),Stat_Expertise=" + save.expertise + ",N_Hunger=" + save.hunger + ",N_Thirst=" + save.thirst + ",R_Arrows=" + save.arrows + ",R_Rope=" + save.ropes + ",R_Herbs=" + save.herbs + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=,"
+                    + "),Stat_Expertise=" + save.expertise + ",N_Hunger=" + save.hunger + ",N_Thirst=" + save.thirst + ",R_Arrows=" + save.arrows + ",R_Rope=" + save.ropes + ",R_Herbs=" + save.herbs + ",MyTeepee=None,MyTotem=None,MyCage=None,MyCatapult=None,ItemSlot[0]=\"Tomahawk\","
                     + "ItemSlot[1]=" + save.itemSlot1 + ",ItemSlot[2]=" + save.itemSlot2 + ",ItemSlot[3]=" + save.itemSlot3 + ",ItemSlot[4]=" + save.itemSlot4 + ",ItemSlot[5]=" + save.itemSlot5
                     + ",ItemSlot[6]=" + save.itemSlot6 + ",ItemSlot[7]=" + save.itemSlot7 + ",ItemSlot[8]=" + save.itemSlot8 + ",ItemSlot[9]=" + save.itemSlot9 + ")";
             }
