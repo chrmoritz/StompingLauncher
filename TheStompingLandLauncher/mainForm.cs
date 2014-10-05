@@ -133,7 +133,7 @@ namespace TheStompingLandLauncher
                 WebRequest http = HttpWebRequest.Create("https://github.com/chrmoritz/StompingLauncher/releases/latest");
                 Task<WebResponse> updateCheckTask = http.GetResponseAsync();
                 WebResponse wr = await updateCheckTask;
-                if (wr.ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.5")
+                if (wr.ResponseUri.AbsoluteUri != "https://github.com/chrmoritz/StompingLauncher/releases/tag/0.3.6")
                 {
                     DialogResult result = MessageBox.Show(GlobalStrings.NewVersionAvailableBody, GlobalStrings.NewVersionAvailableHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
